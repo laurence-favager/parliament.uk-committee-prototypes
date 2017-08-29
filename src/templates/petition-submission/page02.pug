@@ -1,0 +1,34 @@
+extends ../../layouts/layout.pug
+
+block content
+  .section--primary#content
+    .container
+      h1 Submitter Type
+
+  section
+    .container
+      +form('#', 'post')
+        +fieldset('Who is submitting this petition?')
+          ol.list--block
+            li
+              .list--details
+                +input('radio', 'Individual', 'submitter-type', 'sbType1')
+                p A single person...
+            li
+              .list--details
+                +input('radio', 'Group of individuals', 'submitter-type', 'sbType2')
+                p A group of people who are affected...
+            li
+              .list--details
+                +input('radio', 'Business / Organisation', 'submitter-type', 'sbType3')
+                p A private organisation...
+            li
+              .list--details
+                +input('radio', 'Representative / Agent', 'submitter-type', 'sbType4')
+                p An agent submitting on behalf of...
+
+      +buttonLink('#', 'Next', 'btn--primary')
+      p #[+link('page04-1.html', 'Individual')]
+      p #[+link('page04-2.html', 'Group')]
+      p #[+link('page04-3.html', 'Organisation')]
+      p #[+link('page03.html', 'Agent')]

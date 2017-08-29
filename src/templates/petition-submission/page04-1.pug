@@ -1,0 +1,37 @@
+extends ../../layouts/layout.pug
+
+block content
+  .section--primary#content
+    .container
+      h1 Individual's details
+
+  section
+    .container
+      +form('#', 'post')
+        +input('text', 'Full name', 'name', 'txtName')
+        +input('text', 'Address line 1', 'address', 'txtAddress1')
+        +input('text', 'Address line 2', 'address', 'txtAddress2')
+        +input('text', 'Post code', 'post code', 'txtPostCode')
+        +input('text', 'Email address', 'email', 'txtEmail')
+        +input('text', 'Telephone number', 'phone', 'txtPhone')
+        br
+        +input('checkbox', 'Do you have a representative / agent?', 'agent-rep', 'chkAgentInd')
+
+        h2 Representative / Agent details
+
+        +input('text', 'Full name', 'name', 'txtAgtName')
+        +input('text', 'Address line 1', 'address', 'txtAgtAddress1')
+        +input('text', 'Address line 2', 'address', 'txtAgtAddress2')
+        +input('text', 'Post code', 'post code', 'txtAgtPostCode')
+        +input('text', 'Email address', 'email', 'txtAgtEmail')
+        +input('text', 'Telephone number', 'phone', 'txtAgtPhone')
+        
+        br
+        p Who would you prefer to be the main point of contact for correspondence?
+
+        +input('checkbox', 'Individual', 'contact-ind', 'chkIndCnt')
+        +input('checkbox', 'Representative / Agent', 'contact-agt', 'chkAgentCnt')
+        
+        br
+        +buttonLink('#', 'Next', 'btn--primary')
+        p #[+link('page06.html', 'Next')]

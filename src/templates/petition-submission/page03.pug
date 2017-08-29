@@ -1,0 +1,29 @@
+extends ../../layouts/layout.pug
+
+block content
+  .section--primary#content
+    .container
+      h1 An agent submitting on behalf of...
+
+  section
+    .container
+      +form('#', 'post')
+        +fieldset('Who are you submitting on behalf of?')
+          ol.list--block
+            li
+              .list--details
+                +input('radio', 'Individual', 'agent-submitter-type', 'asbType1')
+                p A single person...
+            li
+              .list--details
+                +input('radio', 'Group of individuals', 'agent-submitter-type', 'asbType2')
+                p A group of people who are affected...
+            li
+              .list--details
+                +input('radio', 'Business / Organisation', 'agent-submitter-type', 'asbType3')
+                p A private organisation...
+
+      +buttonLink('#', 'Next', 'btn--primary')
+      p #[+link('page05-1.html', 'Individual')]
+      p #[+link('page05-2.html', 'Group')]
+      p #[+link('page05-3.html', 'Organisation')]

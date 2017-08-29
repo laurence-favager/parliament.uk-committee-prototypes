@@ -1,0 +1,31 @@
+extends ../../layouts/layout.pug
+
+block content
+  .section--primary#content
+    .container
+      h1 Submission complete
+      
+  section
+    .container
+      h2 Thank you
+      p Your reference number is 123xyz
+
+  section
+    .container
+      h2 Next steps
+      ol     
+        li Petition submission checked and verified
+        li Request for payment emailed
+        li Payment needs to be sent
+        li Government department will make contact
+
+  section
+    .container
+      h2 Updates
+      +form('#', 'post')
+        +input('checkbox', 'Updates on the progression of the bill', 'updates', 'chkUpdateBill')
+        +input('text', 'Email address', 'email', 'txtUptEmail')
+
+      br
+      +buttonLink('#', 'Finish', 'btn--primary')
+      p #[+link('page01.html', 'Finish')]

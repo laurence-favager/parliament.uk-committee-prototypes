@@ -1,0 +1,57 @@
+extends ../../layouts/layout.pug
+
+block content
+  #content.hero.theme--grey-4
+    .container
+      h1 Petition submission
+      p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris at felis malesuada, rhoncus justo non, hendrerit orci. Vivamus eu tellus sit amet metus blandit euismod in ut velit.
+
+  section
+    .container
+      h2 Submission deadline
+      .status--highlight.theme--caution
+        p Submission deadline date
+
+  section
+    .container
+      h2 Submission guidelines
+      ol.list--pipe
+        li
+          .list--details
+            h3 1. Read guidelines
+            p Read guidelines for submitting a petition and review bill...
+        li
+          .list--details
+            h3 2. Petition template
+            p Download and complete petition template (Word document)...
+        li
+          .list--details
+            h3 3. Online submission
+            p Submit your contact details and petition document online...
+        li
+          .list--details
+            h3 4. Petition payment
+            p If petition is verfied and accepted, payment will need to be made...
+        
+      br
+      +form('#', 'post')
+        +input('checkbox', 'I have read the above steps & ready to submit', 'terms-start', 'chkSteps')
+        +input('checkbox', 'I understand payment is required', 'terms-start', 'chkPayment')
+      
+      br
+      +buttonLink('page02.html', 'Respond Online', 'btn--primary')
+      p #[+link('page02.html', 'Respond Online')]
+
+  section
+    .container
+      h2 Alternative ways to petition
+      
+      h3 By email
+      ul
+        li Download the petition template + cover sheet
+        li Complete and return to: someone@domain.com
+  
+      h3 By post
+      ul
+        li Download the petition template + cover sheet
+        li Complete and return to: Address 1, Address 2, Post Code
