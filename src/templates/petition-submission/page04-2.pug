@@ -7,36 +7,38 @@ block content
 
   section
     .container
-      +form('#', 'post')
+      +form('page06.html')
         +input('text', 'Group name (optional)', 'name', 'txtGroupName')
 
         br
         p Please specifiy one group member as the main contact.
 
-        +input('text', 'Full name', 'name', 'txtName')
-        +input('text', 'Address line 1', 'address', 'txtAddress1')
+        +input('text', 'Full name', 'name', 'txtName')(required)
+        +input('text', 'Address line 1', 'address', 'txtAddress1')(required)
         +input('text', 'Address line 2', 'address', 'txtAddress2')
-        +input('text', 'Post code', 'post code', 'txtPostCode')
-        +input('text', 'Email address', 'email', 'txtEmail')
-        +input('text', 'Telephone number', 'phone', 'txtPhone')
+        +input('text', 'Post code', 'post code', 'txtPostCode')(maxlength='8', pattern='[0-9a-zA-Z ]{5,}', data-type='input', required)
+        +input('text', 'Email address', 'email', 'txtEmail')(required)
+        +input('text', 'Telephone number', 'phone', 'txtPhone')(maxlength='10', pattern='[0-9]', required)
         br
-        +input('checkbox', 'Do you have a representative that is independent of the group?', 'agent-rep', 'chkAgentGrp')
+        +input('checkbox', 'Do you have a representative that is independent of the group?', 'agent-rep', 'chkAgent')
 
-        h2 Representative / Agent details
+        #detAgent
+          h2 Representative / Agent details
 
-        +input('text', 'Full name', 'name', 'txtAgtName')
-        +input('text', 'Address line 1', 'address', 'txtAgtAddress1')
-        +input('text', 'Address line 2', 'address', 'txtAgtAddress2')
-        +input('text', 'Post code', 'post code', 'txtAgtPostCode')
-        +input('text', 'Email address', 'email', 'txtAgtEmail')
-        +input('text', 'Telephone number', 'phone', 'txtAgtPhone')
+          +input('text', 'Full name', 'name', 'txtAgtName')
+          +input('text', 'Address line 1', 'address', 'txtAgtAddress1')
+          +input('text', 'Address line 2', 'address', 'txtAgtAddress2')
+          +input('text', 'Post code', 'post code', 'txtAgtPostCode')(maxlength='8', pattern='[0-9a-zA-Z ]{5,}', data-type='input')
+          +input('text', 'Email address', 'email', 'txtAgtEmail')
+          +input('text', 'Telephone number', 'phone', 'txtAgtPhone')(maxlength='10', pattern='[0-9]')
+          
+          br
+          p Who would you prefer to be the main point of contact for correspondence?
+
+          +input('checkbox', 'Group contact', 'contact-grp', 'chkGrpCnt')(checked)
+          +input('checkbox', 'Group Representative', 'contact-grp-agt', 'chkGrpAgtCnt')
         
         br
-        p Who would you prefer to be the main point of contact for correspondence?
-
-        +input('checkbox', 'Group contact', 'contact-grp', 'chkGrpCnt')
-        +input('checkbox', 'Group Representative', 'contact-grp-agt', 'chkGrpAgtCnt')
-        
-        br
-        +buttonLink('#', 'Next', 'btn--primary')
-        p #[+link('page06.html', 'Next')]
+        +button('Next', 'btn--primary')
+        br  
+        p #[+link('page06.html', 'Next Page')]  

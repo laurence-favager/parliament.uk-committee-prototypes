@@ -7,23 +7,25 @@ block content
 
   section
     .container
-      +form('#', 'post')
+      +form
         +fieldset('Who are you submitting on behalf of?')
           ol.list--block
             li
               .list--details
-                +input('radio', 'Individual', 'agent-submitter-type', 'asbType1')
+                +input('radio', 'Individual', 'agent-submitter-type', 'page05-1')(checked, value='Individual')
                 p A single person...
             li
               .list--details
-                +input('radio', 'Group of individuals', 'agent-submitter-type', 'asbType2')
+                +input('radio', 'Group of individuals', 'agent-submitter-type', 'page05-2')(value='Group of individuals')
                 p A group of people who are affected...
             li
               .list--details
-                +input('radio', 'Business / Organisation', 'agent-submitter-type', 'asbType3')
+                +input('radio', 'Business / Organisation', 'agent-submitter-type', 'page05-3')(value='Business / Organisation')
                 p A private organisation...
 
-      +buttonLink('#', 'Next', 'btn--primary')
+        // +button('Next', 'btn--primary')
+
+      br
       p #[+link('page05-1.html', 'Individual')]
       p #[+link('page05-2.html', 'Group')]
       p #[+link('page05-3.html', 'Organisation')]

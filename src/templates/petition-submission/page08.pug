@@ -22,10 +22,10 @@ block content
   section
     .container
       h2 Updates
-      +form('#', 'post')
-        +input('checkbox', 'Updates on the progression of the bill', 'updates', 'chkUpdateBill')
-        +input('text', 'Email address', 'email', 'txtUptEmail')
-
-      br
-      +buttonLink('#', 'Finish', 'btn--primary')
-      p #[+link('page01.html', 'Finish')]
+      +form('../index.html')
+        +input('checkbox', 'Updates on the progression of the bill', 'updates', 'chkAgent')
+        #detAgent
+          br
+          +input('text', 'Email address', 'email', 'txtUptEmail')
+        br
+        +button('Finish', 'btn--primary')

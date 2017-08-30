@@ -1,0 +1,36 @@
+input[type="checkbox"] {
+    position: absolute;
+}
+input[type="checkbox"] ~ label {
+    padding-left: $base-spacing-unit-small;
+    display:inline-block;
+}
+
+.block input[type="checkbox"] {
+  margin-top: $base-spacing-unit;
+}
+
+input[type="checkbox"], input[type="radio"] {
+  transform: scale(1.5);
+  outline-offset: 3px;
+}
+
+input[type="checkbox"] + label {
+  padding-bottom: 0;
+  margin-left: $base-spacing-unit-tiny;
+}
+
+input[type="radio"] + label {
+  padding-bottom: $base-spacing-unit;
+  margin-left: $base-spacing-unit-tiny;
+  font-weight: bold;
+}
+
+input[type="text"] {
+  margin-bottom: $base-spacing-unit-tiny;
+}
+
+ol > li > ul > li {
+  padding-top: $base-spacing-unit-tiny;
+  list-style: none;
+}

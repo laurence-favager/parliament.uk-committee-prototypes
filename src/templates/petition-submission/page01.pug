@@ -34,13 +34,15 @@ block content
             p If petition is verfied and accepted, payment will need to be made...
         
       br
-      +form('#', 'post')
-        +input('checkbox', 'I have read the above steps & ready to submit', 'terms-start', 'chkSteps')
-        +input('checkbox', 'I understand payment is required', 'terms-start', 'chkPayment')
-      
-      br
-      +buttonLink('page02.html', 'Respond Online', 'btn--primary')
-      p #[+link('page02.html', 'Respond Online')]
+      +form('page02.html')
+        +fieldset
+          +input('checkbox', 'I have read the above steps & ready to submit', 'terms-start', 'chkSteps')(required)
+          +input('checkbox', 'I understand payment is required', 'terms-payment', 'chkPayment')(required)
+          br
+        +button('Respond Online', 'btn--primary')
+
+      br  
+      p #[+link('page02.html', 'Next Page')]  
 
   section
     .container

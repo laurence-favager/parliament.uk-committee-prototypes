@@ -7,27 +7,29 @@ block content
 
   section
     .container
-      +form('#', 'post')
+      +form(id='subtype')
         +fieldset('Who is submitting this petition?')
           ol.list--block
             li
               .list--details
-                +input('radio', 'Individual', 'submitter-type', 'sbType1')
+                +input('radio', 'Individual', 'submitter-type', 'page04-1')(checked, value='Individual')
                 p A single person...
             li
               .list--details
-                +input('radio', 'Group of individuals', 'submitter-type', 'sbType2')
+                +input('radio', 'Group of individuals', 'submitter-type', 'page04-2')(value='Group of individuals')
                 p A group of people who are affected...
             li
               .list--details
-                +input('radio', 'Business / Organisation', 'submitter-type', 'sbType3')
+                +input('radio', 'Business / Organisation', 'submitter-type', 'page04-3')(value='Business / Organisation')
                 p A private organisation...
             li
               .list--details
-                +input('radio', 'Representative / Agent', 'submitter-type', 'sbType4')
+                +input('radio', 'Representative / Agent', 'submitter-type', 'page03')(value='Representative / Agent')
                 p An agent submitting on behalf of...
-
-      +buttonLink('#', 'Next', 'btn--primary')
+        
+        // +button('Next', 'btn--primary')
+      
+      br
       p #[+link('page04-1.html', 'Individual')]
       p #[+link('page04-2.html', 'Group')]
       p #[+link('page04-3.html', 'Organisation')]
