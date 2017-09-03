@@ -3,10 +3,11 @@ extends ../../layouts/layout.pug
 block content
   .section--primary#content
     .container
-      h1 Group of individual's details
+      h1 Petition New Motorway Bill
 
   section
     .container
+      h2 Group of individuals details
       +form('page06.html')
         +input('text', 'Group name (optional)', 'name', 'txtGroupName')
 
@@ -20,10 +21,10 @@ block content
         +input('text', 'Email address', 'email', 'txtEmail')(required)
         +input('text', 'Telephone number', 'phone', 'txtPhone')(maxlength='10', pattern='[0-9]', required)
         br
-        +input('checkbox', 'Do you have a representative that is independent of the group?', 'agent-rep', 'chkAgent')
+        +input('checkbox', 'Do you have a representative (not in your group)?', 'agent-rep', 'toggleContent')
 
-        #detAgent
-          h2 Representative / Agent details
+        #contentPane
+          h2 Representative's details
 
           +input('text', 'Full name', 'name', 'txtAgtName')
           +input('text', 'Address line 1', 'address', 'txtAgtAddress1')
@@ -33,12 +34,10 @@ block content
           +input('text', 'Telephone number', 'phone', 'txtAgtPhone')(maxlength='10', pattern='[0-9]')
           
           br
-          p Who would you prefer to be the main point of contact for correspondence?
+          p Who should be contacted about this petition?
 
           +input('checkbox', 'Group contact', 'contact-grp', 'chkGrpCnt')(checked)
-          +input('checkbox', 'Group Representative', 'contact-grp-agt', 'chkGrpAgtCnt')
+          +input('checkbox', 'Representative', 'contact-grp-agt', 'chkGrpAgtCnt')
         
-        br
-        +button('Next', 'btn--primary')
         br  
-        p #[+link('page06.html', 'Next Page')]  
+        p #[+link('page06.html', 'Next Page')(class='btn--primary')]  

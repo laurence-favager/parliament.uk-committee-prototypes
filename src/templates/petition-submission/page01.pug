@@ -3,14 +3,19 @@ extends ../../layouts/layout.pug
 block content
   #content.hero.theme--grey-4
     .container
-      h1 Petition submission
-      p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris at felis malesuada, rhoncus justo non, hendrerit orci. Vivamus eu tellus sit amet metus blandit euismod in ut velit.
+      h1 Petition New Motorway Bill
+      p If you are affected by the new motorway in Gloucestershire you can make a complaint by submitting a petition.
+
+  section
+    .container
+      h2 Find out if you're affected
+      p See if you will be affected by the motorway in Gloucestershire by reading the #[+link('#', 'New Motorway Bill')].
 
   section
     .container
       h2 Submission deadline
       .status--highlight.theme--caution
-        p Submission deadline date
+        p The deadline for petitions is 3 October 2017.
 
   section
     .container
@@ -19,30 +24,27 @@ block content
         li
           .list--details
             h3 1. Read guidelines
-            p Read guidelines for submitting a petition and review bill...
+            p Make sure your read our #[+link('#', 'submission guidelines')] before your submit your petition.
         li
           .list--details
             h3 2. Petition template
-            p Download and complete petition template (Word document)...
+            p To submit a petition, download the #[+link('#', 'petition template')].
         li
           .list--details
             h3 3. Online submission
-            p Submit your contact details and petition document online...
+            p Once you have completed the petition template you can submit your petition online.
         li
           .list--details
             h3 4. Petition payment
-            p If petition is verfied and accepted, payment will need to be made...
+            p If your petition is accepted a one off payment will be required to officially publish your submission.
         
       br
       +form('page02.html')
         +fieldset
-          +input('checkbox', 'I have read the above steps & ready to submit', 'terms-start', 'chkSteps')(required)
-          +input('checkbox', 'I understand payment is required', 'terms-payment', 'chkPayment')(required)
+          +input('checkbox', 'I have read the submission guidelines & I am ready to submit my petition online', 'terms-start', 'chkSteps')(required)
+          +input('checkbox', 'I understand that payment for my petition is required', 'terms-payment', 'chkPayment')(required)
           br
-        +button('Respond Online', 'btn--primary')
-
-      br  
-      p #[+link('page02.html', 'Next Page')]  
+          +button('Respond Online', 'btn--primary')
 
   section
     .container
@@ -50,10 +52,10 @@ block content
       
       h3 By email
       ul
-        li Download the petition template + cover sheet
-        li Complete and return to: someone@domain.com
+        li Read our #[+link('#', 'submission guidelines')] and download the #[+link('#', 'petition template')].
+        li Complete and email your petition to #[+link('#', 'BillPetition@parliament.uk')]
   
       h3 By post
       ul
-        li Download the petition template + cover sheet
-        li Complete and return to: Address 1, Address 2, Post Code
+        li Read our #[+link('#', 'submission guidelines')] and download the #[+link('#', 'petition template')].
+        li Complete and post your petition to House of Commons, London, SW1A 0AA

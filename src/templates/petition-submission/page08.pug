@@ -3,29 +3,29 @@ extends ../../layouts/layout.pug
 block content
   .section--primary#content
     .container
-      h1 Submission complete
+      h1 Petition New Motorway Bill
       
   section
     .container
-      h2 Thank you
+      h2 Thank you for your submission.
       p Your reference number is 123xyz
 
   section
     .container
-      h2 Next steps
+      h2 What happens next?
       ol     
-        li Petition submission checked and verified
-        li Request for payment emailed
-        li Payment needs to be sent
-        li Government department will make contact
+        li Your petition submission will checked and verified.
+        li A request for payment will be emailed to you.
+        li You will be required to make your payment.
+        li The Government department will contact you.
 
   section
     .container
       h2 Updates
       +form('../index.html')
-        +input('checkbox', 'Updates on the progression of the bill', 'updates', 'chkAgent')
-        #detAgent
+        +input('checkbox', 'Give me updates on the New Motorway Bill', 'updates', 'toggleContent')
+        #contentPane
           br
           +input('text', 'Email address', 'email', 'txtUptEmail')
-        br
-        +button('Finish', 'btn--primary')
+      br
+      p #[+link('../index.html', 'Finish')(class='btn--primary')]

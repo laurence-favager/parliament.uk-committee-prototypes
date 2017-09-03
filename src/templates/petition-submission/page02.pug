@@ -3,34 +3,29 @@ extends ../../layouts/layout.pug
 block content
   .section--primary#content
     .container
-      h1 Submitter Type
+      h1 Petition New Motorway Bill
 
   section
     .container
-      +form(id='subtype')
-        +fieldset('Who is submitting this petition?')
+      h2 Who is submitting this petition?
+      +form(id='submitterType' action='page04-1.html')
+        +fieldset
           ol.list--block
             li
               .list--details
-                +input('radio', 'Individual', 'submitter-type', 'page04-1')(checked, value='Individual')
-                p A single person...
+                +input('radio', 'Individual', 'submitter-type', 'Individual')(data-route='page04-1.html')(checked)
+                p You are submitting a petition for yourself.
             li
               .list--details
-                +input('radio', 'Group of individuals', 'submitter-type', 'page04-2')(value='Group of individuals')
-                p A group of people who are affected...
+                +input('radio', 'Group of individuals', 'submitter-type', 'Group of individuals')(data-route='page04-2.html')
+                p You are submitting a petition for a group of people.
             li
               .list--details
-                +input('radio', 'Business / Organisation', 'submitter-type', 'page04-3')(value='Business / Organisation')
-                p A private organisation...
+                +input('radio', 'Organisation', 'submitter-type', 'page04-3')(data-route='page04-3.html')
+                p You are submitting a petition for an organisation.
             li
               .list--details
-                +input('radio', 'Representative / Agent', 'submitter-type', 'page03')(value='Representative / Agent')
-                p An agent submitting on behalf of...
+                +input('radio', 'Representative / Agent', 'submitter-type', 'page03')(data-route='page03.html')
+                p You are submitting a petition on behalf of someone else.
         
-        // +button('Next', 'btn--primary')
-      
-      br
-      p #[+link('page04-1.html', 'Individual')]
-      p #[+link('page04-2.html', 'Group')]
-      p #[+link('page04-3.html', 'Organisation')]
-      p #[+link('page03.html', 'Agent')]
+        +button('Next', 'btn--primary')

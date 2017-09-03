@@ -3,10 +3,12 @@ extends ../../layouts/layout.pug
 block content
   .section--primary#content
     .container
-      h1 Terms & Conditions
+      h1 Petition New Motorway Bill
 
   section
     .container
+      h2 Terms & Conditions
+      
       h3 I understand:
       
       ol
@@ -24,9 +26,7 @@ block content
        
       br
       +form('page08.html')
-        .block
+        .status--highlight
           +input('checkbox', 'I agree to obey and observe the orders and practice of the House of Commons and any rules prescribed by the Speaker in relation to the proceedings on this petition.', 'terms-main', 'chkTrmCnd')(required)
-        br
-        +button('Accept', 'btn--primary')
-        br  
-        p #[+link('page08.html', 'Next Page')]
+      br  
+      p #[+link('page08.html', 'Accept')(class='btn--primary')]

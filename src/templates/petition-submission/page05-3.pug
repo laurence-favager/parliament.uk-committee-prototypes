@@ -3,10 +3,11 @@ extends ../../layouts/layout.pug
 block content
   .section--primary#content
     .container
-      h1 Representative / Agent details
+      h1 Petition New Motorway Bill
 
   section
     .container
+      h2 Representative's details
       +form('page06.html')
         +input('text', 'Full name', 'name', 'txtAgtName')(required)
         +input('text', 'Address line 1', 'address', 'txtAgtAddress1')(required)
@@ -30,12 +31,10 @@ block content
         +input('text', 'Contact Telephone number', 'phone', 'txtOrgPhone')(maxlength='10', pattern='[0-9]', required)
         
         br
-        p Who would you prefer to be the main point of contact for correspondence?
+        p Who should be contacted about this petition?
 
-        +input('checkbox', 'Representative / Agent', 'contact-agt', 'chkAgentCnt')(checked)
+        +input('checkbox', 'You', 'contact-agt', 'chkAgentCnt')
         +input('checkbox', 'Organisation', 'contact-org', 'chkOrgCnt')
         
-        br
-        +button('Next', 'btn--primary')
-        br  
-        p #[+link('page06.html', 'Next Page')]
+      br  
+      p #[+link('page06.html', 'Next Page')(class='btn--primary')]
