@@ -18,24 +18,25 @@
 }());
 
 // Function to listen for checked radio buttons and change form action
+
+function getCheckedRadioIndex(radios) {
+  for (var i = 0; i < radios.length; i++) {
+    if (radios[i].checked) {
+      var r = radios[i].dataset.route;
+      return r;
+    }
+  }
+}
+
 (function () {
   if (document.querySelectorAll('input[type=radio]')) {
 
     var radios = document.querySelectorAll('input[type=radio]');
 
-    function getCheckedRadioIndex(radios) {
-      for (var i = 0; i < radios.length; i++) {
-        if (radios[i].checked) {
-          var r = radios[i].dataset.route;
-          return r;
-        }
-      }
-    }
-
     for (var i = 0; i < radios.length; i++) {
-      radios[i].onclick = function(event) {
+      radios[i].onclick = function () {
         var route = getCheckedRadioIndex(radios);
-        document.getElementById('submitterType').action=route;
+        document.getElementById('submitterType').action = route;
       };
     }
   }
