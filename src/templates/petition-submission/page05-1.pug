@@ -14,17 +14,17 @@ block content
         +input('text', 'Address line 2', 'address', 'txtAgtAddress2')
         +input('text', 'Post code', 'post code', 'txtAgtPostCode')(maxlength='8', pattern='[0-9a-zA-Z ]{5,}', data-type='input', required)
         +input('text', 'Email address', 'email', 'txtAgtEmail')(required)
-        +input('text', 'Telephone number', 'phone', 'txtAgtPhone')(maxlength='10', pattern='[0-9]', required)
+        +input('text', 'Telephone number', 'phone', 'txtAgtPhone')(maxlength='10', pattern='[0-9]')
 
         br
-        p Please provide contact details for the individual you are representing
+        p Please provide contact details for the individual you are representing.
 
         +input('text', 'Full name', 'name', 'txtName')(required)
         +input('text', 'Address line 1', 'address', 'txtAddress1')(required)
         +input('text', 'Address line 2', 'address', 'txtAddress2')
         +input('text', 'Post code', 'post code', 'txtPostCode')(maxlength='8', pattern='[0-9a-zA-Z ]{5,}', data-type='input', required)
         +input('text', 'Email address', 'email', 'txtEmail')(required)
-        +input('text', 'Telephone number', 'phone', 'txtPhone')(maxlength='10', pattern='[0-9]', required)
+        +input('text', 'Telephone number', 'phone', 'txtPhone')(maxlength='10', pattern='[0-9]')
         
         br
         p Who should be contacted about this petition?
@@ -32,5 +32,7 @@ block content
         +input('checkbox', 'You', 'contact-agt', 'chkAgentCnt')
         +input('checkbox', 'Individual', 'contact-ind', 'chkIndCnt')
         
-      br  
-      p #[+link('page06.html', 'Next Page')(class='btn--primary')]  
+        br  
+        +button('Next', 'btn--primary')
+      br
+      p < #[+link('page03.html', 'Back')]

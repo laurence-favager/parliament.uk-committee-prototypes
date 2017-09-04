@@ -8,24 +8,31 @@ block content
   section
     .container
       h2 Thank you for your submission.
-      p Your reference number is 123xyz
+      .status--highlight
+        p Your petition reference number is HB123XYZ
 
   section
     .container
       h2 What happens next?
-      ol     
-        li Your petition submission will checked and verified.
-        li A request for payment will be emailed to you.
-        li You will be required to make your payment.
-        li The Government department will contact you.
+      ol.list--pipe
+        li
+          .list--details
+            h3 1. Your petition is validated     
+            p Your online submission will checked and verified by a member of the Parliamentary staff.
+        li
+          .list--details
+            h3 2. Payment for your petition is required  
+            p A request for payment will be emailed to you, follow the instructions enclosed to make your payment.
+        li
+          .list--details
+            h3 3. You will be contacted by the Government department
+            p The Department for Transport will get in touch with you regarding the status of your petition.
 
   section
     .container
       h2 Updates
-      +form('../index.html')
-        +input('checkbox', 'Give me updates on the New Motorway Bill', 'updates', 'toggleContent')
-        #contentPane
-          br
-          +input('text', 'Email address', 'email', 'txtUptEmail')
+      .status--highlight.theme--grey-4
+        +form('../index.html')
+          +input('checkbox', 'Give me updates on the New Motorway Bill', 'updates', 'chkUpdates')
       br
       p #[+link('../index.html', 'Finish')(class='btn--primary')]

@@ -19,6 +19,9 @@ block content
 
         +input('text', 'Contact name', 'contact name', 'txtOrgName')(required)
         +input('text', 'Contact Email address', 'email', 'txtOrgEmail')(required)
-        +input('text', 'Contact Telephone number', 'phone', 'txtOrgPhone')(maxlength='10', pattern='[0-9]', required)
-      br  
-      p #[+link('page06.html', 'Next Page')(class='btn--primary')]  
+        +input('text', 'Contact Telephone number', 'phone', 'txtOrgPhone')(maxlength='10', pattern='[0-9]')
+
+        br
+        +button('Next', 'btn--primary')
+      br
+      p < #[+link('page02.html', 'Back')]

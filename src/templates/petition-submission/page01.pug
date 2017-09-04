@@ -15,36 +15,37 @@ block content
     .container
       h2 Submission deadline
       .status--highlight.theme--caution
-        p The deadline for petitions is 3 October 2017.
+        p The deadline for petitions is 3 November 2017.
 
   section
     .container
-      h2 Submission guidelines
+      h2 How to petition online
       ol.list--pipe
         li
           .list--details
             h3 1. Read guidelines
-            p Make sure your read our #[+link('#', 'submission guidelines')] before your submit your petition.
+            p Make sure you have read our #[+link('#', 'submission guidelines')] before your submit your petition.
         li
           .list--details
-            h3 2. Petition template
-            p To submit a petition, download the #[+link('#', 'petition template')].
+            h3 2. Complete petition
+            p #[+link('#', 'Download form')] and fill out your information.
         li
           .list--details
-            h3 3. Online submission
-            p Once you have completed the petition template you can submit your petition online.
+            h3 3. Submit petition online
+            p Once you have completed your petition form you can #[+link('#submitOnline', 'submit online')].
         li
           .list--details
-            h3 4. Petition payment
-            p If your petition is accepted a one off payment will be required to officially publish your submission.
+            h3 4. Pay for petition
+            p If your petition is accepted, a one off payment will be required to officially process your submission.
         
-      br
-      +form('page02.html')
-        +fieldset
-          +input('checkbox', 'I have read the submission guidelines & I am ready to submit my petition online', 'terms-start', 'chkSteps')(required)
-          +input('checkbox', 'I understand that payment for my petition is required', 'terms-payment', 'chkPayment')(required)
-          br
-          +button('Respond Online', 'btn--primary')
+      br#submitOnline
+      .status--highlight
+        +form('page02.html')
+          +fieldset
+            +input('checkbox', 'I have read the submission guidelines & I am ready to submit my petition online', 'terms-start', 'chkSteps')(required)
+            +input('checkbox', 'I understand that payment for my petition is required', 'terms-payment', 'chkPayment')(required)
+            br
+            +button('Submit Petition', 'btn--primary')
 
   section
     .container

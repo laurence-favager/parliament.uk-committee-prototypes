@@ -14,10 +14,11 @@ block content
         +input('text', 'Address line 2', 'address', 'txtAddress2')
         +input('text', 'Post code', 'post code', 'txtPostCode')(maxlength='8', pattern='[0-9a-zA-Z ]{5,}', data-type='input', required)
         +input('text', 'Email address', 'email', 'txtEmail')(required)
-        +input('text', 'Telephone number', 'phone', 'txtPhone')(maxlength='10', pattern='[0-9]', required)
+        +input('text', 'Telephone number', 'phone', 'txtPhone')(maxlength='10', pattern='[0-9]')
         br
-        +input('checkbox', 'Do you have a representative?', 'agent-rep', 'toggleContent')
-        
+        .status--highlight.theme--grey-4
+          +input('checkbox', 'Do you have a representative?', 'agent-rep', 'toggleContent')
+
         #contentPane
           h2 Representative's details
 
@@ -27,12 +28,14 @@ block content
           +input('text', 'Post code', 'post code', 'txtAgtPostCode')(maxlength='8', pattern='[0-9a-zA-Z ]{5,}', data-type='input')
           +input('text', 'Email address', 'email', 'txtAgtEmail')
           +input('text', 'Telephone number', 'phone', 'txtAgtPhone')(maxlength='10', pattern='[0-9]')
-          
+
           br
           p Who should be contacted about this petition?
 
           +input('checkbox', 'You', 'contact-ind', 'chkIndCnt')(checked)
           +input('checkbox', 'Your representative', 'contact-agt', 'chkAgentCnt')
-        
-        br  
-        p #[+link('page06.html', 'Next')(class='btn--primary')]  
+
+        br
+        +button('Next', 'btn--primary')
+      br
+      p < #[+link('page02.html', 'Back')]
