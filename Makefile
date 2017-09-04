@@ -24,8 +24,7 @@ PRETTY_MINI_JSON=$(PUGIN)/node_modules/pretty-mini-json/pretty-mini-json.js
 
 # Installs npm packages
 install:
-	@npm i
-	make install -C $(PUGIN)
+	@make install -C $(PUGIN)
 
 # Deletes the public folder
 clean:
