@@ -11,6 +11,10 @@ ol > li > ul > li {
   font-weight: bold;
 }
 
+footer {
+  display: none;
+}
+
 input[type="checkbox"], input[type="radio"] {
   transform: scale(1.5);
   outline-offset: 3px;

@@ -14,7 +14,7 @@ block content
         +input('text', 'Address line 2', 'address', 'txtAgtAddress2')
         +input('text', 'Post code', 'post code', 'txtAgtPostCode')(maxlength='8', pattern='[0-9a-zA-Z ]{5,}', data-type='input', required)
         +input('text', 'Email address', 'email', 'txtAgtEmail')(required)
-        +input('text', 'Telephone number', 'phone', 'txtAgtPhone')(maxlength='10', pattern='[0-9]')
+        +input('text', 'Telephone number', 'phone', 'txtAgtPhone')(maxlength='10', pattern='[0-9]{7,10}')
 
         br
         p Please provide details for the organisation you are representing.
@@ -28,7 +28,7 @@ block content
 
         +input('text', 'Contact name', 'contact name', 'txtOrgName')(required)
         +input('text', 'Contact Email address', 'email', 'txtOrgEmail')(required)
-        +input('text', 'Contact Telephone number', 'phone', 'txtOrgPhone')(maxlength='10', pattern='[0-9]')
+        +input('text', 'Contact Telephone number', 'phone', 'txtOrgPhone')(maxlength='10', pattern='[0-9]{7,10}')
         
         br
         p Who should be contacted about this petition?

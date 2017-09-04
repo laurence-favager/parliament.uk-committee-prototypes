@@ -19,7 +19,7 @@ block content
 
         +input('text', 'Contact name', 'contact name', 'txtOrgName')(required)
         +input('text', 'Contact Email address', 'email', 'txtOrgEmail')(required)
-        +input('text', 'Contact Telephone number', 'phone', 'txtOrgPhone')(maxlength='10', pattern='[0-9]')
+        +input('text', 'Contact Telephone number', 'phone', 'txtOrgPhone')(maxlength='10', pattern='[0-9]{7,10}')
 
         br
         +button('Next', 'btn--primary')
