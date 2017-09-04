@@ -30,7 +30,7 @@ The [Parliament.uk-composition][parliament.uk-pugin-composition] application inh
 ### Running the application
 To run the application locally, run:
 ```bash
-make install
+npm install
 make serve
 ```
 

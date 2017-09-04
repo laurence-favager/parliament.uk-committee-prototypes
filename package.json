@@ -8,6 +8,7 @@
     "node": "7.x"
   },
   "scripts": {
+    "postinstall": "make install",
     "start": "make serve"
   },
   "devDependencies": {
