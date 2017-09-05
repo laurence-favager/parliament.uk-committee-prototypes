@@ -17,9 +17,9 @@ block content
         +input('text', 'Full name', 'name', 'txtName')(required)
         +input('text', 'Address line 1', 'address', 'txtAddress1')(required)
         +input('text', 'Address line 2', 'address', 'txtAddress2')
-        +input('text', 'Post code', 'post code', 'txtPostCode')(maxlength='8', pattern='[0-9a-zA-Z ]{5,}', data-type='input', required)
+        +input('text', 'Post code', 'post code', 'txtPostCode')(required)
         +input('text', 'Email address', 'email', 'txtEmail')(required)
-        +input('text', 'Telephone number', 'phone', 'txtPhone')(maxlength='10', pattern='[0-9]{7,10}')
+        +input('text', 'Telephone number', 'phone', 'txtPhone')
 
         br
         +button('Next', 'btn--primary')
