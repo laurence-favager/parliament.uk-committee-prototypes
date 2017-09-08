@@ -3,7 +3,7 @@ extends ../../layouts/layout.pug
 block content
   .section--primary#content
     .container
-      h1 Petition New Motorway Bill
+      h1 Petition New Motorway Bills
 
   section
     .container
@@ -27,7 +27,7 @@ block content
               .list--details
                 +input('radio', 'Representative / Agent', 'submitter-type', 'page03')(data-route='page03.html')
                 p You are submitting a petition on behalf of someone else.
-        
+
         +button('Next', 'btn--primary')
       br
       p < #[+link('page01.html', 'Back')]
