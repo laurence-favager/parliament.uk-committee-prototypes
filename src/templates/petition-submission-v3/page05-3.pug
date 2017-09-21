@@ -22,6 +22,26 @@ block content
         +input('text', 'Contact Telephone number', 'phone', 'txtOrgPhone')
 
         br
+        .status--highlight.theme--grey-4
+          +input('checkbox', 'Do you have a representative?', 'agent-rep', 'toggleContent')
+
+        #contentPane
+          h2 Representative's details
+
+          +input('text', 'Full name', 'name', 'txtAgtName')
+          +input('text', 'Address line 1', 'address', 'txtAgtAddress1')
+          +input('text', 'Address line 2', 'address', 'txtAgtAddress2')
+          +input('text', 'Post code', 'post code', 'txtAgtPostCode')
+          +input('text', 'Email address', 'email', 'txtAgtEmail')
+          +input('text', 'Telephone number', 'phone', 'txtAgtPhone')
+
+          br
+          p Who should be contacted about this petition?
+
+          +input('checkbox', 'You', 'contact-ind', 'chkIndCnt')(checked)
+          +input('checkbox', 'Your representative', 'contact-agt', 'chkAgentCnt')
+
+        br
         +button('Next', 'btn--primary')
       br
       p < #[+link('page03.html', 'Back')]

@@ -9,7 +9,7 @@ block content
     .container
       br
       .status--highlight.theme--caution
-        p The deadline for petitions is 3 November 2017.
+        p The deadline for all petitions is 3 November 2017 at 5pm.
 
   section
     .container
@@ -30,17 +30,16 @@ block content
       .status--highlight
         +form('page03.html')
           +fieldset
-            +input('checkbox', 'I have read and understood all of the above and am happy to proceed', 'terms-start', 'enableSubmit')
+            //+input('checkbox', 'I have read and understood all of the above and am happy to proceed', 'terms-start', 'enableSubmit')
             
             //this is a normal checkbox
-            //+input('checkbox', 'I have read and understood all of the above and am happy to proceed', 'terms-start')
+            +input('checkbox', 'I have read and understood all of the above and am happy to proceed', 'terms-start')
             
             br
-            +button('Start petition', 'btn--disabled', 'disabled')(id='buttonSubmit')
+            //+button('Start petition', 'btn--disabled', 'disabled')(id='buttonSubmit')
             
             //this is a normal button
-            //+button('Start petition', 'btn--primary')
-
+            +button('Start petition', 'btn--primary')
 
   section
     .container
@@ -55,6 +54,11 @@ block content
       ul
         li read the #[+link('#', 'submission guidelines')] and download the #[+link('../../documents/bill-petition-template.docx', 'petition template')].
         li complete the template and post to House of Commons, London, SW1A 0AA
-      
+  
+    section
+      .container
+        h3 Help and Support
+        p For more information e-mail #[+link('#', 'petition@parliament.uk')] or phone 020 7219 3000
+    
       br
       p < #[+link('page01.html', 'Back')]
