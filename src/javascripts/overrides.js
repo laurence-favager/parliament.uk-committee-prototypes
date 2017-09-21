@@ -26,11 +26,11 @@
       if (checkbox.checked) {
         button.disabled = false;
         button.className = 'btn--primary';
-        button.style.cursor = 'pointer'
+        button.style.cursor = 'pointer';
       } else {
         button.disabled = true;
         button.className = 'btn--disabled';
-        button.style.cursor = 'not-allowed'
+        button.style.cursor = 'not-allowed';
       }
     };
 
