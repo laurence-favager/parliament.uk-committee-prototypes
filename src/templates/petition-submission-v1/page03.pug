@@ -13,15 +13,15 @@ block content
           ol.list--block
             li
               .list--details
-                +input('radio', 'Individual', 'agent-submitter-type', 'Individual')(data-route='page05-1.html')(checked)
+                +input('radio', 'Individual', 'agent-submitter-type', 'agt-ind')(data-route='page05-1.html', checked)
                 p You are submitting a petition for one person.
             li
               .list--details
-                +input('radio', 'Group of individuals', 'agent-submitter-type', 'Group of individuals')(data-route='page05-2.html')
+                +input('radio', 'Group of individuals', 'agent-submitter-type', 'agt-grp')(data-route='page05-2.html')
                 p You are submitting a petition for a group of people.
             li
               .list--details
-                +input('radio', 'Organisation', 'agent-submitter-type', 'Organisation')(data-route='page05-3.html')
+                +input('radio', 'Organisation', 'agent-submitter-type', 'agt-org')(data-route='page05-3.html')
                 p You are submitting a petition for an organisation.
 
         +button('Next', 'btn--primary')

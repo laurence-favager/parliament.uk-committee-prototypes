@@ -1,0 +1,30 @@
+extends ../../layouts/layout.pug
+
+block content
+  #content.hero.theme--grey-4
+    .container
+      h1 New Motorway Bill
+
+  section
+    .container
+      h2 Where is the new motorway going to be built?
+      p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+  section
+    .container
+      h2 What is the potential impact of the new motorway?
+      p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+  br
+
+  section
+     .container
+       +dropdownToggle("I know I'm impacted. What should I do?")
+         p If you know you will be impacted by HS2 and you wish to object to this, either you or someone representing you, can submit a petition to the House of Commons. This will give you the opportunity to provide an explanation on how this will impact you, why you object to this and how you would like your objections to be met.
+         p #[+link('page02.html', 'I would like to submit a petition')(class='btn--primary')]
+
+  section
+    .container
+      +dropdownToggle("I'm representing someone who's impacted. What should I do?")
+        p If you are representing someone who is impacted by HS2 and they wish to object to this, you can submit a petition to the House of Commons. This will give you the opportunity to provide an explanation on how this will impact you, why you object to this and how you would like your objections to be met.
+        p #[+link('page02.html', 'I would like to submit a petition')(class='btn--primary')]

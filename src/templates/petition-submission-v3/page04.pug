@@ -1,0 +1,29 @@
+extends ../../layouts/layout.pug
+
+block content
+  .section--primary#content
+    .container
+      h1 Petition New Motorway Bill
+
+  section
+    .container
+      h2 Who are you submitting a petition for?
+      +form(id='submitterType' action='page06-1.html')
+        +fieldset
+          ol.list--block
+            li
+              .list--details
+                +input('radio', 'Individual', 'agent-submitter-type', 'rep-ind')(data-route='page06-1.html', checked)
+                p You are submitting a petition for one person.
+            li
+              .list--details
+                +input('radio', 'Group of individuals', 'agent-submitter-type', 'rep-grp')(data-route='page06-2.html')
+                p You are submitting a petition for a group of people.
+            li
+              .list--details
+                +input('radio', 'Business / Organisation', 'agent-submitter-type', 'rep-org')(data-route='page06-3.html')
+                p You are submitting a petition for a business or organisation.
+
+        +button('Next', 'btn--primary')
+      br
+      p < #[+link('page03.html', 'Back')]

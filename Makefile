@@ -7,6 +7,7 @@ JAVASCRIPTS_LOC=src/javascripts
 JSON_LOC=src/json
 STYLESHEETS_LOC=src/stylesheets
 IMAGES_LOC=src/images
+DOCS_LOC=src/documents
 REPORTS_FOLDER=reports
 
 # Node module variables
@@ -57,6 +58,11 @@ images:
 icons:
 	@$(SVGO) -f $(PUGIN)/$(SRC_FOLDER)/icons -o $(PUBLIC_FOLDER)/icons
 
+# Adds document files
+documents:
+	@mkdir -p $(PUBLIC_FOLDER)/documents
+	@cp $(DOCS_LOC)/bill-petition-template.docx $(PUBLIC_FOLDER)/documents/bill-petition-template.docx
+
 # Outputs pug files to html within public folder
 templates:
 	@$(PUG) $(SRC_FOLDER)/templates -P --out $(PUBLIC_FOLDER)/templates
@@ -81,4 +87,4 @@ test:
 	@node $(PUGIN)/scripts/w3c.js
 
 # Builds application
-build: lint css js images icons templates json
+build: lint css js images icons templates json documents
