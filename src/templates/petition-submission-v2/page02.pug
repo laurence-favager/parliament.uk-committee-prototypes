@@ -31,8 +31,16 @@ block content
         +form('page03.html')
           +fieldset
             +input('checkbox', 'I have read and understood all of the above and am happy to proceed', 'terms-start', 'enableSubmit')
+            
+            //this is a normal checkbox
+            //+input('checkbox', 'I have read and understood all of the above and am happy to proceed', 'terms-start')
+            
             br
             +button('Start petition', 'btn--disabled', 'disabled')(id='buttonSubmit')
+            
+            //this is a normal button
+            //+button('Start petition', 'btn--primary')
+
 
   section
     .container
