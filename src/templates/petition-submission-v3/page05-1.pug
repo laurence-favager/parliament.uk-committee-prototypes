@@ -7,14 +7,14 @@ block content
 
   section
     .container
-      h2 Petitioner's details
+      h2 Your details
       +form('page07.html')
         +input('text', 'Full name', 'name', 'txtName')(required)
         +input('text', 'Address line 1', 'address', 'txtAddress1')(required)
         +input('text', 'Address line 2', 'address', 'txtAddress2')
         +input('text', 'Post code', 'post code', 'txtPostCode')(required)
-        +input('text', 'Email address', 'email', 'txtEmail')(required)
-        +input('text', 'Telephone number', 'phone', 'txtPhone')
+        +input('text', 'Email', 'email', 'txtEmail')(required)
+        +input('text', 'Phone', 'phone', 'txtPhone')
         
         br
         .status--highlight.theme--grey-4
@@ -27,14 +27,13 @@ block content
           +input('text', 'Address line 1', 'address', 'txtAgtAddress1')
           +input('text', 'Address line 2', 'address', 'txtAgtAddress2')
           +input('text', 'Post code', 'post code', 'txtAgtPostCode')
-          +input('text', 'Email address', 'email', 'txtAgtEmail')
-          +input('text', 'Telephone number', 'phone', 'txtAgtPhone')
+          +input('text', 'Email', 'email', 'txtAgtEmail')
+          +input('text', 'Phone', 'phone', 'txtAgtPhone')
 
-          br
-          p Who should be contacted about this petition?
+          //p Who should be contacted about this petition?
 
-          +input('checkbox', 'You', 'contact-ind', 'chkIndCnt')(checked)
-          +input('checkbox', 'Your representative', 'contact-agt', 'chkAgentCnt')
+          //+input('checkbox', 'You', 'contact-ind', 'chkIndCnt')(checked)
+          //+input('checkbox', 'Your representative', 'contact-agt', 'chkAgentCnt')
 
         br
         +button('Next', 'btn--primary')

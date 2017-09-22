@@ -13,28 +13,26 @@ block content
         +input('text', 'Address line 1', 'address', 'txtAgtAddress1')(required)
         +input('text', 'Address line 2', 'address', 'txtAgtAddress2')
         +input('text', 'Post code', 'post code', 'txtAgtPostCode')(required)
-        +input('text', 'Email address', 'email', 'txtAgtEmail')(required)
-        +input('text', 'Telephone number', 'phone', 'txtAgtPhone')
+        +input('text', 'Email', 'email', 'txtAgtEmail')(required)
+        +input('text', 'Phone', 'phone', 'txtAgtPhone')
 
-        br
-        p Please provide details for the business or organisation you are representing.
+        h2 Organisation's details
+        p Please provide details for the business or organisation you're representing.
         
-        +input('text', 'Business / Organisation name', 'organisation name', 'txtOrgName')(required)
-        +input('text', 'Business / Organisation Address line 1', 'address', 'txtOrgAddress1')(required)
-        +input('text', 'Business / Organisation Address line 2', 'address', 'txtOrgAddress2')
-        +input('text', 'Business / Organisation Post code', 'post code', 'txtOrgPostCode')(required)
+        +input('text', 'Organisation name', 'organisation name', 'txtOrgName')(required)
+        +input('text', 'Address line 1', 'address', 'txtOrgAddress1')(required)
+        +input('text', 'Address line 2', 'address', 'txtOrgAddress2')
+        +input('text', 'Post code', 'post code', 'txtOrgPostCode')(required)
 
-        br
-
-        +input('text', 'Contact name', 'contact name', 'txtOrgName')(required)
-        +input('text', 'Contact Email address', 'email', 'txtOrgEmail')(required)
-        +input('text', 'Contact Telephone number', 'phone', 'txtOrgPhone')
+        h2 Details of individual in organisation
+        +input('text', 'Full name', 'contact name', 'txtOrgName')(required)
+        +input('text', 'Email', 'email', 'txtOrgEmail')(required)
+        +input('text', 'Phone', 'phone', 'txtOrgPhone')
         
-        br
-        p Who should be contacted about this petition?
+        //p Who should be contacted about this petition?
 
-        +input('checkbox', 'You', 'contact-agt', 'chkAgentCnt')
-        +input('checkbox', 'Business / Organisation', 'contact-org', 'chkOrgCnt')
+        //+input('checkbox', 'You', 'contact-agt', 'chkAgentCnt')
+        //+input('checkbox', 'Business / Organisation', 'contact-org', 'chkOrgCnt')
         
         br  
         +button('Next', 'btn--primary')

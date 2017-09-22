@@ -9,17 +9,17 @@ block content
     .container
       h2 Group of individuals details
       +form('page07.html')
-        +input('text', 'Group name (optional)', 'name', 'txtGroupName')
+        +input('text', 'Group name', 'name', 'txtGroupName')
 
-        br
+        h3 Group contact's details
         p Please specify a representative for your group.
 
         +input('text', 'Full name', 'name', 'txtName')(required)
         +input('text', 'Address line 1', 'address', 'txtAddress1')(required)
         +input('text', 'Address line 2', 'address', 'txtAddress2')
         +input('text', 'Post code', 'post code', 'txtPostCode')(required)
-        +input('text', 'Email address', 'email', 'txtEmail')(required)
-        +input('text', 'Telephone number', 'phone', 'txtPhone')
+        +input('text', 'Email', 'email', 'txtEmail')(required)
+        +input('text', 'Phone', 'phone', 'txtPhone')
 
         br
         +button('Next', 'btn--primary')

@@ -9,30 +9,28 @@ block content
     .container
       h2 Terms & Conditions
 
-      h3 I understand:
-
+      p I understand that:
       ol
-        li that a copy of this petition, including my name and address (and any other contact details which I have chosen to include on the last page of my petition) but without my signature, will be placed on the Parliamentary website and a hard copy will be made available to anyone who asks for it.
+        li a copy of this petition, with my name and address will be published on UK Parliament’s website.  
+        li a copy of this petition and information provided in the online form will be:
+        ul
+          li kept in the Private Bill Office and as a record in the Parliamentary Archives
+          li will be available to the Parliamentary Agent responsible for the bill once the petition has been accepted by the Private Bill Office who may contact me directly regarding the petition.  
+        li the personal information I’ve supplied may be kept in a database by both Private Bill Offices. Communications may also be stored in databases to keep track of information I have given or received. This information may be shared between the Private Bill Offices.  
+        li Private Bill Office staff may be in touch with any of the named petitioners to verify the information provided.
 
-        br
+      p I agree to observe the orders and practice of the House of Commons and any #[+link('#', 'Speakers rules')] that relate to proceedings on this petition.
+      p The information I have provided in the petition and online form is accurate
+      p If I have filled in the form on behalf of a petitioner or petitioners as a representative or as a co-petitioner, I have been authorised to do so.  
 
-        li that a copy of this petition together with this sheet will be:
-          ul
-            li a. kept in the Private Bill Office and subsequently kept as a record of Parliament in the House of Lords Record Office (where it can be accessed by the public under the Freedom of Information Act 2000);
-       
-            li b. will be made available to the Parliamentary Agent responsible for the bill once my petition has been deposited in the Private Bill Office.
-
-        li that the personal information supplied above and on the petition may be kept in a database by either or both Private Bill Offices. These databases may be used to store summaries of emails and/or conversations for the purpose of keeping track of procedural advice/information given to the parties or received from them. This information will only be shared between the Private Bill Offices unless prior permission has been obtained from the petitioner/agent concerned.
-
-      br
       +form('page09.html')
         .status--highlight
           +input('checkbox', 'I agree and am happy to proceed with my submission.', 'chk-terms', 'enableSubmit')(required)
           
           //normal checkbox
-          +input('checkbox', 'I agree and am happy to proceed with my submission.', 'chk-terms')(required)
+          //+input('checkbox', 'I agree and am happy to proceed with my submission.', 'chk-terms')(required)
 
-          //+input('checkbox', 'I would like to receive updates on my submission via email.', 'chk-updates', 'chkUpd')
+          +input('checkbox', 'I would like to receive updates on my submission via email.', 'chk-updates', 'chkUpd')
           br
             
           +button('Submit petition1', 'btn--primary', 'disabled')

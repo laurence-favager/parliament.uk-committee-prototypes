@@ -7,19 +7,19 @@ block content
 
   section
     .container
-      h2 Business / Organisation details
+      h2 Organisation details
       +form('page07.html')
-        +input('text', 'Business / Organisation name', 'organisation name', 'txtOrgName')(required)
-        +input('text', 'Business / Organisation Address line 1', 'address', 'txtOrgAddress1')(required)
-        +input('text', 'Business / Organisation Address line 2', 'address', 'txtOrgAddress2')
-        +input('text', 'Business / Organisation Post code', 'post code', 'txtOrgPostCode')(required)
+        +input('text', 'Organisation name', 'organisation name', 'txtOrgName')(required)
+        +input('text', 'Address line 1', 'address', 'txtOrgAddress1')(required)
+        +input('text', 'Address line 2', 'address', 'txtOrgAddress2')
+        +input('text', 'Post code', 'post code', 'txtOrgPostCode')(required)
 
-        br
-        p Please specify a representative for your business or organisation.
+        h3 Organisation representative's details
+        p Please choose a representative from within your business or organisation.
 
-        +input('text', 'Contact name', 'contact name', 'txtOrgName')(required)
-        +input('text', 'Contact Email address', 'email', 'txtOrgEmail')(required)
-        +input('text', 'Contact Telephone number', 'phone', 'txtOrgPhone')
+        +input('text', 'Name', 'contact name', 'txtOrgName')(required)
+        +input('text', 'Email', 'email', 'txtOrgEmail')(required)
+        +input('text', 'Phone', 'phone', 'txtOrgPhone')
 
         br
         +button('Next', 'btn--primary')
