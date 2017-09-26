@@ -23,7 +23,12 @@ block content
 
         br
         .status--highlight.theme--grey-4
-          +input('checkbox', 'Do you have a representative?', 'agent-rep', 'toggleContent')
+          +input('checkbox', 'Do you have an external representative?', 'agent-rep', 'toggleContent')
+
+          section
+             .container
+               +dropdownToggle("What is a representative?")
+                p You can either represent yourself or ask someone to act as your representative, to act on your behalf in all matters relating to the petition, including arguing your case before the committee.
 
         #contentPane
           h3 Representative's details
