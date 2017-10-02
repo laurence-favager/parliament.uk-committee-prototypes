@@ -11,6 +11,16 @@ ol > li > ul > li {
   font-weight: bold;
 }
 
+.list--pipe li {
+  figure, img {
+    background-color: transparent;
+    width: 150px;
+    @include media($desktop) {
+      width: 350px;
+    }
+  }
+}
+
 footer {
   display: none;
 }
