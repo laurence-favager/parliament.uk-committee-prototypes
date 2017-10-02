@@ -53,6 +53,7 @@ json:
 # Minifies images
 images:
 	@$(IMAGEMIN) $(PUGIN)/$(IMAGES_LOC)/* -o $(PUBLIC_FOLDER)/images
+	@$(IMAGEMIN) $(IMAGES_LOC)/* -o $(PUBLIC_FOLDER)/images
 
 # Optimises SVGs
 icons:
