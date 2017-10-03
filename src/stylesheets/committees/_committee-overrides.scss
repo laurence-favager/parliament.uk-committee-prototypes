@@ -12,7 +12,7 @@ ol > li > ul > li {
 }
 
 .list--pipe li {
-  figure, img {
+  .image--postit, .image--postit img {
     background-color: transparent;
     width: 150px;
     @include media($desktop) {
