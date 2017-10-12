@@ -1,0 +1,30 @@
+extends ../../layouts/layout.pug
+
+block content
+  #content.hero.theme--grey-4
+    .container
+      h1 Thank you for your submission
+      p.lead Confirmation
+
+  section
+    .container
+      br
+      //h2 Thank you for your submission.
+      .status--highlight
+        p.lead Your petition reference number is <b>HB123XYZ</b>
+        p An email with this reference number will shortly be sent to <italics>***test@gmail.com***</italics>. 
+
+    .container
+      h2 What happens next
+      .timeline
+        h3 Your petition is checked
+        ul.list--block
+          li
+            .list--details
+              p We will review your petition before sending it to the Government
+        h3 Request for payment requested
+        ul.list--block
+          li
+            .list--details
+              p In the next 14 days we will email you with details on how to pay your £20 petition fee
+        h3 The Department of Transport will contact you with details on your status

@@ -111,3 +111,8 @@ h1 + .lead {
     text-align: right;
   }
 }
+
+.list--block > li {
+  background-color: transparent;
+  padding: 0 0 6px 0;
+}
