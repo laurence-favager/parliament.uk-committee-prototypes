@@ -77,6 +77,7 @@ h1 + .lead {
 .btn--mint {
   @include button($deep-purple, $mint, $mint--light);
   color: $deep-purple !important;
+  padding-bottom: ($base-spacing-unit + 1);
 }
 
 .btn--mint-alt {
@@ -87,7 +88,7 @@ h1 + .lead {
 
 .btn--bordered {
   padding-top: ($base-spacing-unit - 2);
-  padding-bottom: ($base-spacing-unit - 2);
+  padding-bottom: ($base-spacing-unit - 1);
 }
 
 .btn--large {
@@ -96,5 +97,17 @@ h1 + .lead {
 
 .btn--bordered--large {
   padding-top: ($base-spacing-unit + 2);
-  padding-bottom: ($base-spacing-unit + 2);
+  padding-bottom: ($base-spacing-unit + 3);
+}
+
+.box--holder {
+  display: flex;
+  width: 100%;
+}
+
+.box--50 {
+  flex: 1;
+  &:last-child {
+    text-align: right;
+  }
 }
