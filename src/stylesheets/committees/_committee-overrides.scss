@@ -76,18 +76,25 @@ h1 + .lead {
 
 .btn--mint {
   @include button($deep-purple, $mint, $mint--light);
+  color: $deep-purple !important;
 }
 
 .btn--mint-alt {
   @include button($deep-purple, transparent, $mint--light);
   border: solid 2px $mint;
+  color: $deep-purple !important;
+}
+
+.btn--bordered {
+  padding-top: ($base-spacing-unit - 2);
+  padding-bottom: ($base-spacing-unit - 2);
 }
 
 .btn--large {
   padding: 12px 24px;
 }
 
-.btn--bordered {
-  padding-top: 9px;
-  padding-bottom: 9px;
+.btn--bordered--large {
+  padding-top: ($base-spacing-unit + 2);
+  padding-bottom: ($base-spacing-unit + 2);
 }

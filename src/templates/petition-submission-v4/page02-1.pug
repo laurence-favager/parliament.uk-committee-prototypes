@@ -11,7 +11,12 @@ block content
 
   section
     .container
-      h2 Writing your petition
-      
-      +buttonLink('#', 'Download guidelines (.pdf)', 'btn--mint btn--large', 'text/html')
-      +buttonLink('#', 'View guidelines as webpage', 'btn--mint-alt btn--large btn--bordered', 'text/html')
+      .block--border__bottom
+
+        h2 Writing your petition
+        
+        +link('#', 'Download guidelines (.pdf)')(class='btn--mint')
+        +link('#', 'View guidelines as webpage')(class='btn--mint-alt btn--bordered')
+        
+        +link('#', 'Download template as word document')(class='btn--mint')
+        +link('#', 'Download as .otf file')(class='btn--mint-alt btn--bordered')
