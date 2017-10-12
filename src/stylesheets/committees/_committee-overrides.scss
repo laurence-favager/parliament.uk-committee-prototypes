@@ -1,3 +1,4 @@
+
 h3 {
   margin-bottom: $base-spacing-unit-small;
 }
@@ -22,7 +23,7 @@ ol > li > ul > li {
 }
 
 footer {
-  display: none;
+  color: $grey-5;
 }
 
 input[type="checkbox"], input[type="radio"] {
@@ -56,4 +57,37 @@ input[type="radio"] + label {
 
 input[type="text"] {
   margin-bottom: $base-spacing-unit-tiny;
+}
+
+// Prototype Version 4 Overides
+
+h1 + .lead {
+  margin-top: 0;
+}
+
+.hero h1:after {
+  display: none;
+}
+
+.btn--primary-alt {
+  @include button($button--primary, transparent, $button--secondary__hover);
+  border: solid 2px $button--primary;
+}
+
+.btn--mint {
+  @include button($deep-purple, $mint, $mint--light);
+}
+
+.btn--mint-alt {
+  @include button($deep-purple, transparent, $mint--light);
+  border: solid 2px $mint;
+}
+
+.btn--large {
+  padding: 12px 24px;
+}
+
+.btn--bordered {
+  padding-top: 9px;
+  padding-bottom: 9px;
 }
