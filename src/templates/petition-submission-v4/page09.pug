@@ -26,7 +26,11 @@ block content
       +form('page09.html')
         .status--highlight
           +input('checkbox', 'I agree and am happy to proceed with my submission.', 'chk-terms', 'enableSubmit')(required)
-
-      br
-      p < #[+link('page07.html', 'Back')]
-      +button('Submit', 'btn--primary')(class='btn--primary btn--large')
+      
+  section
+    .container
+      .block--border__bottom
+      .box--holder
+        .box--50
+        .box--50
+          +button('Submit', 'btn--primary')(class='btn--primary btn--large')

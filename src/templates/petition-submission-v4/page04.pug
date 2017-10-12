@@ -1,0 +1,60 @@
+extends ../../layouts/layout.pug
+
+block content
+  #content.hero.theme--grey-4
+    .container
+      h1 Your details
+      p.lead Step 3 of 5 - Petition the HS2 Bill
+  br
+  section
+    .container
+      +form('page07.html')
+      
+  section
+    .container
+      .box--holder
+        .box--50
+          +input('text', 'First name(s)', 'name', 'txtName')
+        .box--50
+          +input('text', 'Last name', 'lname', 'txtLname')
+  section
+    .container          
+      +input('text', 'Address line 1', 'address', 'txtAddress1')(required)
+      +input('text', 'Address line 2', 'address', 'txtAddress2')
+      +input('text', 'Post code', 'post code', 'txtPostCode')(required)
+      +input('text', 'Email', 'email', 'txtEmail')(required)
+      +input('checkbox', 'I would like to recieve updates', 'contact-ind', 'chkIndCnt') 
+      br
+      +input('text', 'Phone', 'phone', 'txtPhone')         
+              
+      br
+      .status--highlight.theme--grey-4
+        +input('radio', 'Do you have a representative?', 'agent-rep', 'toggleContent')
+
+  section
+     .container
+       h2 Is there anyone else to contact about your petition?
+       +dropdownToggle("What is a representative?")
+        p You can either represent yourself or ask someone to act as your representative, to act on your behalf in all matters relating to the petition, including arguing your case before the committee.
+
+        #contentPane
+          h2 Representative's details
+
+          +input('text', 'Address line 1', 'address', 'txtAgtAddress1')
+          +input('text', 'Address line 2 (Optional)', 'address', 'txtAgtAddress2')
+          +input('text', 'Post code', 'post code', 'txtAgtPostCode')
+          +input('text', 'Phone', 'phone', 'txtAgtPhone')
+          +input('text', 'Email', 'email', 'txtAgtEmail')
+
+          //p Who should be contacted about this petition?
+          //+input('checkbox', 'I would like to recieve updates', 'contact-ind', 'chkIndCnt')(checked)
+          //+input('checkbox', 'Your representative', 'contact-agt', 'chkAgentCnt')
+      
+  section
+    .container
+      .block--border__bottom
+      .box--holder
+        .box--50
+          +link('page03.html', 'back')
+        .box--50
+          +button('Next', 'btn--primary')(class='btn--primary btn--large')
