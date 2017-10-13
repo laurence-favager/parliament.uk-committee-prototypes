@@ -3,18 +3,29 @@ extends ../../layouts/layout.pug
 block content
   #content.hero.theme--deep-purple
     .container
-      h1 Petitioning the New Motorway Bill
-      p.lead Step 1 of 5
+      h1 Objecting to the New M404 Motorway Bill
 
   section
     .container
       h2 What is the New Motorway Bill?
 
+      p.lead The bill includes suggested changes to the law needed to build a new motorway in Gloucestershire. 
+
+      p.lead It also explains where the work will take place and what land will be needed for construction work. 
+
   section
     .container
       h2 Objecting to the bill
-      
+
+      p Any individual, group of individuals, organisation or business affected by the New Motorway Bill can send a petition to disagree with it. Petitioning against a bill is different to signing an #[+link('https://petition.parliament.uk', 'e-petition')(target='_blank')].
+
+      p To find out if you’re affected visit the #[+link('#', 'New Motorway Bill website')].
+
+      p The deadline for petitions is 5pm on 3 December 2017.
+
+      br
+
   section
-    .container
-      +link('page02-1.html', 'Submit a petition on our website')(class='btn--primary btn--large')
-      +link('page02-2.html', 'Submit a petition by email, post or in person')(class='btn--primary-alt btn--large btn--bordered--large')
+    .container#postoption
+      +link('page02.html', 'Start a petition on our website')(class='btn--primary btn--large')
+      +link('page01.html#postoption', 'Submit a petition by email, post or in person')(class='btn--primary-alt btn--large btn--bordered--large')

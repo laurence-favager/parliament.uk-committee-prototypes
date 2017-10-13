@@ -1,0 +1,54 @@
+extends ../../layouts/layout.pug
+
+block content
+  #content.hero.theme--grey-4
+    .container
+      h1 Send a petition
+
+  section
+    .container
+      br
+      .status--highlight
+        p The deadline for petitions is 5pm on 3 December 2017.
+
+  section
+    .container
+      h2 Overview
+
+      p.lead To petition the New Motorway Bill you need to give examples of how it affects you.
+
+      h3 Main Contact
+
+      p.lead Someone else can complete the petition for you. We will ask you to tell us who should be contacted about the petition.
+
+      p.lead The main contact for the petition will usually be invited to discuss the objections with a committee of MPs.
+
+      p.lead If you don’t want to meet the committee in person you can send a written statement.
+
+      h3 Fee
+
+      p.lead If your petition is accepted we will ask you to pay a £20 petition fee.
+
+  section
+    .container
+      .block--border__bottom
+        h2 How long it takes
+  
+        .timeline
+          p Once you’ve submitted your petition, we will email you in 14 days about how to pay your £20 petition fee.
+
+          p We will review your petition and publish it on the UK Parliament website.  We will then send it to the Department for Transport (DfT).
+
+          p The DfT will email you about your petition before the committee starts discussing New Motorway Bill petitions in Spring 2018.
+
+        br
+        +link('#', 'Download guidelines (.pdf)')(class='btn--mint-alt btn--bordered')
+
+
+  section
+    .container
+      .box--holder
+        .box--50
+          +link('page01.html', 'back')
+        .box--50
+          +link('page03.html', 'Next')(class='btn--primary btn--large')

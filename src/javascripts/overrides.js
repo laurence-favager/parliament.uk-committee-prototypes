@@ -51,7 +51,7 @@ function getCheckedRadioIndex(radios) {
 }
 
 (function () {
-  if (document.querySelectorAll('input[type=radio]')) {
+  if (document.getElementById('submitterType')) {
 
     var radios = document.querySelectorAll('input[type=radio]');
 

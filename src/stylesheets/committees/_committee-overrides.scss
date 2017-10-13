@@ -65,13 +65,18 @@ h1 + .lead {
   margin-top: 0;
 }
 
+.lead {
+  margin-bottom: $base-spacing-unit-medium;
+}
+
 .hero h1:after {
   display: none;
 }
 
 .btn--primary-alt {
-  @include button($button--primary, transparent, $button--secondary__hover);
+  @include button($button--primary, transparent, #d2dff7 !important);
   border: solid 2px $button--primary;
+  color: $link !important;
 }
 
 .btn--mint {
@@ -92,7 +97,7 @@ h1 + .lead {
 }
 
 .btn--large {
-  padding: 12px 24px;
+  padding: 12px 36px;
 }
 
 .btn--bordered--large {
@@ -100,9 +105,14 @@ h1 + .lead {
   padding-bottom: ($base-spacing-unit + 3);
 }
 
-.box--holder {
+.box--holder, .box--holder__bordered {
   display: flex;
   width: 100%;
+}
+
+.box--holder__bordered {
+  border-top: 1px solid $grey-3;
+  padding-top: $base-spacing-unit-large;
 }
 
 .box--50 {
@@ -110,9 +120,76 @@ h1 + .lead {
   &:last-child {
     text-align: right;
   }
+  input, label {
+    text-align: left;
+  }
 }
 
-.list--block > li {
+.timeline {
+  margin-left: $base-spacing-unit-tiny;
+}
+
+.timeline .list--block > li {
   background-color: transparent;
   padding: 0 0 6px 0;
+}
+
+.timeline > {
+  p {
+    margin-top: 0;
+    color: $grey-1;
+    position: relative;
+    vertical-align: text-top;
+    /*
+    @include fontsize(16);
+    line-height: 1.125; // 18px;
+    @include media($desktop) {
+      @include fontsize(20);
+      line-height: 1.2; // 24px
+    }
+    */
+    &:last-child {
+      margin-bottom: 0;
+    }
+    &:before {
+      z-index: 1;
+      left: -24px;
+      width: 11px;
+      content: '';
+      height: 11px;
+      vertical-align: top;
+      position: absolute;
+      border-radius: 50%;
+      top: calc(50% - 6px);
+      background-color: $grey-1;
+    }
+  }
+}
+
+
+
+
+.list--details p {
+  margin-left: ($base-spacing-unit-large + 3);
+}
+
+.list--number {
+  @extend .list;
+  li {
+    margin-left: $base-spacing-unit-small;
+    margin-bottom: $base-spacing-unit-small;
+  }
+  ul {
+    margin-left: ($base-spacing-unit-tiny + 3);
+    margin-bottom: $base-spacing-unit-small;
+    list-style-type: disc;
+  }
+}
+
+.list--number {
+  list-style-type: decimal;
+}
+
+.theme--grey-4.block h3 {
+  text-align: center;
 }
