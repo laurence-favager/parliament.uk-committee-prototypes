@@ -47,8 +47,7 @@ block content
 
   section
     .container
-      .box--holder
-        .box--50
-          +link('page01.html', 'back')
-        .box--50
-          +link('page03.html', 'Next')(class='btn--primary btn--large')
+      <nav class="navigation--number" aria-label="Pagination">
+        <a class="navigation-control navigation-control--left" href="page01.html">Back</a>
+        <a class="navigation-control navigation-control--right btn--primary btn--large" href="page03.html">Next</a>
+      </nav>

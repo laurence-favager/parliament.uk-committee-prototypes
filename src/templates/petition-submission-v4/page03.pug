@@ -14,14 +14,14 @@ block content
         p.lead To write your petition download and complete the petition template. 
 
         p.lead We’ll ask you to upload your completed version later.
+        br
 
         +link('../../documents/bill-petition-template.docx', 'Download template as word document')(class='btn--mint')
         +link('#', 'Download as .otf file')(class='btn--mint-alt btn--bordered')
 
   section
     .container
-      .box--holder
-        .box--50
-          +link('page02.html', 'back')
-        .box--50
-          +link('page04.html', 'Next')(class='btn--primary btn--large')
+      <nav class="navigation--number" aria-label="Pagination">
+        <a class="navigation-control navigation-control--left" href="page02.html">Back</a>
+        <a class="navigation-control navigation-control--right btn--primary btn--large" href="page04.html">Next</a>
+      </nav>
