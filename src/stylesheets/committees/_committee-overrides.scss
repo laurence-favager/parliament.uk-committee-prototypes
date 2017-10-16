@@ -135,8 +135,9 @@ select {
 
 .timeline {
   > h5 {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: normal;
+    margin-bottom: $base-spacing-unit-large;
   }
 }
 
