@@ -138,7 +138,7 @@ if (document.getElementById('org-new')) {
       r.appendChild(y);
       var funcRem1 = 'multiOrgs';
       var funcRem2 = 'id_' + i;
-      g.setAttribute('onclick', 'removeElement(${funcRem1}, ${funcRem2})');
+      g.setAttribute('onclick', 'removeElement(`funcRem1`\',\' `funcRem2`)');
       r.appendChild(g);
       r.setAttribute('id', 'id_' + i);
       document.getElementById('org-new').insertAdjacentElement('beforebegin', r);
