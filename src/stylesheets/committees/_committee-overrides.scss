@@ -26,37 +26,6 @@ footer {
   color: $grey-5;
 }
 
-/*
-input[type="checkbox"], input[type="radio"] {
-  transform: scale(1.5);
-  outline-offset: 3px;
-}
-
-input[type="checkbox"] {
-    position: absolute;
-}
-
-input[type="checkbox"] ~ label {
-    padding-left: $base-spacing-unit-small;
-    display:inline-block;
-}
-
-input[type="checkbox"] + label {
-  padding-bottom: 0;
-  margin-left: $base-spacing-unit-tiny;
-}
-
-.status--highlight input[type="checkbox"] {
-  margin-top: $base-spacing-unit;
-}
-
-input[type="radio"] + label {
-  padding-bottom: $base-spacing-unit;
-  margin-left: $base-spacing-unit-tiny;
-  font-weight: bold;
-}
-*/
-
 input[type="text"] {
   margin-bottom: $base-spacing-unit-tiny;
 }
@@ -155,7 +124,6 @@ select {
   width: 40%;
 }
 
-
 .timeline {
   margin-left: $base-spacing-unit-tiny;
 }
@@ -165,27 +133,11 @@ select {
   padding: 0 0 6px 0;
 }
 
-.timeline > p {
-  margin-top: 0;
-  color: $grey-1;
-  position: relative;
-}
-
-.timeline > p:last-child {
-  margin-bottom: 0;
-}
-
-.timeline > p:before, .timeline > h3:before {
-  z-index: 1;
-  left: -24px;
-  width: 11px;
-  content: '';
-  height: 11px;
-  vertical-align: top;
-  position: absolute;
-  border-radius: 50%;
-  top: calc(50% - 6px);
-  background-color: $grey-1;
+.timeline {
+  > h5 {
+    font-size: 16px;
+    font-weight: normal;
+  }
 }
 
 .list--details p {
