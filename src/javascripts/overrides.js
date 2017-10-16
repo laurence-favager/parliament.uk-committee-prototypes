@@ -1,86 +1,73 @@
 // Function to show/hide content when checkbox clicked
-(function () {
-  if (document.getElementById('toggleContent')) {
-    var checkbox = document.getElementById('toggleContent');
-    var container = document.getElementById('contentPane');
-    var fnshow = function () {
-      if (checkbox.checked) {
-        container.style.display = 'block';
-      } else {
-        container.style.display = 'none';
-      }
-    };
+if (document.getElementById('toggleContent')) {
+  var checkbox = document.getElementById('toggleContent');
+  var container = document.getElementById('contentPane');
+  var fnshow = function () {
+    if (checkbox.checked) {
+      container.style.display = 'block';
+    } else {
+      container.style.display = 'none';
+    }
+  };
 
-    checkbox.onclick = fnshow;
+  checkbox.onclick = fnshow;
 
-    fnshow.apply(checkbox);
-  }
-}());
-
-// Function to show/hide content for country selection (Individual)
-(function () {
-  if (document.getElementById('countrySelect')) {
-    var checkRow = document.getElementById('country-row');
-    var checkUk = document.getElementById('country-uk');
-    var fncshow = function () {
-      document.getElementById('countrySelect').style.display = 'block';
-    };
-
-    var fnchide = function () {
-      document.getElementById('countrySelect').style.display = 'none';
-    };
-
-    checkRow.onclick = fncshow;
-    checkUk.onclick = fnchide;
-
-    fncshow.apply(checkRow);
-    fnchide.apply(checkUk);
-
-    checkUk.setAttribute.checked;
-  }
-}());
-
-// Function to show/hide content for country selection (Representative)
-(function () {
-  if (document.getElementById('countrySelectRep')) {
-    var checkRowRep = document.getElementById('country-row-rep');
-    var checkUkRep = document.getElementById('country-uk-rep');
-    var fncrshow = function () {
-      document.getElementById('countrySelectRep').style.display = 'block';
-    };
-
-    var fncrhide = function () {
-      document.getElementById('countrySelectRep').style.display = 'none';
-    };
-
-    checkRowRep.onclick = fncrshow;
-    checkUkRep.onclick = fncrhide;
-
-    fncrshow.apply(checkRowRep);
-    fncrhide.apply(checkUkRep);
-  }
-}());
+  fnshow.apply(checkbox);
+}
 
 // Function to show/hide content for representative details
-(function () {
-  if (document.getElementById('repDetails')) {
-    var checkRep = document.getElementById('ext-rep');
-    var checkInd = document.getElementById('ind-only');
-    var fnrshow = function () {
-      document.getElementById('repDetails').style.display = 'block';
-    };
+if (document.getElementById('repDetails')) {
+  var selectRep = document.getElementById('repDetails');
+  var checkRep = document.getElementById('ext-rep');
+  var checkInd = document.getElementById('ind-only');
+  var fnRepShow = function () {
+    selectRep.style.display = 'block';
+  };
 
-    var fnrhide = function () {
-      document.getElementById('repDetails').style.display = 'none';
-    };
+  var fnRepHide = function () {
+    selectRep.style.display = 'none';
+  };
 
-    checkRep.onclick = fnrshow;
-    checkInd.onclick = fnrhide;
+  checkRep.onclick = fnRepShow;
+  checkInd.onclick = fnRepHide;
 
-    fnrshow.apply(checkRep);
-    fnrhide.apply(checkInd);
-  }
-}());
+  fnRepShow.apply(checkRep);
+  fnRepHide.apply(checkInd);
+}
+
+// Function to show/hide content for country selection (Individual)
+if (document.getElementById('countrySelect')) {
+  var indCntSl = document.getElementById('countrySelect');
+  var indCntUk = document.getElementById('country-uk');
+  var indCntRw = document.getElementById('country-row');
+
+  indCntUk.checked = true;
+  indCntSl.style.display = 'none';
+
+  indCntUk.addEventListener('click', function () {
+    indCntSl.style.display = 'none';
+  });
+  indCntRw.addEventListener('click', function () {
+    indCntSl.style.display = 'block';
+  });
+}
+
+// Function to show/hide content for country selection (Representative)
+if (document.getElementById('countrySelectRep')) {
+  var repCntSl = document.getElementById('countrySelectRep');
+  var repCntUk = document.getElementById('country-uk-rep');
+  var repCntRw = document.getElementById('country-row-rep');
+
+  repCntUk.checked = true;
+  repCntSl.style.display = 'none';
+
+  repCntUk.addEventListener('click', function () {
+    repCntSl.style.display = 'none';
+  });
+  repCntRw.addEventListener('click', function () {
+    repCntSl.style.display = 'block';
+  });
+}
 
 // Function to enable submission buttons when checkbox clicked
 (function () {
@@ -106,6 +93,18 @@
 }());
 
 // Function to listen for checked radio buttons and change form action
+if (document.getElementById('submitterType')) {
+
+  var radios = document.querySelectorAll('input[type=radio]');
+
+  for (var i = 0; i < radios.length; i++) {
+    radios[i].onclick = function () {
+      var route = getCheckedRadioIndex(radios);
+      document.getElementById('submitterType').action = route;
+    };
+  }
+}
+
 function getCheckedRadioIndex(radios) {
   for (var i = 0; i < radios.length; i++) {
     if (radios[i].checked) {
@@ -115,46 +114,15 @@ function getCheckedRadioIndex(radios) {
   }
 }
 
-(function () {
-  if (document.getElementById('submitterType')) {
-
-    var radios = document.querySelectorAll('input[type=radio]');
-
-    for (var i = 0; i < radios.length; i++) {
-      radios[i].onclick = function () {
-        var route = getCheckedRadioIndex(radios);
-        document.getElementById('submitterType').action = route;
-      };
-    }
-  }
-}());
-
-// Functionality to add/remove organisation name inputs
-var i = 0;
-
-// Function to do standard incrementation
-function increment() {
-  i += 1;
-}
-
-// Function to do standard incrementation
-function decrement() {
-  i -= 1;
-}
-
-// Function to remove fom elements dynamically
-function removeElement(parentDiv, childDiv) {
-  var child = document.getElementById(childDiv);
-  var parent = document.getElementById(parentDiv);
-  parent.removeChild(child);
-  decrement();
-}
-
 // Functions to add additional inputs to form
 if (document.getElementById('org-new')) {
+
+  var j = 0;
+
+  // Functionality to add/remove organisation name inputs
   document.getElementById('org-new').addEventListener('click', function (event) {
     event.preventDefault();
-    if (i <= 4) {
+    if (j <= 4) {
       var r = document.createElement('span');
       var x = document.createElement('label');
       var y = document.createElement('input');
@@ -168,15 +136,32 @@ if (document.getElementById('org-new')) {
       y.setAttribute('id', 'txtOrgName_' + i);
       r.appendChild(x);
       r.appendChild(y);
-      g.setAttribute('onclick', "removeElement('multiOrgs','id_" + i + "')");
+      g.setAttribute('onclick', 'removeElement(\'multiOrgs\',\'id_' + i + '\')');
       r.appendChild(g);
       r.setAttribute('id', 'id_' + i);
       document.getElementById('org-new').insertAdjacentElement('beforebegin', r);
     } else {
-      alert('You can only add up to 5 additional organisations per petition');
+      alert('You can only provide up to 5 additional organisations per petition');
       return false;
     }
   });
+}
+// Function to do standard incrementation
+function increment() {
+  j += 1;
+}
+
+// Function to do standard incrementation
+function decrement() {
+  j -= 1;
+}
+
+// Function to remove fom elements dynamically
+function removeElement(parentDiv, childDiv) {
+  var child = document.getElementById(childDiv);
+  var parent = document.getElementById(parentDiv);
+  parent.removeChild(child);
+  decrement();
 }
 
 // File upload - show file name

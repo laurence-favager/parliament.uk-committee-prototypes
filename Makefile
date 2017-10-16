@@ -71,7 +71,7 @@ templates:
 
 # Runs tests on javascript files
 lint:
-	@$(ESLINT) $(JAVASCRIPTS_LOC)
+	@$(ESLINT) --fix $(JAVASCRIPTS_LOC)
 
 # Launches a local server
 serve: clean build

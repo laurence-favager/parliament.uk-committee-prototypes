@@ -305,6 +305,9 @@ input {
     line-height: 2;
     color: $grey-1;
     cursor: pointer;
+  }
+  &[type="radio"]:checked + label,
+  &[type="radio"]:not(:checked) + label {
     font-weight: bold;
   }
   &[type="radio"]:checked + label:before,
