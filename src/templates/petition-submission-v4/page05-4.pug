@@ -9,12 +9,13 @@ block content
   section
     .container
       br
-      +form('page06.html')
+      +form(action='page06.html')
 
-        +input('text', 'Organisation name', 'name', 'txtOrgName')(required)
-
-        +link('#', 'Add another organisation')(class="btn--primary-alt" id="org-new")
-
+        +input('text', 'Organisation name', 'name', 'txtOrgName')
+        
+        #multiOrgs
+          p#org-new #[+link('#', 'Add another organisation')(class="btn--primary-alt")]
+        
         h2 Details of individual in organisation
 
         .input--holder
@@ -23,15 +24,14 @@ block content
           .box--50
             +input('text', 'Last name', 'lname', 'txtLname')(required)
 
-        +fieldset
-          p Do you live in the UK?
+        p Do you live in the UK?
+        +fieldset  
           .input-group__inline
             +input('radio', 'Yes', 'country-check', 'country-uk')(checked)
           .input-group__inline
             +input('radio', 'No', 'country-check', 'country-row')
 
         #countrySelect
-          br
           <label for="selCountry">Country you live in</label>
           <select name="country" id="selCountry">
             <option value="GB" label="United Kingdom" selected="selected">United Kingdom</option>

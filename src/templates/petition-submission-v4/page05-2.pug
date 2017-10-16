@@ -29,7 +29,6 @@ block content
             +input('radio', 'No', 'country-check', 'country-row')
 
         #countrySelect
-          br
           <label for="selCountry">Country you live in</label>
           <select name="country" id="selCountry">
             <option value="GB" label="United Kingdom" selected="selected">United Kingdom</option>
@@ -326,7 +325,8 @@ block content
             +input('text', 'Address line 1', 'address', 'txtRepAddress1')
             +input('text', 'Address line 2 (optional)', 'address', 'txtRepAddress2')
             +input('text', 'Post code', 'post code', 'txtRepPostCode')(class='input__sm' maxlength='10')
-
+            
+            
             +fieldset
               p Do you live in the UK?
               .input-group__inline

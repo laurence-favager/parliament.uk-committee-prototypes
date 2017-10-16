@@ -63,6 +63,7 @@ icons:
 documents:
 	@mkdir -p $(PUBLIC_FOLDER)/documents
 	@cp $(DOCS_LOC)/bill-petition-template.docx $(PUBLIC_FOLDER)/documents/bill-petition-template.docx
+	@cp $(DOCS_LOC)/bill-petition-template.odt $(PUBLIC_FOLDER)/documents/bill-petition-template.odt
 
 # Outputs pug files to html within public folder
 templates:

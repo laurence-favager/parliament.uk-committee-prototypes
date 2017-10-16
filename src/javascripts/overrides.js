@@ -22,7 +22,6 @@
   if (document.getElementById('countrySelect')) {
     var checkRow = document.getElementById('country-row');
     var checkUk = document.getElementById('country-uk');
-    var container = document.getElementById('countrySelect');
     var fncshow = function () {
       document.getElementById('countrySelect').style.display = 'block';
     };
@@ -36,6 +35,8 @@
 
     fncshow.apply(checkRow);
     fnchide.apply(checkUk);
+
+    checkUk.setAttribute.checked;
   }
 }());
 
@@ -44,7 +45,6 @@
   if (document.getElementById('countrySelectRep')) {
     var checkRowRep = document.getElementById('country-row-rep');
     var checkUkRep = document.getElementById('country-uk-rep');
-    var container = document.getElementById('countrySelectRep');
     var fncrshow = function () {
       document.getElementById('countrySelectRep').style.display = 'block';
     };
@@ -66,7 +66,6 @@
   if (document.getElementById('repDetails')) {
     var checkRep = document.getElementById('ext-rep');
     var checkInd = document.getElementById('ind-only');
-    var container = document.getElementById('repDetails');
     var fnrshow = function () {
       document.getElementById('repDetails').style.display = 'block';
     };
@@ -129,3 +128,64 @@ function getCheckedRadioIndex(radios) {
     }
   }
 }());
+
+// Functionality to add/remove organisation name inputs
+var i = 0;
+
+// Function to do standard incrementation
+function increment() {
+  i += 1;
+}
+
+// Function to do standard incrementation
+function decrement() {
+  i -= 1;
+}
+
+// Function to remove fom elements dynamically
+function removeElement(parentDiv, childDiv) {
+  var child = document.getElementById(childDiv);
+  var parent = document.getElementById(parentDiv);
+  parent.removeChild(child);
+  decrement();
+}
+
+// Functions to add additional inputs to form
+if (document.getElementById('org-new')) {
+  document.getElementById('org-new').addEventListener('click', function (event) {
+    event.preventDefault();
+    if (i <= 4) {
+      var r = document.createElement('span');
+      var x = document.createElement('label');
+      var y = document.createElement('input');
+      y.setAttribute('type', 'text');
+      var g = document.createElement('a');
+      g.setAttribute('class', 'link--remove');
+      g.innerHTML = 'remove';
+      increment();
+      x.setAttribute('for', 'txtOrgName_' + i);
+      x.innerHTML = 'Organisation name ' + i;
+      y.setAttribute('id', 'txtOrgName_' + i);
+      r.appendChild(x);
+      r.appendChild(y);
+      g.setAttribute('onclick', "removeElement('multiOrgs','id_" + i + "')");
+      r.appendChild(g);
+      r.setAttribute('id', 'id_' + i);
+      document.getElementById('org-new').insertAdjacentElement('beforebegin', r);
+    } else {
+      alert('You can only add up to 5 additional organisations per petition');
+      return false;
+    }
+  });
+}
+
+// File upload - show file name
+if (document.getElementById('file-upload')) {
+  document.getElementById('file-upload').onchange = function () {
+    var fullFile = this.value;
+    var nameFile = fullFile.split(/(\\|\/)/g).pop();
+    document.getElementById('file-uploaded-txt').innerHTML = nameFile;
+    document.getElementById('file-uploaded').innerHTML = 'Thank you! Your petition template has been successfully attached';
+    document.getElementById('file-uploaded').className = 'file--uploaded-success';
+  };
+}
