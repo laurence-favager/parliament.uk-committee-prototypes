@@ -1,19 +1,21 @@
 // Function to show/hide content when checkbox clicked
-if (document.getElementById('toggleContent')) {
-  var checkbox = document.getElementById('toggleContent');
-  var container = document.getElementById('contentPane');
-  var fnshow = function () {
-    if (checkbox.checked) {
-      container.style.display = 'block';
-    } else {
-      container.style.display = 'none';
-    }
-  };
+(function () {
+  if (document.getElementById('toggleContent')) {
+    var checkbox = document.getElementById('toggleContent');
+    var container = document.getElementById('contentPane');
+    var fnshow = function () {
+      if (checkbox.checked) {
+        container.style.display = 'block';
+      } else {
+        container.style.display = 'none';
+      }
+    };
 
-  checkbox.onclick = fnshow;
+    checkbox.onclick = fnshow;
 
-  fnshow.apply(checkbox);
-}
+    fnshow.apply(checkbox);
+  }
+}());
 
 // Function to show/hide content for representative details
 if (document.getElementById('repDetails')) {
@@ -47,6 +49,7 @@ if (document.getElementById('countrySelect')) {
   indCntUk.addEventListener('click', function () {
     indCntSl.style.display = 'none';
   });
+
   indCntRw.addEventListener('click', function () {
     indCntSl.style.display = 'block';
   });
@@ -64,6 +67,7 @@ if (document.getElementById('countrySelectRep')) {
   repCntUk.addEventListener('click', function () {
     repCntSl.style.display = 'none';
   });
+
   repCntRw.addEventListener('click', function () {
     repCntSl.style.display = 'block';
   });
@@ -123,29 +127,30 @@ if (document.getElementById('org-new')) {
   document.getElementById('org-new').addEventListener('click', function (event) {
     event.preventDefault();
     if (j <= 4) {
-      var r = document.createElement('span');
-      var x = document.createElement('label');
-      var y = document.createElement('input');
-      y.setAttribute('type', 'text');
-      var g = document.createElement('a');
-      g.setAttribute('class', 'link--remove');
-      g.innerHTML = 'remove';
+      var is = document.createElement('span');
+      var il = document.createElement('label');
+      var it = document.createElement('input');
+      it.setAttribute('type', 'text');
+      var ir = document.createElement('a');
+      ir.setAttribute('class', 'link--remove');
+      ir.innerHTML = 'remove';
       increment();
-      x.setAttribute('for', 'txtOrgName_' + i);
-      x.innerHTML = 'Organisation name ' + i;
-      y.setAttribute('id', 'txtOrgName_' + i);
-      r.appendChild(x);
-      r.appendChild(y);
-      g.setAttribute('onclick', 'removeElement(\'multiOrgs\', \'id_\' + i)');
-      r.appendChild(g);
-      r.setAttribute('id', 'id_' + i);
-      document.getElementById('org-new').insertAdjacentElement('beforebegin', r);
+      il.setAttribute('for', 'txtOrgName_' + j);
+      il.innerHTML = 'Organisation name ' + j;
+      it.setAttribute('id', 'txtOrgName_' + j);
+      is.appendChild(il);
+      is.appendChild(it);
+      ir.setAttribute('onclick', "removeElement('multiOrgs','id_" + j + "')");
+      is.appendChild(ir);
+      is.setAttribute('id', 'id_' + j);
+      document.getElementById('org-new').insertAdjacentElement('beforebegin', is);
     } else {
-      alert('You can only provide up to 5 additional organisations per petition');
+      alert('You can\'t add more than six organisation names to this form.\n\n If there are more organisations on the petition make sure they\'re included in your petition template.');
       return false;
     }
   });
 }
+
 // Function to do standard incrementation
 function increment() {
   j += 1;
@@ -164,13 +169,15 @@ function removeElement(parentDiv, childDiv) {
   decrement();
 }
 
-// File upload - show file name
-if (document.getElementById('file-upload')) {
-  document.getElementById('file-upload').onchange = function () {
-    var fullFile = this.value;
-    var nameFile = fullFile.split(/(\\|\/)/g).pop();
-    document.getElementById('file-uploaded-txt').innerHTML = nameFile;
-    document.getElementById('file-uploaded').innerHTML = 'Thank you! Your petition template has been successfully attached';
-    document.getElementById('file-uploaded').className = 'file--uploaded-success';
-  };
-}
+// Function to show file name and file upload status messages
+(function () {
+  if (document.getElementById('file-upload')) {
+    document.getElementById('file-upload').onchange = function () {
+      var fullFile = this.value;
+      var nameFile = fullFile.split(/(\\|\/)/g).pop();
+      document.getElementById('file-uploaded-txt').innerHTML = nameFile;
+      document.getElementById('file-uploaded').innerHTML = 'Thank you! Your petition template has been successfully attached';
+      document.getElementById('file-uploaded').className = 'file--uploaded-success';
+    };
+  }
+}());
