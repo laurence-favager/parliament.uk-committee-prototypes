@@ -121,12 +121,12 @@ function getCheckedRadioIndex(radios) {
 // Functions to add additional inputs to form
 if (document.getElementById('org-new')) {
 
-  var j = 0;
+  var j = 1;
 
   // Functionality to add/remove organisation name inputs
   document.getElementById('org-new').addEventListener('click', function (event) {
     event.preventDefault();
-    if (j <= 4) {
+    if (j <= 5) {
       var is = document.createElement('span');
       var il = document.createElement('label');
       var it = document.createElement('input');
