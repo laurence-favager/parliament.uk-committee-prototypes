@@ -30,7 +30,7 @@ input[type="text"] {
   margin-bottom: $base-spacing-unit-tiny;
 }
 
-// Prototype Version 4 Overides
+// ***** Prototype Version 4 Overides *****
 
 h1 + .lead {
   margin-top: 0;
@@ -63,12 +63,12 @@ h1 + .lead {
 }
 
 .btn--bordered {
-  padding-top: ($base-spacing-unit - 2);
-  padding-bottom: ($base-spacing-unit - 1);
+  padding-top: ($base-spacing-unit - 3) !important;
+  padding-bottom: ($base-spacing-unit - 3) !important;
 }
 
 .btn--large {
-  padding: 12px 36px !important;
+  padding: 12px 24px !important;
 }
 
 .btn--bordered--large {
@@ -100,34 +100,9 @@ h1 + .lead {
   }
 }
 
-select {
-  border: 1px solid $grey-3;
-  display: block;
-  padding: ($base-spacing-unit-tiny - 1);
-  margin-bottom: $base-spacing-unit-small;
-  width: 100%;
-  @include media($tablet) {
-    width: 70%;
-  }
-}
-
 .input--holder {
   display: flex;
   width: 72%;
-}
-
-.input__sm {
-  width: 100%;
-  @include media($tablet) {
-    width: 20%;
-  }
-}
-
-.input__md {
-  width: 100%;
-  @include media($tablet) {
-    width: 40%;
-  }
 }
 
 .timeline {
@@ -244,99 +219,16 @@ select {
 /* Radios & Checks */
 
 input {
-  &[type="text"] {
-    margin-bottom: $base-spacing-unit-small;
-  }
-  &[type="radio"]:checked,
-  &[type="radio"]:not(:checked),
-  &[type="checkbox"]:checked,
-  &[type="checkbox"]:not(:checked) {
-    position: absolute;
-    left: -9999px;
-  }
-  &[type="radio"]:checked + label,
-  &[type="radio"]:not(:checked) + label,
-  &[type="checkbox"]:checked + label,
-  &[type="checkbox"]:not(:checked) + label {
-    position: relative;
-    padding-bottom: $base-spacing-unit-small;
-    padding-left: ($base-spacing-unit-medium * 2);
-    line-height: 2;
-    color: $grey-1;
-    cursor: pointer;
-  }
   &[type="radio"]:checked + label,
   &[type="radio"]:not(:checked) + label {
     font-weight: bold;
   }
-  &[type="radio"]:checked + label:before,
-  &[type="radio"]:not(:checked) + label:before,
-  &[type="checkbox"]:checked + label:before,
-  &[type="checkbox"]:not(:checked) + label:before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 32px;
-    height: 32px;
-    @include media($tablet) {
-      width: 38px;
-      height: 38px;
-    }
-    border: 2px solid $grey-1;
-    background: transparent;
-  }
-  &[type="radio"]:checked + label:before,
-  &[type="radio"]:not(:checked) + label:before {
-    border-radius: 100%;
-  }
-  &[type="radio"]:checked + label:after,
-  &[type="radio"]:not(:checked) + label:after {
-    content: '';
-    position: absolute;
-    top: 6px;
-    left: 6px;
-    width: 20px;
-    height: 20px;
-    @include media($tablet) {
-      top: 8px;
-      left: 8px;
-      width: 22px;
-      height: 22px;
-    }
-    border-radius: 100%;
-    background: $grey-1;
-  }
-  &[type="checkbox"]:checked + label:after,
-  &[type="checkbox"]:not(:checked) + label:after {
-    content: '';
-    position: absolute;
-    top: 9px;
-    left: 7px;
-    @include media($tablet) {
-      top: 11px;
-      left: 10px;
-    }
-    width: 18px;
-    height: 11px;
-    border-style: solid;
-    border-width: 0 0 4px 4px;
-    border-color: $grey-1;
-    border-top-color: transparent;
-    background: transparent;
-    transform: rotate(-45deg);
-  }
-  &[type="radio"]:not(:checked) + label:after,
-  &[type="checkbox"]:not(:checked) + label:after {
-    opacity: 0;
-    transform: scale(0);
-  }
-  &[type="radio"]:checked + label:after {
-    opacity: 1;
-    transform: scale(1);
-  }
-  &[type="radio"]:focus + label::before,
-  &[type="checkbox"]:focus + label::before {
-    box-shadow: 0 0 0 3px $caution;
-  }
+}
+
+// ***** Prototype Version 5 Overides *****
+
+.container--hs-v5 {
+  padding: 0 $base-spacing-unit-medium $base-spacing-unit-small $base-spacing-unit-medium;
+  background-color: $white;
+  border: solid 1px $grey-3;
 }
