@@ -14,12 +14,14 @@ block content
 
   section
     .container
+      .block--border__bottom
         +link('../../documents/bill-petition-template.docx', 'Download template as Word document')(class='btn--primary')
         +link('../../documents/bill-petition-template.odt', 'Download in alternative format')(class='btn--primary-alt btn--bordered')
 
-  section.section--primary
+  section
     .container
-      p #[+link('page04.html', 'Next')(class='btn--primary btn--large')]
+      +link('page04.html', 'Next')(class='btn--primary btn--large')
+    .container
       p #[+link('page02.html', 'Back')]
 
   section.section--major

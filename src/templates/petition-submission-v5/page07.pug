@@ -1,29 +1,26 @@
 extends ../../layouts/layout-beta.pug
 
 block content
-  #content.hero.theme--grey-4
+  #content.section--primary
     .container
       h1 Terms and conditions
-      p.lead Step 5 of 5 - Petition the #[+link('#', 'M404 Motorway Bill')]
+      p.lead Step 5 of 5
 
   section
     .container
       .block--border__bottom
-        br
         h2 Personal information
-        ol.list--number
-          //li a copy of this petition, with my name and address will be published on UK Parliament’s website.  
-          
-          p A copy of this petition and information provided in the online form will be:
-          
-          ul
-            li kept in the #[+link('#', 'Private Bill Office')] and as a record in the #[+link('#', 'Parliamentary Archives')].
-            
-            li sent to the #[+link('#', 'Department for Transport')] and #[+link('#', 'HS2 Ltd')] after the petition has been accepted by the Private Bill Office.
-            
-            li published, including your name and address, on UK Parliament’s website. 
-            
-          p The personal information you have provided may be kept in a database by both Private Bill Offices.
+
+        p A copy of this petition and information provided in the online form will be:
+
+        ul.list--bullet
+          li kept in the #[+link('#', 'Private Bill Office')] and as a record in the #[+link('#', 'Parliamentary Archives')].
+
+          li sent to the #[+link('#', 'Department for Transport')] and #[+link('#', 'HS2 Ltd')] after the petition has been accepted by the Private Bill Office.
+
+          li published, including your name and address, on UK Parliament’s website. 
+
+        p The personal information you have provided may be kept in a database by both Private Bill Offices.
           
         h2 Communications
         
@@ -35,11 +32,8 @@ block content
 
         p The information you have provided in the petition and online form is accurate.
         
-        p If you have filled in the form on behalf of an individual, a group or organisation(s), you have been authorised to do so.’
+        p If you have filled in the form on behalf of an individual, a group or organisation(s), you have been authorised to do so.
 
-      
   section
     .container
-      <nav class="navigation--number" aria-label="Pagination">
-        <a class="navigation-control navigation-control--left btn--mint btn--large" href="page08.html">I agree - send petition</a>
-      </nav>
+      +link('page08.html', 'I agree - send petition')(class='btn--primary btn--large')
