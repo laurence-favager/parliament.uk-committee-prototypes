@@ -1,0 +1,38 @@
+extends ../../layouts/layout.pug
+
+block content
+  #content.hero.theme--grey-4
+    .container
+      h1 Who are you submitting a petition for?
+      p.lead Step 2 of 5 - Petition the #[+link('#', 'M404 Motorway Bill')]
+
+  section
+    .container
+      br
+      +form(id='submitterType' action='page05-1.html')
+        +fieldset
+          ol.list--block
+            li
+              .list--details
+                +input('radio', 'Individual', 'submitter-type', 'ind')(data-route='page05-1.html', checked)
+                p.radio--desc You are submitting a petition for one person.
+            li
+              .list--details
+                +input('radio', 'Group of individuals', 'submitter-type', 'grp')(data-route='page05-2.html')
+                p.radio--desc You are submitting a petition for a group of people.
+
+          ol.list--block
+            li
+              .list--details
+                +input('radio', 'Organisation', 'submitter-type', 'org')(data-route='page05-3.html')
+                p.radio--desc You are submitting a petition for a business or organisation.
+            li
+              .list--details
+                +input('radio', 'Group of organisations', 'submitter-type', 'orgs')(data-route='page05-4.html')
+                p.radio--desc You are submitting a petition for a group of businesses or organisations.
+          br
+          .box--holder__bordered
+            .box--50
+              +link('page03.html', 'back')
+            .box--50
+              +button('Next', 'btn--primary')(class='btn--primary btn--large')
