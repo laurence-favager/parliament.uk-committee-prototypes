@@ -1,14 +1,13 @@
 extends ../../layouts/layout-beta.pug
 
 block content
-  #content.section--primary
+  #content.hero.theme--grey-4
     .container
       h1 Who are you submitting a petition for?
       p.lead Step 2 of 5
 
-  section
+  section.section--major
     .container
-      br
       +form(id='submitterType' action='page05-1.html')
         +fieldset
           ol.list--block
@@ -34,4 +33,4 @@ block content
           .box--holder__bordered
             +button('Next', 'btn--primary')(class='btn--primary btn--large')
 
-          p #[+link('page03.html', 'back')]
+          p #[+link('page03.html', 'Back')]

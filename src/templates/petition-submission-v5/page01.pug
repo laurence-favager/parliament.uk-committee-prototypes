@@ -2,7 +2,7 @@ extends ../../layouts/layout-beta.pug
 
 block content
   #content.section--primary
-    .container--offset
+    .container
       h1 Object to the HS2 bill
 
   section
@@ -31,13 +31,27 @@ block content
 
   section
     .container
-      .block--border__bottom
-        h2 Contact details
-        
-        p We will ask you to tell us who should be contacted about your petition. This main contact can be you or someone else, for example a family member or a lawyer.
+      h2 Contact details
 
-        p The main contact will receive all petition communications. They will usually be invited to answer questions about it in front of the HS2 Committee
+      p We will ask you to tell us who should be contacted about your petition. This main contact can be you or someone else, for example a family member or a lawyer.
+
+      p The main contact will receive all petition communications. They will usually be invited to answer questions about it in front of the HS2 Committee
 
   section
     .container
-      +link('page02.html', 'Next')(class='btn--primary btn--large')
+      h2 What happens next
+
+      .timeline
+        h3.timeline--title-v5 If your petition is accepted we will ask you to pay a £20 admin fee.
+
+        h3.timeline--title-v5 We’ll email you within 14 days about how to pay the fee.
+
+        h3.timeline--title-v5 We’ll review your petition and publish it on our website. This will include your name and address. We’ll then send it to the Department for Transport (DfT).
+
+        h3.timeline--title-v5 The DfT will email you about your petition before the committee starts discussing HS2 phase 2a petitions in Spring 2018.
+      br
+
+  section.section--major
+    .container
+      +link('page03.html', 'Send us your petition on our website')(class='btn--primary btn--large')
+      +link('page02.html', 'Send us your petition by email, post or in person')(class='btn--primary-alt btn--large btn--bordered--large')

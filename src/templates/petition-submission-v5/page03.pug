@@ -1,7 +1,7 @@
 extends ../../layouts/layout-beta.pug
 
 block content
-  #content.section--primary
+  #content.hero.theme--grey-4
     .container
       h1 Writing your petition
       p.lead Step 1 of 5
@@ -22,11 +22,4 @@ block content
     .container
       +link('page04.html', 'Next')(class='btn--primary btn--large')
     .container
-      p #[+link('page02.html', 'Back')]
-
-  section.section--major
-    .container
-      .container--hs-v5
-        h2 Help and support
-
-        p For more information e-mail #[+link('#', 'petition@parliament.uk')] or phone 020 7219 3000
+      p #[+link('page01.html', 'Back')]

@@ -141,7 +141,7 @@ select {
 }
 
 .timeline {
-  > h5 {
+  > h5, .timeline--title-v5 {
     font-size: 18px;
     font-weight: normal;
     margin-bottom: $base-spacing-unit-large;
@@ -338,7 +338,7 @@ input {
   }
   &[type="radio"]:focus + label::before,
   &[type="checkbox"]:focus + label::before {
-    box-shadow: 0 0 0 3px $caution;
+    box-shadow: 0 0 0 3px $mint;
   }
 }
 
@@ -358,11 +358,20 @@ select {
   outline-offset: -1px;
 }
 
+input:focus,
+button:focus,
+textarea:focus,
 select:focus {
   position: relative;
   z-index: 10;
-  outline: 3px solid $caution;
+  outline: 3px solid $mint;
   outline-offset: -3px;
+}
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 3px solid $mint;
 }
 
 .list--bullet > li {

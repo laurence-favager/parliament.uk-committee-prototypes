@@ -1,14 +1,13 @@
 extends ../../layouts/layout-beta.pug
 
 block content
-  #content.section--primary
+  #content.hero.theme--grey-4
     .container
       h1 Individual’s details
       p.lead Step 3 of 5
 
-  section
+  section.section--major
     .container
-      br
       +form('page06.html')
       
         +input('text', 'First name(s)', 'fname', 'txtFname')(required)
@@ -292,7 +291,8 @@ block content
 
         +input('text', 'Address line 1', 'address', 'txtAddress1')(required)
         +input('text', 'Address line 2 (optional)', 'address', 'txtAddress2')
-        +input('text', 'Post code', 'post code', 'txtPostCode')(class='input__sm' maxlength='10' required)
+        #postCodeInd
+          +input('text', 'Post code', 'post code', 'txtPostCode')(class='input__sm' maxlength='10' required)
         +input('text', 'Email', 'email', 'txtEmail')(required)
         +input('checkbox', 'I would like to receive updates from the New Motorway Bill committee', 'contact-ind', 'chkIndCnt') 
         br
@@ -590,7 +590,8 @@ block content
 
           +input('text', 'Address line 1', 'address', 'txtRepAddress1')
           +input('text', 'Address line 2 (optional)', 'address', 'txtRepAddress2')
-          +input('text', 'Post code', 'post code', 'txtRepPostCode')(class='input__sm' maxlength='10')
+          #postCodeRep
+            +input('text', 'Post code', 'post code', 'txtRepPostCode')(class='input__sm' maxlength='10')
           +input('text', 'Email', 'email', 'txtRepEmail')
           +input('checkbox', 'I would like to receive updates from the New Motorway Bill committee', 'contact-ind', 'chkRepIndCnt') 
           br
@@ -600,4 +601,4 @@ block content
         .box--holder__bordered
           +button('Next', 'btn--primary')(class='btn--primary btn--large')
 
-        p #[+link('page04.html', 'back')]
+        p #[+link('page04.html', 'Back')]

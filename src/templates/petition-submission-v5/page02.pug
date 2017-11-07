@@ -1,32 +1,36 @@
 extends ../../layouts/layout-beta.pug
 
 block content
-  #content.section--primary
+  #content.hero.theme--grey-4
     .container
-      h1 Object to the HS2 bill
-
-  section
-    .container
-      h2 What happens next
-
-      .timeline
-        h5 If your petition is accepted we will ask you to pay a £20 admin fee.
-
-        h5 We’ll email you within 14 days about how to pay the fee.
-
-        h5 We’ll review your petition and publish it on our website. This will include your name and address. We’ll then send it to the Department for Transport (DfT).
-
-        h5 The DfT will email you about your petition before the committee starts discussing HS2 phase 2a petitions in Spring 2018.
-      br
-
-  section.section--major
-    .container#postoption
-      +link('page03.html', 'Send us your petition on our website')(class='btn--primary btn--large')
-      +link('page02.html#postoption', 'Send us your petition by email, post or in person')(class='btn--primary-alt btn--large btn--bordered--large')
+      h1 Who are you submitting a petition for?
+      p.lead Step 1 of 2
 
   section.section--major
     .container
-      .container--hs-v5
-        h2 Help and support
+      +form(id='submitterType' action='page02-1.html')
+        +fieldset
+          ol.list--block
+            li
+              .list--details
+                +input('radio', 'Individual', 'submitter-type', 'ind')(data-route='page02-1.html', checked)
+                p.radio--desc You are submitting a petition for one person.
+            li
+              .list--details
+                +input('radio', 'Group of individuals', 'submitter-type', 'grp')(data-route='page02-2.html')
+                p.radio--desc You are submitting a petition for a group of people.
 
-        p For more information e-mail #[+link('#', 'petition@parliament.uk')] or phone 020 7219 3000
+          ol.list--block
+            li
+              .list--details
+                +input('radio', 'Organisation', 'submitter-type', 'org')(data-route='page02-3.html')
+                p.radio--desc You are submitting a petition for a business or organisation.
+            li
+              .list--details
+                +input('radio', 'Group of organisations', 'submitter-type', 'orgs')(data-route='page02-4.html')
+                p.radio--desc You are submitting a petition for a group of businesses or organisations.
+          br
+          .box--holder__bordered
+            +button('Next', 'btn--primary')(class='btn--primary btn--large')
+
+          p #[+link('page01.html', 'Back')]

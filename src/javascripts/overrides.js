@@ -42,16 +42,19 @@ if (document.getElementById('countrySelect')) {
   var indCntSl = document.getElementById('countrySelect');
   var indCntUk = document.getElementById('country-uk');
   var indCntRw = document.getElementById('country-row');
+  var indPcd = document.getElementById('postCodeInd');
 
-  indCntUk.checked = true;
   indCntSl.style.display = 'none';
+  indPcd.style.display = 'block';
 
   indCntUk.addEventListener('click', function () {
     indCntSl.style.display = 'none';
+    indPcd.style.display = 'block';
   });
 
   indCntRw.addEventListener('click', function () {
     indCntSl.style.display = 'block';
+    indPcd.style.display = 'none';
   });
 }
 
@@ -60,16 +63,19 @@ if (document.getElementById('countrySelectRep')) {
   var repCntSl = document.getElementById('countrySelectRep');
   var repCntUk = document.getElementById('country-uk-rep');
   var repCntRw = document.getElementById('country-row-rep');
+  var repPcd = document.getElementById('postCodeRep');
 
-  repCntUk.checked = true;
   repCntSl.style.display = 'none';
+  repPcd.style.display = 'block';
 
   repCntUk.addEventListener('click', function () {
     repCntSl.style.display = 'none';
+    repPcd.style.display = 'block';
   });
 
   repCntRw.addEventListener('click', function () {
     repCntSl.style.display = 'block';
+    repPcd.style.display = 'none';
   });
 }
 
