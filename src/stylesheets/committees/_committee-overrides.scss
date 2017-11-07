@@ -242,17 +242,20 @@ select {
   background: url("../../images/uploader.svg") no-repeat scroll center center / 100% auto rgba(0, 0, 0, 0);
   position: relative;
   display: block;
-  height: 110px;
   width: 90px;
+  height: 106px;
   margin: $base-spacing-unit-medium auto 0 auto;
-  &:hover {
-    background: url("../../images/uploader-hover.svg") no-repeat scroll center center / 100% auto rgba(0, 0, 0, 0);
-  }
+}
+
+.file--upload:hover > .file--upload-icon {
+  background: url("../../images/uploader-hover.svg") no-repeat scroll center center / 100% auto rgba(0, 0, 0, 0);
 }
 
 .file--uploaded, .file--uploaded-success  {
   width: 70%;
   padding: $base-spacing-unit-tiny;
+  @include fontsize(21);
+  line-height: 1.333; // 24px;
 }
 
 .file--uploaded {
