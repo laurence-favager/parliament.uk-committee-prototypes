@@ -254,8 +254,7 @@ select {
 .file--uploaded, .file--uploaded-success  {
   width: 70%;
   padding: $base-spacing-unit-tiny;
-  @include fontsize(21);
-  line-height: 1.333; // 24px;
+  font-size: 18px;
 }
 
 .file--uploaded {
