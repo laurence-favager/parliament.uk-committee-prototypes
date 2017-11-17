@@ -182,7 +182,7 @@ function removeElement(parentDiv, childDiv) {
       var fullFile = this.value;
       var nameFile = fullFile.split(/(\\|\/)/g).pop();
       document.getElementById('file-uploaded-txt').innerHTML = nameFile;
-      document.getElementById('file-uploaded').innerHTML = '&#x2713; Success'
+      document.getElementById('file-uploaded').innerHTML = '&#x2713; Success';
       document.getElementById('file-uploaded').className = 'file--uploaded-success';
     };
   }
