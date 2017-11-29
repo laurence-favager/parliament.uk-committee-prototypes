@@ -4,7 +4,7 @@ block content
   #content.hero.theme--grey-4
     .container
       h1 Upload your completed template
-      p.lead Step 4 of 5
+      h2.typography--light Step 4 of 5
 
   section
     .container
@@ -16,10 +16,8 @@ block content
         li not include any images, graphics or videos
       br
 
-  section
-    .container
       +form(action='page07.html')
-        .file--upload
+        .file--upload.block--border__bottom
           .file--upload-icon
           h3#file-uploaded-txt Upload your petition template
 
@@ -27,6 +25,4 @@ block content
 
         p.file--uploaded#file-uploaded No file selected
 
-        br
-        .box--holder__bordered
-          +button('Next', 'btn--primary')(class='btn--primary btn--large')
+        +button('Next', 'btn--primary', 'submit')
