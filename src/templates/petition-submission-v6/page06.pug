@@ -14,15 +14,15 @@ block content
         li be less than 2 MB in size
         li be file type: doc, docx, rtf, txt, ooxml, odt or PDF
         li not include any images, graphics or videos
-      br
 
       +form(action='page07.html')
-        .file--upload.block--border__bottom
-          .file--upload-icon
-          h3#file-uploaded-txt Upload your petition template
+        .block--border__bottom
+          .file--upload
+            .file--upload-icon
+            h3#file-uploaded-txt Upload your petition template
 
-          +input('file')(id='file-upload', class='file--uploader', title='Click here to upload your petition' required)
+            +input('file')(id='file-upload', class='file--uploader', title='Click here to upload your petition' required)
 
-        p.file--uploaded#file-uploaded No file selected
+          p.file--uploaded#file-uploaded No file selected
 
         +button('Next', 'btn--primary', 'submit')
