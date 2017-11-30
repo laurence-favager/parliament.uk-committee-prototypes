@@ -31,7 +31,7 @@ The [Parliament.uk-composition][parliament.uk-pugin-composition] application inh
 To run the application locally, run:
 ```bash
 npm install
-make serve
+npm start
 ```
 
 ### Running tests
