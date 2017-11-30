@@ -8,11 +8,12 @@
     "node": "7.x"
   },
   "scripts": {
+    "preinstall": "make clean_hard",
     "postinstall": "make install",
     "start": "make serve"
   },
   "devDependencies": {
     "express": "^4.15.4",
-    "parliamentuk-pugin": "git+https://github.com/ukparliament/parliament.uk-pugin.git#1.7.0"
+    "parliamentuk-pugin": "git+https://github.com/ukparliament/parliament.uk-pugin.git"
   }
 }
