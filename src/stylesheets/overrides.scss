@@ -1,12 +1,5 @@
-// Import Pugin settings
-@import 'settings/pugin-mixins';
-
-// Import app settings
-@import 'settings/colours';
-
-// Import elements
-@import 'elements/body';
-@import 'elements/headings';
+// Import Pugin base styles
+@import 'node_modules/parliamentuk-pugin/src/stylesheets/main.scss';
 
 // Import Committee overrides
 @import 'committees/committee-overrides.scss';
