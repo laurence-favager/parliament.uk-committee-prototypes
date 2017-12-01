@@ -294,6 +294,11 @@ span.label {
 }
 
 .btn--disabled {
-  border-color: $grey-3;
   color: $grey-2;
+}
+
+.hb--border__top {
+  border-top-color: $mint;
+  border-top-width: $base-spacing-unit;
+  border-top-style: solid;
 }
