@@ -80,25 +80,29 @@ if (document.getElementById('countrySelectRep')) {
 }
 
 // Function to enable submission buttons when radio checked
-if (document.getElementById('petitionCheck')) {
-  var radioYes = document.getElementById('check-yes');
-  var radioNo = document.getElementById('check-no');
-  var button = document.getElementById('petitionCheck');
+if (document.getElementById('petition-check-button')) {
+  var radioYes = document.getElementById('petition-check-yes');
+  var radioNo = document.getElementById('petition-check-no');
+  var button = document.getElementById('petition-check-button');
+  var message = document.getElementById('petitionCheckStatus');
 
   button.disabled = true;
   button.className = 'btn--disabled';
   button.style.cursor = 'not-allowed';
+  message.style.display = 'block';
 
   radioYes.addEventListener('click', function () {
     button.disabled = false;
     button.className = 'btn--primary';
     button.style.cursor = 'pointer';
+    message.style.display = 'none';
   });
 
   radioNo.addEventListener('click', function () {
     button.disabled = true;
     button.className = 'btn--disabled';
     button.style.cursor = 'not-allowed';
+    message.style.display = 'block';
   });
 
 }

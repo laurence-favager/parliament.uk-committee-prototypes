@@ -20,32 +20,33 @@ block content
         
       p We’ll ask you to upload your completed template at step 4
       
-      ol.list--pipe
+      ol.list--block
         li
           figure
             picture
               include ../../images/file-doc.svg
           .list--details
             h3 Petition template
-            p .doc / .docx
+            p
+              span.label .doc / .docx
             +buttonLink('../../documents/bill-petition-template.docx', 'Download template as Word document', 'btn--primary btn--icon', '')
               include ../../images/download-white.svg
 
   section#completePetition.section--major
     .container
       h2.typography--light Have you completed your petition template?
-      +form(action='page06.html')
+      +form(action='page04.html')
         .block--border__bottom
           +fieldset
             .input-group__inline
-              +input('radio', 'Yes', 'petition-check', 'check-yes')
+              +input('radio', 'Yes', 'petition-check', 'petition-check-yes')
             .input-group__inline
-              +input('radio', 'No', 'petition-check', 'check-no')(checked)
+              +input('radio', 'No', 'petition-check', 'petition-check-no')(checked)
               
-          .status--highlight.theme--caution
+          .status--highlight.theme--caution#petitionCheckStatus
             p Complete your petition template before you continue
         
-        +button('Next', 'btn--primary', 'submit')(id="petitionCheck")
+        +button('Next', 'btn--primary', 'submit')(id="petition-check-button")
       
       p #[+link('page01.html', 'Back')]
         
