@@ -40,9 +40,11 @@ h1 + .lead {
   margin-bottom: $base-spacing-unit-medium;
 }
 
+/*
 .hero h1:after {
   display: none;
 }
+*/
 
 .btn--primary-alt {
   @include button($button--primary, transparent, #d2dff7 !important);

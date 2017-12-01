@@ -79,6 +79,30 @@ if (document.getElementById('countrySelectRep')) {
   });
 }
 
+// Function to enable submission buttons when radio checked
+if (document.getElementById('petitionCheck')) {
+  var radioYes = document.getElementById('check-yes');
+  var radioNo = document.getElementById('check-no');
+  var button = document.getElementById('petitionCheck');
+
+  button.disabled = true;
+  button.className = 'btn--disabled';
+  button.style.cursor = 'not-allowed';
+
+  radioYes.addEventListener('click', function () {
+    button.disabled = false;
+    button.className = 'btn--primary';
+    button.style.cursor = 'pointer';
+  });
+
+  radioNo.addEventListener('click', function () {
+    button.disabled = true;
+    button.className = 'btn--disabled';
+    button.style.cursor = 'not-allowed';
+  });
+
+}
+
 // Function to enable submission buttons when checkbox clicked
 (function () {
   if (document.getElementById('enableSubmit')) {

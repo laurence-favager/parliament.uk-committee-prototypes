@@ -3,12 +3,15 @@ extends ../../layouts/layout-beta.pug
 block content
   #content.hero.theme--grey-4
     .container
-      h1 Writing your petition
+      h1 Writing your petition - online
+        span.sr-only.
+        span Object to the High Speed Rail (West Midlands – Crewe) Bill
+
       h2.typography--light Step 1 of 5
 
   section
     .container
-      h2.typography--light To write your petition:
+      h2 To write your petition
 
       ol.list--number
         li download and save the petition template to your device
@@ -17,33 +20,34 @@ block content
         
       p We’ll ask you to upload your completed template at step 4
       
-      ol.list--block
+      ol.list--pipe
         li
           figure
             picture
-              img(src='https://cdn4.iconfinder.com/data/icons/48-bubbles/48/12.File-64.png', alt='Document')
+              include ../../images/file-doc.svg
           .list--details
             h3 Petition template
-            p .docx
-            +link('../../documents/bill-petition-template.docx', 'Download template as Word document')(class='btn--primary btn--download') 
+            p .doc / .docx
+            +buttonLink('../../documents/bill-petition-template.docx', 'Download template as Word document', 'btn--primary btn--icon', '')
+              include ../../icons/download.svg
 
-  section
+  section#completePetition.section--major
     .container
       h2.typography--light Have you completed your petition template?
-      +form(action='page06.html')    
-        +fieldset
-          .input-group__inline
-            +input('radio', 'Yes', 'country-check-ind', 'country-uk')
-          .input-group__inline
-            +input('radio', 'No', 'country-check-ind', 'country-row')(checked)
-            
-      .status--highlight.theme--caution
-        p Complete your petition template before you continue
+      +form(action='page06.html')
+        .block--border__bottom
+          +fieldset
+            .input-group__inline
+              +input('radio', 'Yes', 'petition-check', 'check-yes')
+            .input-group__inline
+              +input('radio', 'No', 'petition-check', 'check-no')(checked)
+              
+          .status--highlight.theme--caution
+            p Complete your petition template before you continue
+        
+        +button('Next', 'btn--primary', 'submit')(id="petitionCheck")
       
-      br
-      .box--holder__bordered      
-        p #[+buttonLink('page04.html', 'Next', 'btn--primary')]
-        p #[+link('page01.html', 'Back')]
+      p #[+link('page01.html', 'Back')]
         
       br
       .block
