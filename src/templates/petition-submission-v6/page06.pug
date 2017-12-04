@@ -20,13 +20,27 @@ block content
 
       +form(action='page07.html')
         .block--border__bottom
-          .file--upload
-            .file--upload-icon
-            h3#file-uploaded-txt Upload your petition template
+          ol.list--block
+            li
+              figure
+                picture
+                  include ../../images/file-doc.svg
+              .list--details
+                h3 Attach your petition template
 
-            +input('file')(id='file-upload', class='file--uploader', title='Click here to upload your petition' required)
-
-          p.file--uploaded#file-uploaded No file selected
+                .upload-wrapper
+                  +button('Upload your file', 'btn--primary', 'button')
+                  input(type='file', id='uploader', name='file-uploader' class='btn--primary')
+                
+                #file-uploaded No file selected
+                
+                //.file--upload
+                  //.file--upload-icon
+                  //h3#file-uploaded-txt Upload your petition template
+            
+                  //+input('file')(id='file-upload', class='file--uploader', title='Click here to upload your petition' required)
+            
+                //p.file--uploaded#file-uploaded No file selected
 
         +button('Next', 'btn--primary', 'submit')
 

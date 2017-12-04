@@ -302,3 +302,18 @@ span.label {
   border-top-width: $base-spacing-unit;
   border-top-style: solid;
 }
+
+.upload-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.upload-wrapper > input[type=file] {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  width: 96%;
+  height: 88%;
+}
