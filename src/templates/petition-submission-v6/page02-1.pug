@@ -25,7 +25,17 @@ block content
       p Call 020 7219 3000 to arrange a time to deliver your completed petition template.
 
       .section--major
-        +buttonLink('../../documents/bill-petition-template.docx', 'Download Word document', 'btn--primary btn--icon', '')
-          include ../../images/download-white.svg
+        .block--border__bottom
+          ol.list--block
+            li
+              figure
+                picture
+                  include ../../images/file-doc.svg
+              .list--details
+                h3 Petition template
+                p
+                  span.label .doc / .docx
+                +buttonLink('../../documents/bill-petition-template.docx', 'Download template as Word document', 'btn--primary btn--icon', '')
+                  include ../../images/download-white.svg
 
         p #[+link('page02.html', 'Back')]

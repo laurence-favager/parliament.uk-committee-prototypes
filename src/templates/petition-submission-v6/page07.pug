@@ -34,11 +34,15 @@ block content
 
   section
     .container
-      .block--border__bottom
-        h2 Consent and confirmation
+      h2 Consent and confirmation
 
-        p The information you have provided in the petition and online form is accurate.
-        
-        p If you have filled in the form on behalf of an individual, a group of individuals, an organisation, or a group of organisations, you have been authorised to do so.
+      p The information you have provided in the petition and online form is accurate.
+      
+      p If you have filled in the form on behalf of an individual, a group of individuals, an organisation, or a group of organisations, you have been authorised to do so.
 
-      +buttonLink('page08.html', 'I agree - send petition', 'btn--primary')
+      +form(action='page08.html')
+        .block--border__bottom
+          +fieldset
+            +input('checkbox', 'I agree to the terms and conditions', 'terms-check', 'enableSubmit')
+
+        +button('Send petition', 'btn--primary', 'submit')(id="buttonSubmit")
