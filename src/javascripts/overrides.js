@@ -251,7 +251,7 @@ UK_Parliament.fileUploader = function () {
       // Check if file exceeds size limit (currently set to 2Mb)
       if (fileObjectSize > 2097152) {
         fileStatusText.setAttribute('aria-live', 'assertive');
-        fileStatusText.innerHTML = 'The file you have uploaded is too big. Please make sure it is smaller than 2Mb.';
+        fileStatusText.innerHTML = 'The file you have uploaded is too big. Please make sure it is smaller than 2MB.';
         fileStatusText.classList.add('message--error');
         fileStatusIcon.classList = '';
         fileStatusIcon.classList.add('file--upload__status--error');
