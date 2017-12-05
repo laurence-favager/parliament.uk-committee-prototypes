@@ -38,10 +38,12 @@ block content
 
       p The information you have provided in the petition and online form is accurate.
       
-      p If you have filled in the form on behalf of an individual, a group of individuals, an organisation, or a group of organisations, you have been authorised to do so.
+      p If you have completed the form on behalf of an individual, a group of individuals, an organisation, or a group of organisations, you have been authorised to do so.
+
+      br
 
       +form(action='page08.html')
-        .block--border__bottom
+        .block--border__bottom.v6-check
           +fieldset
             +input('checkbox', 'I agree to the terms and conditions', 'terms-check', 'enableSubmit')
 

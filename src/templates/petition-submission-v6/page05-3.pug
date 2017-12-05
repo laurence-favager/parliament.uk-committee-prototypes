@@ -3,7 +3,7 @@ extends ../../layouts/layout-beta.pug
 block content
   #content.hero.theme--grey-4
     .container
-      h1 Organisation details
+      h1 Organisation's details
         span.sr-only.
         span Object to the High Speed Rail (West Midlands – Crewe) Bill
 
@@ -303,9 +303,8 @@ block content
           #postCodeInd
             +input('text', 'Post code', 'post code', 'txtPostCode')(class='input__sm' maxlength='10')
           +input('text', 'Email', 'email', 'txtEmail')(required)
-          +input('checkbox', 'I would like to receive updates from the HS2 bill committee', 'contact-ind', 'chkIndCnt') 
-          br
-          +input('text', 'Phone', 'phone', 'txtPhone')(class='input__md' maxlength='12')
+          +input('checkbox', 'I would like to receive updates from the High Speed Rail (West Midlands - Crewe) Bill Committee', 'contact-ind', 'chkIndCnt') 
+          +input('text', 'Phone', 'phone', 'txtPhone')(class='input__md' maxlength='12' required)
 
           h2 Who should be contacted about this petition?
 
@@ -602,8 +601,7 @@ block content
             #postCodeRep
               +input('text', 'Post code', 'post code', 'txtRepPostCode')(class='input__sm' maxlength='10')
             +input('text', 'Email', 'email', 'txtRepEmail')
-            +input('checkbox', 'I would like to receive updates from the HS2 bill committee', 'contact-ind', 'chkRepIndCnt') 
-            br
+            +input('checkbox', 'I would like to receive updates from the High Speed Rail (West Midlands - Crewe) Bill Committee', 'contact-ind', 'chkRepIndCnt') 
             +input('text', 'Phone', 'phone', 'txtRepPhone')(class='input__md' maxlength='12')
 
         +button('Next', 'btn--primary', 'submit')
