@@ -215,3 +215,67 @@ function removeElement(parentDiv, childDiv) {
     };
   }
 }());
+
+
+// Show file name, file upload status and check file size
+
+UK_Parliament.fileUploader = function () {
+
+  if (document.getElementById('fileUpload')) {
+    // Local variables
+    var
+      fileInput = document.getElementById('fileUpload'),
+      fileStatusText = document.getElementById('fileUploadStatusText'),
+      fileStatusIcon = document.getElementById('fileUploadStatusIcon'),
+      fileUploadButton = document.getElementById('file-upload-check');
+
+    // Set submit button state
+    fileUploadButton.disabled = true;
+    fileUploadButton.className = 'btn--disabled';
+
+    fileInput.onchange = function () {
+
+      // Grab file object reference, determine size and construct filename
+      var
+        fileObject = this.files,
+        fileObjectSize = fileObject[0].size,
+        fileNameSplit = this.value.split(/(\\|\/)/g).pop(),
+        fileNameSplitFormatted = '<b>\'' + fileNameSplit + '\'</b>';
+
+      // Remove error attributes and classes
+      if (fileStatusText.hasAttribute('aria-live')) {
+        fileStatusText.removeAttribute('aria-live', 'assertive');
+        fileStatusText.classList.remove('message--error');
+      }
+
+      // Check if file exceeds size limit (currently set to 2Mb)
+      if (fileObjectSize > 2097152) {
+        fileStatusText.setAttribute('aria-live', 'assertive');
+        fileStatusText.innerHTML = 'The file you have uploaded is too big. Please make sure it is smaller than 2Mb.';
+        fileStatusText.classList.add('message--error');
+        fileStatusIcon.classList = '';
+        fileStatusIcon.classList.add('file--upload__status--error');
+        fileUploadButton.disabled = true;
+        fileUploadButton.className = 'btn--disabled';
+
+      // Check if linked file object is present
+      } else if (fileObject) {
+        fileStatusText.innerHTML = fileNameSplitFormatted + ' is ready to be uploaded';
+        fileStatusIcon.classList = '';
+        fileStatusIcon.classList.add('file--upload__status--success');
+        fileUploadButton.disabled = false;
+        fileUploadButton.className = 'btn--primary';
+
+      // Return text to default state if no linked file object exists
+      } else {
+        fileStatusText.innerHTML = 'No file(s) selected';
+        fileStatusIcon.classList = '';
+        fileStatusIcon.classList.add('file--upload__status--standard');
+        fileUploadButton.disabled = true;
+        fileUploadButton.className = 'btn--disabled';
+      }
+    };
+  }
+};
+
+UK_Parliament.fileUploader();

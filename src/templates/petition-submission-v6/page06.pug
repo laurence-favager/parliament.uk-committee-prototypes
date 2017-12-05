@@ -19,30 +19,21 @@ block content
         li not include any images, graphics or videos
 
       +form(action='page07.html')
-        .block--border__bottom
-          ol.list--block
-            li
-              figure
-                picture
-                  include ../../images/file-doc.svg
-              .list--details
-                h3 Attach your petition template
+        ol.list--pipe
+          li.pipe--padding
+            figure
+              picture
+                #fileUploadStatusIcon.file--upload__status--standard
+            .list--details
+              h3 Attach your petition template
 
-                .upload-wrapper
-                  +button('Upload your file', 'btn--primary', 'button')
-                  input(type='file', id='uploader', name='file-uploader' class='btn--primary')
-                
-                #file-uploaded No file selected
-                
-                //.file--upload
-                  //.file--upload-icon
-                  //h3#file-uploaded-txt Upload your petition template
-            
-                  //+input('file')(id='file-upload', class='file--uploader', title='Click here to upload your petition' required)
-            
-                //p.file--uploaded#file-uploaded No file selected
+              .file--upload__wrapper
+                +button('Choose file', 'btn--primary', 'button')
+                input(type='file', id='fileUpload', name='file-upload' class='btn--primary')
+              
+              p#fileUploadStatusText No file selected
 
-        +button('Next', 'btn--primary', 'submit')
+        +button('Next', 'btn--primary', 'submit')(id='file-upload-check')
 
       br
       .block.hb--border__top

@@ -280,12 +280,18 @@ h1 {
   }
 }
 
-.list--block {
+.list--block, .list--pipe {
   li {
-    picture {
-      background-color: $white;
+    figure, picture {
+      display: flex;
+      background-color: transparent;
     }
   }
+}
+
+.pipe--padding {
+  padding-top: 27px !important;
+  padding-bottom: 27px !important;
 }
 
 span.label {
@@ -303,17 +309,42 @@ span.label {
   border-top-style: solid;
 }
 
-.upload-wrapper {
+.file--upload__wrapper {
   position: relative;
-  overflow: hidden;
   display: inline-block;
+  margin-top: 6px !important;
+  margin-bottom: 6px !important;
 }
 
-.upload-wrapper > input[type=file] {
+.file--upload__wrapper > input[type="file"] {
   position: absolute;
   left: 0;
   top: 0;
   opacity: 0;
   width: 96%;
   height: 88%;
+}
+
+.file--upload__status--standard {
+  background: url('../../images/file--blank.svg') no-repeat scroll center center / 100% auto rgba(0, 0, 0, 0);
+  position: relative;
+  display: block;
+  width: 86px;
+  height: auto;
+}
+
+.file--upload__status--success {
+  background: url('../../images/file--success.svg') no-repeat scroll center center / 100% auto rgba(0, 0, 0, 0);
+  position: relative;
+  display: block;
+  width: 100px;
+  height: auto;
+}
+
+.file--upload__status--error {
+  background: url('../../images/file--fail.svg') no-repeat scroll center center / 100% auto rgba(0, 0, 0, 0);
+  position: relative;
+  display: block;
+  width: 100px;
+  height: auto;
 }
