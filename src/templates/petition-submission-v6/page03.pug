@@ -13,24 +13,23 @@ block content
     .container
       h2 To write your petition
 
-      ol.list--number
+      ol
         li download and save the petition template to your device
         li complete the petition template
         li save your completed template
+        li click the link at the end of your template to continue the process
         
-      p We’ll ask you to upload your completed template at Step 4.
+      p We’ll ask you to upload your completed template later.
       
-      ol.list--pipe
-        li.pipe--padding
-          figure
-            picture
-              include ../../images/file--doc.svg
+      ol.list--pipe__deep
+        li
+          figure.svg--icon
+            include ../../images/file--doc.svg
           .list--details
             h3 Petition template
-            p
-              span.label .doc / .docx
-            +buttonLink('../../documents/bill-petition-template.docx', 'Download template as Word document', 'btn--primary btn--icon')
+            +buttonLink('../../documents/bill-petition-template.doc', 'Download template as Word document', 'btn--primary btn--icon')
               include ../../images/download-white.svg
+            p If you need a different format, email #[+link('mailto:prbohoc@parliament.uk', 'prbohoc@parliament.uk')] or phone 020 7219 3250.
 
   section#complete-petition.section--major
     .container
@@ -51,7 +50,7 @@ block content
       p #[+link('page01.html', 'Back')]
         
       br
-      .block.hb--border__top
+      .block.accent
         h3 Help and support
-        p For more information e-mail #[+link('mailto:prbohoc@parliament.uk', 'prbohoc@parliament.uk')] or phone 020 7219 3000
+        p For more information e-mail #[+link('mailto:prbohoc@parliament.uk', 'prbohoc@parliament.uk')] or phone 020 7219 3250
        

@@ -15,17 +15,15 @@ block content
 
       ul.list--bullet
         li be less than 2 MB in size
-        li be file type: doc, docx, rtf, txt, ooxml, odt or PDF
         li not include any images, graphics or videos
 
       br
 
       +form(action='page07.html')
-        ol.list--pipe
-          li.pipe--padding
-            figure
-              picture
-                #fileUploadStatusIcon.file--upload__status--standard
+        ol.list--pipe__deep
+          li
+            figure.svg--icon
+               #fileUploadStatusIcon.file--upload__status--standard
             .list--details
               h3 Attach your petition template
 
@@ -38,6 +36,6 @@ block content
         +button('Next', 'btn--primary', 'submit')(id='file-upload-check')
 
       br
-      .block.hb--border__top
+      .block.accent
         h3 Help and support
-        p For more information e-mail #[+link('mailto:prbohoc@parliament.uk', 'prbohoc@parliament.uk')] or phone 020 7219 3000
+        p For more information e-mail #[+link('mailto:prbohoc@parliament.uk', 'prbohoc@parliament.uk')] or phone 020 7219 3250

@@ -22,19 +22,17 @@ block content
       p Post your completed petition template to Hybrid Bills Office, Houses of Parliament, London, SW1A 0AA.
       
       h3 Send in person
-      p Call 020 7219 3000 to arrange a time to deliver your completed petition template.
+      p Call 020 7219 3250 to arrange a time to deliver your completed petition template.
 
       .section--major
-        ol.list--pipe
-          li.pipe--padding
-            figure
-              picture
-                include ../../images/file--doc.svg
+        ol.list--pipe__deep
+          li
+            figure.svg--icon
+              include ../../images/file--doc.svg
             .list--details
               h3 Petition template
-              p
-                span.label .doc / .docx
-              +buttonLink('../../documents/bill-petition-template.docx', 'Download template as Word document', 'btn--primary btn--icon')
+              +buttonLink('../../documents/bill-petition-template.doc', 'Download template as Word document', 'btn--primary btn--icon')
                 include ../../images/download-white.svg
+              p If you need a different format, email #[+link('mailto:prbohoc@parliament.uk', 'prbohoc@parliament.uk')] or phone 020 7219 3250.
 
-        p #[+link('page02.html', 'Back')]
+        +buttonLink('page01.html', 'Finish', 'btn--primary')
