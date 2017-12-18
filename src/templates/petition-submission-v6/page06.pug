@@ -22,16 +22,14 @@ block content
       +form(action='page07.html')
         ol.list--pipe__deep
           li
-            figure.svg--icon
-               #fileUploadStatusIcon.file--upload__status--standard
+            figure.svg--icon(data-file-upload='icon')
+                include ../../images/file.svg
             .list--details
               h3 Attach your petition template
 
-              .file--upload__wrapper
-                +button('Choose file', 'btn--primary', 'button')
-                input(type='file', id='fileUpload', name='file-upload' class='btn--primary')
-              
-              p#fileUploadStatusText No file selected
+              +input('file', 'Choose file', 'file-uploader', 'fileUpload', 'button', '2097152')(class='btn--primary')
+
+              p(data-file-upload='status') No file(s) selected
 
         +button('Next', 'btn--primary', 'submit')(id='file-upload-check')
 
