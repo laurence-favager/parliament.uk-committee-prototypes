@@ -40,12 +40,12 @@ block content
             .input-group__inline
               +input('radio', 'Yes', 'petition-check', 'petition-check-yes')
             .input-group__inline
-              +input('radio', 'No', 'petition-check', 'petition-check-no')(checked)
+              +input('radio', 'No', 'petition-check', 'petition-check-no')(checked, data-submit='disabled')
               
           .status--highlight.theme--caution#petitionCheckStatus
             p Complete your petition template before you continue
         
-        +button('Next', 'btn--primary', 'submit')(id="petition-check-button")
+        +button('Next', 'btn--primary', 'submit')
       
       p #[+link('page01.html', 'Back')]
         

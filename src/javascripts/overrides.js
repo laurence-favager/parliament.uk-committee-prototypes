@@ -80,28 +80,18 @@ if (document.getElementById('countrySelectRep')) {
 }
 
 // Function to enable submission buttons when radio checked
-if (document.getElementById('petition-check-button')) {
+if (document.getElementById('petitionCheckStatus')) {
   var radioYes = document.getElementById('petition-check-yes');
   var radioNo = document.getElementById('petition-check-no');
-  var button = document.getElementById('petition-check-button');
   var message = document.getElementById('petitionCheckStatus');
 
-  button.disabled = true;
-  button.className = 'btn--disabled';
-  button.style.cursor = 'not-allowed';
   message.style.display = 'block';
 
   radioYes.addEventListener('click', function () {
-    button.disabled = false;
-    button.className = 'btn--primary';
-    button.style.cursor = 'pointer';
     message.style.display = 'none';
   });
 
   radioNo.addEventListener('click', function () {
-    button.disabled = true;
-    button.className = 'btn--disabled';
-    button.style.cursor = 'not-allowed';
     message.style.display = 'block';
   });
 
@@ -215,3 +205,74 @@ function removeElement(parentDiv, childDiv) {
     };
   }
 }());
+
+
+
+UK_Parliament.enableSubmit = function () {
+
+  if (document.querySelector('[data-submit="disabled"]')) {
+
+    var submitInputChecks = document.querySelectorAll('[data-submit="disabled"]');
+
+    //console.log(submitInputChecks);
+
+    var styleEnable = function (userButton, userButtonClass) {
+      userButton.disabled = false;
+      userButton.className = userButtonClass;
+    }
+
+    var styleDisable = function (userButton) {
+      userButton.disabled = true;
+      userButton.className = 'btn--disabled';
+    }
+
+    submitInputChecks.forEach(function (i) {
+
+      var userForm = i.form;
+      var userButton = userForm.querySelector('button[type="submit"]');
+      var userButtonClass = userButton.className;
+
+      //console.log(userForm);
+      //console.log(userButton);
+      //console.log(userButtonClass);
+
+      styleDisable(userButton);
+
+      if (i.type == 'checkbox'){
+        i.addEventListener('click', function () {
+          if (this.checked) {
+            styleEnable(userButton, userButtonClass);
+          } else {
+            styleDisable(userButton);
+          }
+        });
+      }
+
+      if (i.type == 'radio'){
+        var inputCheckName = i.name;
+
+        //console.log (inputCheckName);
+
+        var inputCheckNamesArray = document.getElementsByName(inputCheckName);
+
+        //console.log (inputCheckNamesArray);
+
+        inputCheckNamesArray.forEach(function (r) {
+          r.addEventListener('click', function () {
+            //console.log(r);
+            if (this.hasAttribute('data-submit') && this.checked) {
+              styleDisable(userButton);
+            } else {
+              styleEnable(userButton, userButtonClass);
+            }
+          });
+        });
+
+      }
+
+    });
+
+  }
+};
+
+UK_Parliament.enableSubmit();

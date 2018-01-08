@@ -45,6 +45,6 @@ block content
       +form(action='page08.html')
         .block--border__bottom.v6-check
           +fieldset
-            +input('checkbox', 'I agree to the terms and conditions', 'terms-check', 'enableSubmit')
+            +input('checkbox', 'I agree to the terms and conditions', 'terms-check', '2')(data-submit='disabled')
 
-        +button('Send petition', 'btn--primary', 'submit')(id="buttonSubmit")
+        +button('Send petition', 'btn--primary', 'submit')
