@@ -23,12 +23,12 @@ block content
       
       ol.list--pipe__deep
         li
-          figure.svg--icon
-            include ../../images/file--doc.svg
+          figure.svg--icon.svg--file__word
+            include ../../icons/file.svg
           .list--details
             h3 Petition template
-            +buttonLink('../../documents/bill-petition-template.doc', 'Download template as Word document', 'btn--primary btn--icon')
-              include ../../images/download-white.svg
+            +buttonLink('../../documents/HS2-Phase-2a-Petition-Template-Online.doc', 'Download template as Word document', 'btn--primary', 'download')
+              include ../../icons/download.svg
             p If you need a different format, email #[+link('mailto:prbohoc@parliament.uk', 'prbohoc@parliament.uk')] or phone 020 7219 3250.
 
   section#complete-petition.section--major
@@ -50,7 +50,7 @@ block content
       p #[+link('page01.html', 'Back')]
         
       br
-      .block.accent
+      .block.accent--mint
         h3 Help and support
         p For more information email #[+link('mailto:prbohoc@parliament.uk', 'prbohoc@parliament.uk')] or phone 020 7219 3250
        
