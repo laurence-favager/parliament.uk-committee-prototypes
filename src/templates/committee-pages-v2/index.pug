@@ -1,0 +1,42 @@
+extends ../../layouts/layout.pug
+
+block content
+  #content.section--primary
+    .container
+      h1 Committee Name
+      p.lead House | Committee type
+
+  section
+    .container
+      h2 About the committee
+      p description
+
+  section
+    .container
+      h2 Committee members
+      ol.list--block
+        li
+          figure
+            a(href="#" tabindex="-1")
+              picture
+                img(src="/images/placeholder_members_image.png" alt="Name")
+          .list--details
+            h2
+              a(href="#" tabindex="-1") Name
+            p Committee chair
+            p Party | MP for constituency / Member of the House of Lords
+      p #[+link('committee-members.html', 'View all committee members')]
+      
+  section
+    .container
+      h2 Contact us
+      
+      .block
+        dl.list--definition
+          dt Email:
+          dd
+            +link('mailto:committee@parliament.uk', 'committee@parliament.uk')
+          dt Phone:
+          dd #[+link('tel:01234567890', '01234567890')]
+          dt Address:
+          dd House of Commons, London, SW1A 0AA

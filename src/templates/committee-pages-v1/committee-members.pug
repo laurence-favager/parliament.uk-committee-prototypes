@@ -1,0 +1,45 @@
+extends ../../layouts/layout.pug
+
+block content
+  #content.section--primary
+    .container
+      h1 Committee Name - committee members
+
+  section
+    .container
+      h2 Committee Chair
+      ol.list--block
+        +list--block('Name', 'constituency / Member of the House of Lords', 'Party', '/images/placeholder_members_image.png')
+
+  section
+    .container
+      h2 Members
+      ol.list--block
+        +list--block('Name', 'constituency / Member of the House of Lords', 'Party', '/images/placeholder_members_image.png')
+        +list--block('Name', 'constituency / Member of the House of Lords', 'Party', '/images/placeholder_members_image.png')
+        +list--block('Name', 'constituency / Member of the House of Lords', 'Party', '/images/placeholder_members_image.png')
+        +list--block('Name', 'constituency / Member of the House of Lords', 'Party', '/images/placeholder_members_image.png')
+
+
+  section
+    .container
+      h2 Lay members
+      ol.list--block
+        li
+          figure
+            a(href="#" tabindex="-1")
+              picture
+                img(src="/images/placeholder_members_image.png" alt="Name")
+          .list--details
+            h2
+              a(href="#" tabindex="-1") Name
+            p Role / Specialisation
+        li
+          figure
+            a(href="#" tabindex="-1")
+              picture
+                img(src="/images/placeholder_members_image.png" alt="Name")
+          .list--details
+            h2
+              a(href="#" tabindex="-1") Name
+            p Role / Specialisation
