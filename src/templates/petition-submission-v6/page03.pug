@@ -11,6 +11,12 @@ block content
 
   section
     .container
+
+      div(data-browser='javascript')
+        br
+        .status--highlight.theme--caution
+          p JavaScript is currently switched off in your browser. Switch it on for a better experience.
+
       h2 To write your petition
 
       ol
@@ -34,6 +40,7 @@ block content
   section#complete-petition.section--major
     .container
       h2.typography--light Have you completed your petition template?
+
       +form(action='page04.html')
         .block--border__bottom
           +fieldset
@@ -41,16 +48,22 @@ block content
               +input('radio', 'Yes', 'petition-check', 'petition-check-yes')
             .input-group__inline
               +input('radio', 'No', 'petition-check', 'petition-check-no')(checked, data-submit='disabled')
-              
-          .status--highlight.theme--caution#petitionCheckStatus
-            p Complete your petition template before you continue
-        
+
+          div
+            .status--highlight.theme--caution#petitionCheckStatus
+              p Complete your petition template before you continue
+
+          div(data-browser='cookies')
+            br
+            .status--highlight.theme--warning
+              p #[+link('https://beta.parliament.uk/meta/cookie-policy', 'Cookies')] are currently blocked. Allow all cookies to continue.
+              p If you don’t want to allow all cookies, you can #[+link('page02.html', 'petition by email, post or in person')].
+
         +button('Next', 'btn--primary', 'submit')
-      
+
       p #[+link('page01.html', 'Back')]
-        
+
       br
       .block.accent--mint
         h3 Help and support
         p For more information email #[+link('mailto:prbohoc@parliament.uk', 'prbohoc@parliament.uk')] or phone 020 7219 3250
-       

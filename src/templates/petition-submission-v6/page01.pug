@@ -6,8 +6,12 @@ block content
       h1 Object to the High Speed Rail (West Midlands – Crewe) Bill
 
       br
+      div(data-browser='javascript')
+        .status--highlight.theme--caution
+          p JavaScript is currently switched off in your browser. Switch it on for a better experience.
+
       .status--highlight
-        p The deadline is 5pm on 9 January 2018.
+        p The deadline is 5pm on 26 February 2018.
 
   section
     .container
@@ -51,5 +55,10 @@ block content
         h3.typography--light You will usually be invited to give evidence to the committee about your petition. Hearings are scheduled for spring/summer 2018.
 
       .section--major
-        +buttonLink('page03.html', 'Petition on our website', 'btn--primary')
+        div(data-browser='cookies')
+          .status--highlight.theme--warning
+            p #[+link('https://beta.parliament.uk/meta/cookie-policy', 'Cookies')] are currently blocked. Allow all cookies to petition online.
+            p If you don’t want to allow all cookies, you can petition by email, post or in person.
+
+        +buttonLink('page03.html', 'Petition on our website', 'btn--primary')(data-browser='button')
         +buttonLink('page02.html', 'Petition by email, post or in person', 'btn--primary--inverse')

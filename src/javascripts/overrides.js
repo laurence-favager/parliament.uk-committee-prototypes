@@ -1,278 +1,232 @@
-// Function to show/hide content when checkbox clicked
-(function () {
-  if (document.getElementById('toggleContent')) {
-    var checkbox = document.getElementById('toggleContent');
-    var container = document.getElementById('contentPane');
-    var fnshow = function () {
-      if (checkbox.checked) {
-        container.style.display = 'block';
-      } else {
-        container.style.display = 'none';
-      }
-    };
+// JavaScript enabled message function
+UK_Parliament.jsEnabled = function () {
+  if (document.querySelector('body.has-js')) {
+    if (document.querySelector('[data-browser="javascript"]')) {
 
-    checkbox.onclick = fnshow;
+      var jsMessage = document.querySelectorAll('[data-browser="javascript"]');
 
-    fnshow.apply(checkbox);
+      jsMessage.forEach(function (message, index) {
+        message.style.display = 'none';
+      });
+    }
   }
-}());
+};
 
-// Function to show/hide content for representative details
-if (document.getElementById('repDetails')) {
-  var selectRep = document.getElementById('repDetails');
-  var checkRep = document.getElementById('ext-rep');
-  var checkInd = document.getElementById('ind-only');
-  var fnRepShow = function () {
-    selectRep.style.display = 'block';
-  };
+UK_Parliament.jsEnabled();
 
-  var fnRepHide = function () {
-    selectRep.style.display = 'none';
-  };
+// Cookies enabled message and button suppression function
+UK_Parliament.cookiesEnabled = function () {
+  if (navigator.cookieEnabled === true) {
+    if (document.querySelector('[data-browser="cookies"]')) {
 
-  checkRep.onclick = fnRepShow;
-  checkInd.onclick = fnRepHide;
+      var ckeMessage = document.querySelectorAll('[data-browser="cookies"]');
 
-  fnRepShow.apply(checkRep);
-  fnRepHide.apply(checkInd);
-}
+      ckeMessage.forEach(function (message, index) {
+        message.style.display = 'none';
+      });
+    }
+  } else {
+    if (document.querySelector('[data-browser="button"]')) {
 
-// Function to show/hide content for country selection (Individual)
-if (document.getElementById('countrySelect')) {
-  var indCntSl = document.getElementById('countrySelect');
-  var indCntUk = document.getElementById('country-uk');
-  var indCntRw = document.getElementById('country-row');
-  var indPcd = document.getElementById('postCodeInd');
+      var ckeButtons = document.querySelectorAll('[data-browser="button"]');
 
-  indCntSl.style.display = 'none';
-  indPcd.style.display = 'block';
+      ckeButtons.forEach(function (button, index) {
+        button.style.display = 'none';
+      });
+    }
+  }
+};
 
-  indCntUk.addEventListener('click', function () {
-    indCntSl.style.display = 'none';
-    indPcd.style.display = 'block';
-  });
+UK_Parliament.cookiesEnabled();
 
-  indCntRw.addEventListener('click', function () {
-    indCntSl.style.display = 'block';
-    indPcd.style.display = 'none';
-  });
-}
+// Function to show/hide petition completion message when radio checked
+UK_Parliament.petitionCheck = function () {
+  if (document.getElementById('petitionCheckStatus')) {
+    var radioYes = document.getElementById('petition-check-yes');
+    var radioNo = document.getElementById('petition-check-no');
+    var message = document.getElementById('petitionCheckStatus');
 
-// Function to show/hide content for country selection (Representative)
-if (document.getElementById('countrySelectRep')) {
-  var repCntSl = document.getElementById('countrySelectRep');
-  var repCntUk = document.getElementById('country-uk-rep');
-  var repCntRw = document.getElementById('country-row-rep');
-  var repPcd = document.getElementById('postCodeRep');
-
-  repCntSl.style.display = 'none';
-  repPcd.style.display = 'block';
-
-  repCntUk.addEventListener('click', function () {
-    repCntSl.style.display = 'none';
-    repPcd.style.display = 'block';
-  });
-
-  repCntRw.addEventListener('click', function () {
-    repCntSl.style.display = 'block';
-    repPcd.style.display = 'none';
-  });
-}
-
-// Function to enable submission buttons when radio checked
-if (document.getElementById('petitionCheckStatus')) {
-  var radioYes = document.getElementById('petition-check-yes');
-  var radioNo = document.getElementById('petition-check-no');
-  var message = document.getElementById('petitionCheckStatus');
-
-  message.style.display = 'block';
-
-  radioYes.addEventListener('click', function () {
-    message.style.display = 'none';
-  });
-
-  radioNo.addEventListener('click', function () {
     message.style.display = 'block';
-  });
 
-}
+    radioYes.addEventListener('click', function () {
+      message.style.display = 'none';
+    });
 
-// Function to enable submission buttons when checkbox clicked
-(function () {
-  if (document.getElementById('enableSubmit')) {
-    var checkbox = document.getElementById('enableSubmit');
-    var button = document.getElementById('buttonSubmit');
-    var fnsubmit = function () {
-      if (checkbox.checked) {
-        button.disabled = false;
-        button.className = 'btn--primary';
-        button.style.cursor = 'pointer';
-      } else {
-        button.disabled = true;
-        button.className = 'btn--disabled';
-        button.style.cursor = 'not-allowed';
-      }
-    };
-
-    checkbox.onclick = fnsubmit;
-
-    fnsubmit.apply(checkbox);
+    radioNo.addEventListener('click', function () {
+      message.style.display = 'block';
+    });
   }
-}());
+};
 
-// Function to listen for checked radio buttons and change form action
-if (document.getElementById('submitterType')) {
+UK_Parliament.petitionCheck();
 
-  var radios = document.querySelectorAll('input[type=radio]');
-
-  for (var i = 0; i < radios.length; i++) {
-    radios[i].onclick = function () {
-      var route = getCheckedRadioIndex(radios);
-      document.getElementById('submitterType').action = route;
-    };
-  }
-}
-
-function getCheckedRadioIndex(radios) {
-  for (var i = 0; i < radios.length; i++) {
-    if (radios[i].checked) {
-      var r = radios[i].dataset.route;
-      return r;
-    }
-  }
-}
-
-// Functions to add additional inputs to form
-if (document.getElementById('org-new')) {
-
-  var j = 1;
-
-  // Functionality to add/remove organisation name inputs
-  document.getElementById('org-new').addEventListener('click', function (event) {
-    event.preventDefault();
-    if (j <= 5) {
-      var is = document.createElement('span');
-      var il = document.createElement('label');
-      var it = document.createElement('input');
-      it.setAttribute('type', 'text');
-      var ir = document.createElement('a');
-      ir.setAttribute('class', 'link--remove');
-      ir.innerHTML = 'remove';
-      increment();
-      il.setAttribute('for', 'txtOrgName_' + j);
-      il.innerHTML = 'Organisation name ' + j;
-      it.setAttribute('id', 'txtOrgName_' + j);
-      is.appendChild(il);
-      is.appendChild(it);
-      ir.setAttribute('onclick', "removeElement('multiOrgs','id_" + j + "')");
-      is.appendChild(ir);
-      is.setAttribute('id', 'id_' + j);
-      document.getElementById('org-new').insertAdjacentElement('beforebegin', is);
-    } else {
-      alert('You can\'t add more than six organisation names to this form.\n\n If there are more organisations on the petition make sure they\'re included in your petition template.');
-      return false;
-    }
-  });
-}
-
-// Function to do standard incrementation
-function increment() {
-  j += 1;
-}
-
-// Function to do standard incrementation
-function decrement() {
-  j -= 1;
-}
-
-// Function to remove fom elements dynamically
-function removeElement(parentDiv, childDiv) {
-  var child = document.getElementById(childDiv);
-  var parent = document.getElementById(parentDiv);
-  parent.removeChild(child);
-  decrement();
-}
-
-// Function to show file name and file upload status messages
-(function () {
-  if (document.getElementById('file-upload')) {
-    document.getElementById('file-upload').onchange = function () {
-      var fullFile = this.value;
-      var nameFile = fullFile.split(/(\\|\/)/g).pop();
-      document.getElementById('file-uploaded-txt').innerHTML = nameFile;
-      document.getElementById('file-uploaded').innerHTML = '&#x2713; Success';
-      document.getElementById('file-uploaded').className = 'file--uploaded-success';
-    };
-  }
-}());
-
-
-
+// Function to enable/disable form submit buttons using form elements
 UK_Parliament.enableSubmit = function () {
 
   if (document.querySelector('[data-submit="disabled"]')) {
 
-    var submitInputChecks = document.querySelectorAll('[data-submit="disabled"]');
+    var forms = document.querySelectorAll('form');
 
-    //console.log(submitInputChecks);
-
+    // Enabled button attribute and styling
     var styleEnable = function (userButton, userButtonClass) {
       userButton.disabled = false;
       userButton.className = userButtonClass;
-    }
+      userButton.setAttribute('aria-live', 'assertive');
+    };
 
+    // Disabled button attribute and styling
     var styleDisable = function (userButton) {
       userButton.disabled = true;
       userButton.className = 'btn--disabled';
-    }
+      if (userButton.hasAttribute('aria-live')) userButton.removeAttribute('aria-live');
+    };
 
-    submitInputChecks.forEach(function (i) {
+    forms.forEach(function (elements, index) {
 
-      var userForm = i.form;
-      var userButton = userForm.querySelector('button[type="submit"]');
-      var userButtonClass = userButton.className;
+      if (elements.querySelector('[data-submit="disabled"]')) {
 
-      //console.log(userForm);
-      //console.log(userButton);
-      //console.log(userButtonClass);
+        // Grab form submit button and button classes
+        var userButton = elements.querySelector('button[type="submit"]');
+        var userButtonClass = userButton.className;
 
-      styleDisable(userButton);
+        // Disable form submit button
+        styleDisable(userButton);
 
-      if (i.type == 'checkbox'){
-        i.addEventListener('click', function () {
-          if (this.checked) {
-            styleEnable(userButton, userButtonClass);
-          } else {
-            styleDisable(userButton);
+        // Grab all elements that has required data attributes
+        var inputChecks = elements.querySelectorAll('[data-submit="disabled"]');
+
+        inputChecks.forEach(function (element, index) {
+
+          // Handle checkbox element
+          if (element.type == 'checkbox') {
+            element.addEventListener('click', function () {
+              if (this.checked) {
+                styleEnable(userButton, userButtonClass);
+              } else {
+                styleDisable(userButton);
+              }
+            });
+          }
+
+          // Handle radio button group
+          if (element.type == 'radio') {
+
+            // Grab name of radio group and then collection of same name
+            var inputCheckName = element.name;
+            var inputCheckNamesArray = document.getElementsByName(inputCheckName);
+
+            // Loop radio group and grab clicked radio button
+            inputCheckNamesArray.forEach(function (radios, index) {
+              radios.addEventListener('click', function () {
+                if (this.dataset.submit == 'disabled' && this.checked) {
+                  styleDisable(userButton);
+                } else {
+                  styleEnable(userButton, userButtonClass);
+                }
+              });
+            });
           }
         });
       }
-
-      if (i.type == 'radio'){
-        var inputCheckName = i.name;
-
-        //console.log (inputCheckName);
-
-        var inputCheckNamesArray = document.getElementsByName(inputCheckName);
-
-        //console.log (inputCheckNamesArray);
-
-        inputCheckNamesArray.forEach(function (r) {
-          r.addEventListener('click', function () {
-            //console.log(r);
-            if (this.hasAttribute('data-submit') && this.checked) {
-              styleDisable(userButton);
-            } else {
-              styleEnable(userButton, userButtonClass);
-            }
-          });
-        });
-
-      }
-
     });
-
   }
 };
 
 UK_Parliament.enableSubmit();
+
+// Function to listen for checked radio buttons and change form action
+UK_Parliament.radioRouting = function () {
+  if (document.getElementById('submitterType')) {
+
+    var radios = document.querySelectorAll('input[type=radio]');
+
+    for (var i = 0; i < radios.length; i++) {
+      radios[i].onclick = function () {
+        var route = getCheckedRadioIndex(radios);
+        document.getElementById('submitterType').action = route;
+      };
+    }
+  }
+
+  function getCheckedRadioIndex(radios) {
+    for (var i = 0; i < radios.length; i++) {
+      if (radios[i].checked) {
+        var r = radios[i].dataset.route;
+        return r;
+      }
+    }
+  }
+};
+
+UK_Parliament.radioRouting();
+
+// Function to show/hide content for representative details
+UK_Parliament.representativeToggle = function () {
+  if (document.getElementById('repDetails')) {
+    var selectRep = document.getElementById('repDetails');
+    var checkRep = document.getElementById('ext-rep');
+    var checkInd = document.getElementById('ind-only');
+
+    selectRep.style.display = 'none';
+
+    checkRep.addEventListener('click', function () {
+      selectRep.style.display = 'block';
+    });
+
+    checkInd.addEventListener('click', function () {
+      selectRep.style.display = 'none';
+    });
+  }
+};
+
+UK_Parliament.representativeToggle();
+
+// Function to show/hide content for country selection (Individual)
+UK_Parliament.countryPetitioner = function () {
+  if (document.getElementById('countrySelect')) {
+    var indCntSl = document.getElementById('countrySelect');
+    var indCntUk = document.getElementById('country-uk');
+    var indCntRw = document.getElementById('country-row');
+    var indPcd = document.getElementById('postCodeInd');
+
+    indCntSl.style.display = 'none';
+    indPcd.style.display = 'block';
+
+    indCntUk.addEventListener('click', function () {
+      indCntSl.style.display = 'none';
+      indPcd.style.display = 'block';
+    });
+
+    indCntRw.addEventListener('click', function () {
+      indCntSl.style.display = 'block';
+      indPcd.style.display = 'none';
+    });
+  }
+};
+
+UK_Parliament.countryPetitioner();
+
+// Function to show/hide content for country selection (Representative)
+UK_Parliament.countryRepresentative = function () {
+  if (document.getElementById('countrySelectRep')) {
+    var repCntSl = document.getElementById('countrySelectRep');
+    var repCntUk = document.getElementById('country-uk-rep');
+    var repCntRw = document.getElementById('country-row-rep');
+    var repPcd = document.getElementById('postCodeRep');
+
+    repCntSl.style.display = 'none';
+    repPcd.style.display = 'block';
+
+    repCntUk.addEventListener('click', function () {
+      repCntSl.style.display = 'none';
+      repPcd.style.display = 'block';
+    });
+
+    repCntRw.addEventListener('click', function () {
+      repCntSl.style.display = 'block';
+      repPcd.style.display = 'none';
+    });
+  }
+};
+
+UK_Parliament.countryRepresentative();
