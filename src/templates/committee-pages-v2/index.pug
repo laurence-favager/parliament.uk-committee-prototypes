@@ -3,13 +3,13 @@ extends ../../layouts/layout-beta.pug
 block content
   #content.section--primary
     .container
-      h1 Committee Name
-      p.lead House | Committee type
+      h1 Joint Committee on Human Rights
+      p.lead House of Commons and House of Lords joint select committee
 
   section
     .container
       h2 About the committee
-      p description
+      p We consider human rights issues in the UK and check government bills are compatible with human rights.
 
   section
     .container
@@ -19,12 +19,12 @@ block content
           figure
             a(href="#" tabindex="-1")
               picture
-                img(src="/images/placeholder_members_image.png" alt="Name")
+                img(src="https://api.parliament.uk/Staging/photo/ZY0Mx1bp.jpeg?crop=CU_1:1&width=186&quality=80" alt="Ms Harriet Harman")
           .list--details
-            h2
-              a(href="#" tabindex="-1") Name
+            h3
+              a(href="#") Ms Harriet Harman
             p Committee chair
-            p Party | MP for constituency / Member of the House of Lords
+            p Labour | MP for Camberwell and Peckham
       p #[+link('committee-members.html', 'View all committee members')]
       
   section
@@ -35,8 +35,8 @@ block content
         dl.list--definition
           dt Email:
           dd
-            +link('mailto:committee@parliament.uk', 'committee@parliament.uk')
+            +link('mailto:jchr@parliament.uk', 'jchr@parliament.uk')
           dt Phone:
-          dd #[+link('tel:01234567890', '01234567890')]
+          dd #[+link('tel:02072192467', '020 7219 2467')]
           dt Address:
-          dd House of Commons, London, SW1A 0AA
+          dd Joint Committee on Human Rights, Houses of Parliament, London, SW1A 0AA
