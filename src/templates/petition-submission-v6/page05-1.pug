@@ -299,7 +299,7 @@ block content
               +input('text', 'Address line 1', 'address', 'txtAddress1')(required)
               +input('text', 'Address line 2 (optional)', 'address', 'txtAddress2')
               #postCodeInd(data-dropdown-content='hide')
-                +input('text', 'Post code', 'post code', 'txtPostCode')(class='input__sm' maxlength='10')
+                +input('text', 'Post code', 'post code', 'txtPostCode')(class='input__sm', maxlength='8', pattern='[0-9a-zA-Z ]{5,}', data-postcode='petitioner')
 
 
           +input('text', 'Email', 'email', 'txtEmail')(required)
