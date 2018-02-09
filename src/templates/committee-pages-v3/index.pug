@@ -1,0 +1,42 @@
+extends ../../layouts/layout-beta.pug
+
+block content
+  #content.section--primary
+    .container
+      h1 Joint Committee on Human Rights
+      p.lead House of Commons and House of Lords joint select committee
+
+  section
+    .container
+      h2 About the committee
+      p We consider human rights issues in the UK and check government bills are compatible with human rights.
+
+  section
+    .container
+      h2 Committee members
+      ol.list--block
+        li
+          figure
+            a(href="#" tabindex="-1")
+              picture
+                img(src="https://api.parliament.uk/Staging/photo/ZY0Mx1bp.jpeg?crop=CU_1:1&width=186&quality=80" alt="Ms Harriet Harman")
+          .list--details
+            h3
+              a(href="#") Ms Harriet Harman
+            p Committee chair
+            p Labour MP for Camberwell and Peckham
+      p #[+link('committee-members.html', 'View all committee members')]
+      
+  section
+    .container
+      h2 Contact us
+      
+      .block
+        dl.list--definition
+          dt Email:
+          dd
+            +link('mailto:jchr@parliament.uk', 'jchr@parliament.uk')
+          dt Phone:
+          dd #[+link('tel:02072192467', '020 7219 2467')]
+          dt Address:
+          dd Joint Committee on Human Rights, Houses of Parliament, London, SW1A 0AA
