@@ -5,14 +5,14 @@ block content
     .container
       h1 Writing your petition - online
         span.sr-only.
-        span Object to the High Speed Rail (West Midlands – Crewe) Bill
+        span Object to additional provision one of the High Speed Rail (West Midlands to Crewe) Bill
 
       h2.typography--light Step 1 of 5
 
   section
     .container
 
-      div(data-browser='javascript')
+      noscript
         br
         .status--highlight.theme--caution
           p JavaScript is currently switched off in your browser. Switch it on for a better experience.
@@ -39,7 +39,7 @@ block content
 
   section#complete-petition.section--major
     .container
-      h2.typography--light Have you completed your petition template?
+      h2 Have you completed your petition template?
 
       +form(action='page04.html')
         .block--border__bottom(data-dropdown='holder')
@@ -50,13 +50,14 @@ block content
               +input('radio', 'No', 'petition-check', 'petition-check-no')(checked, data-submit='disabled')
 
           div(data-dropdown='content')
+            br
             .status--highlight.theme--caution#petitionCheckStatus
               p Complete your petition template before you continue
 
-          div(data-browser='cookies')
+          noscript
             br
             .status--highlight.theme--warning
-              p #[+link('https://beta.parliament.uk/meta/cookie-policy', 'Cookies')] are currently blocked. Allow all cookies to continue.
+              p JavaScript is currently switched off in your browser. This might mean that #[+link('https://beta.parliament.uk/meta/cookie-policy', 'Cookies')] are also currently blocked. You will need to allow all cookies to petition online.
               p If you don’t want to allow all cookies, you can #[+link('page02.html', 'petition by email, post or in person')].
 
         +button('Next', 'btn--primary', 'submit')

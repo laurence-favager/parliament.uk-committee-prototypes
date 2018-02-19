@@ -3,44 +3,50 @@ extends ../../layouts/layout-beta.pug
 block content
   #content.section--primary
     .container
-      h1 Hybrid Bills
+      h1 Hybrid bills
 
-      p Hybrid Bills mix the characteristics of #[+link('http://www.parliament.uk/about/how/laws/bills/public/', 'Public Bills')(target='_blank')]#[span.sr-only (This link will open in a new window)] and #[+link('http://www.parliament.uk/about/how/laws/bills/private/', 'Private Bills')(target='_blank')]#[span.sr-only (This link will open in a new window)]. They often propose works of national importance in a specific area of the UK.
+      p Hybrid bills mix the characteristics of 
+        +link('http://www.parliament.uk/about/how/laws/bills/public/', 'Public Bills')(target='_blank')
+          span.sr-only (This link will open in a new window) 
+        |  and  
+        +link('http://www.parliament.uk/about/how/laws/bills/private/', 'Private Bills')(target='_blank')
+          span.sr-only (This link will open in a new window)
+        | . They often propose works of national importance in a specific area of the UK.
       
       p For example, the Channel Tunnel Bills passed in the 1970s and 1980s and the Crossrail Bill passed in 2008.
 
-      p Changes to the law proposed by a Hybrid Bill affect the general public and impact specific individuals, groups or organisations.
+      p Changes to the law proposed by a hybrid bill affect the general public and impact specific individuals, groups or organisations.
 
-      p To find out more, read our #[+link('http://researchbriefings.parliament.uk/ResearchBriefing/Summary/SN06736', 'Hybrid Bill Background Paper')(target='_blank')]#[span.sr-only (This link will open in a new window)].
+      p To find out more, read our 
+        +link('http://researchbriefings.parliament.uk/ResearchBriefing/Summary/SN06736', 'Hybrid Bill Background Paper')(target='_blank')
+          span.sr-only (This link will open in a new window)
+        | .
 
   section
     .container
-      h2 Objecting to a Hybrid Bill
+      h2 Objecting to a hybrid bill
 
-      p Any individual, group of individuals, organisation or group of organisations affected by a Hybrid Bill can object to it.  
+      p Any individual, group of individuals, organisation or group of organisations affected by a hybrid bill can object to it.  
 
       p This can lead to changes being made to the Bill, called additional provisions.
-
-      p Objecting to additional provisions is separate to objecting to the original Bill.
+      
+      p Objecting to additional provisions is separate to objecting to the original bill.
 
   section
    .container
-      h2 Hybrid Bills currently open in Parliament
-
+      h2 Current hybrid bills
+      
+      h3 High Speed Rail (West Midlands – Crewe) Bill
+      
       .section--minor
-        ol.list--pipe__deep
+        ol.list--pipe
           li
-            figure.svg--icon
-              include ../../icons/file.svg
             .list--details
-              h3 High Speed Rail (West Midlands – Crewe) Bill
-              +buttonLink('page01.html', 'Object to the Bill', 'btn--primary')
-              p Status: Closed.
-
+              h4 High Speed Rail (West Midlands – Crewe) Bill
+              p Status: Closed
+              +buttonLink('../petition-submission-v6/page01.html', 'Object to the Bill', 'btn--primary')
           li
-            figure.svg--icon
-              include ../../icons/file.svg
             .list--details
-              h3 Additional provision 1 of the High Speed Rail (West Midlands – Crewe) Bill
-              +buttonLink('page01.html', 'Object to additional provision 1', 'btn--primary')
+              h4 High Speed Rail (West Midlands – Crewe) additional provision one
               p Status: Open
+              +buttonLink('page01.html', 'Object to additional provision one', 'btn--primary')
