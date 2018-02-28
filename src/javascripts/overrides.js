@@ -8,46 +8,24 @@ if (window.NodeList && !NodeList.prototype.forEach) {
   };
 }
 
-// JavaScript enabled message function
-UK_Parliament.jsEnabled = function () {
+// Add aria attritube to <noscript> tags
+UK_Parliament.nsAria = function () {
   if (document.querySelector('body.has-js')) {
-    if (document.querySelector('[data-browser="javascript"]')) {
+    if (document.getElementsByTagName('noscript')) {
 
-      var jsMessage = document.querySelectorAll('[data-browser="javascript"]');
+      // Grab all <noscript> tags
+      var nsTags = (document.getElementsByTagName('noscript'));
 
-      jsMessage.forEach(function (message, index) {
-        message.style.display = 'none';
-      });
+      // Loop through collected tags and add aria attribute
+      for (var i = 0; i < nsTags.length; i++) {
+        nsTags[i].setAttribute('aria-hidden', 'true');
+      }
+
     }
   }
 };
 
-UK_Parliament.jsEnabled();
-
-// Cookies enabled message and button suppression function
-UK_Parliament.cookiesEnabled = function () {
-  if (navigator.cookieEnabled === true) {
-    if (document.querySelector('[data-browser="cookies"]')) {
-
-      var ckeMessage = document.querySelectorAll('[data-browser="cookies"]');
-
-      ckeMessage.forEach(function (message, index) {
-        message.style.display = 'none';
-      });
-    }
-  } else {
-    if (document.querySelector('[data-browser="button"]')) {
-
-      var ckeButtons = document.querySelectorAll('[data-browser="button"]');
-
-      ckeButtons.forEach(function (button, index) {
-        button.style.display = 'none';
-      });
-    }
-  }
-};
-
-UK_Parliament.cookiesEnabled();
+UK_Parliament.nsAria();
 
 // Function to show/hide petition completion message when radio checked
 UK_Parliament.petitionCheck = function () {
@@ -200,19 +178,15 @@ UK_Parliament.countryPetitioner = function () {
     var indCntSl = document.getElementById('countrySelect');
     var indCntUk = document.getElementById('country-uk');
     var indCntRw = document.getElementById('country-row');
-    //var indPcd = document.getElementById('postCodeInd');
 
     indCntSl.style.display = 'none';
-    //indPcd.style.display = 'block';
 
     indCntUk.addEventListener('click', function () {
       indCntSl.style.display = 'none';
-      //indPcd.style.display = 'block';
     });
 
     indCntRw.addEventListener('click', function () {
       indCntSl.style.display = 'block';
-      //indPcd.style.display = 'none';
     });
   }
 };
@@ -225,19 +199,15 @@ UK_Parliament.countryRepresentative = function () {
     var repCntSl = document.getElementById('countrySelectRep');
     var repCntUk = document.getElementById('country-uk-rep');
     var repCntRw = document.getElementById('country-row-rep');
-    //var repPcd = document.getElementById('postCodeRep');
 
     repCntSl.style.display = 'none';
-    //repPcd.style.display = 'block';
 
     repCntUk.addEventListener('click', function () {
       repCntSl.style.display = 'none';
-      //repPcd.style.display = 'block';
     });
 
     repCntRw.addEventListener('click', function () {
       repCntSl.style.display = 'block';
-      //repPcd.style.display = 'none';
     });
   }
 };
@@ -271,7 +241,7 @@ UK_Parliament.dropdownSwitch = function () {
     };
 
     // Set default content visibility state
-    dropdownContentList.forEach(function (elements, index) {
+    dropdownContentList.forEach(function (elements) {
 
       // Grab visibility state (show/hide) of each content block
       var dropdownContentInitalState = elements.getAttribute('data-dropdown-content');
@@ -284,7 +254,7 @@ UK_Parliament.dropdownSwitch = function () {
     });
 
     // Loop through content switches
-    dropdownSwitcherList.forEach(function (elements, index) {
+    dropdownSwitcherList.forEach(function (elements) {
 
       // Grab the switch/content holder using closestElement function
       var dropdownHolder = closestParentElement(elements, function (el) {
@@ -325,27 +295,25 @@ UK_Parliament.dropdownSwitch = function () {
         // Grab radio group elements with that name
         var inputSwitchNamesArray = document.getElementsByName(inputSwitchName);
 
-        // function to set submit button type from radio selection
-        var styleSetRadio = function () {
-          if (this.getAttribute('data-dropdown') === 'switch' && this.checked) {
-            if (dropdownContentState === 'show') {
-              contentHide(dropdownContent);
-            } else if (dropdownContentState === 'hide') {
-              contentShow(dropdownContent);
-            }
-          } else {
-            if (dropdownContentState === 'show') {
-              contentShow(dropdownContent);
-            } else if (dropdownContentState === 'hide') {
-              contentHide(dropdownContent);
-            }
-          }
-        };
-
         // Loop radio group and grab clicked radio button
-        for (var x = 0; x < inputSwitchNamesArray.length; x++) {
-          inputSwitchNamesArray[x].addEventListener('click', styleSetRadio, false);
-        }
+        inputSwitchNamesArray.forEach(function (radios, index) {
+          radios.addEventListener('click', function () {
+
+            if (this.getAttribute('data-dropdown') === 'switch' && this.checked) {
+              if (dropdownContentState === 'show') {
+                contentHide(dropdownContent);
+              } else if (dropdownContentState === 'hide') {
+                contentShow(dropdownContent);
+              }
+            } else {
+              if (dropdownContentState === 'show') {
+                contentShow(dropdownContent);
+              } else if (dropdownContentState === 'hide') {
+                contentHide(dropdownContent);
+              }
+            }
+          });
+        });
       }
     });
   }

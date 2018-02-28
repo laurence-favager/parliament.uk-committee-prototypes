@@ -13,7 +13,7 @@ block content
           p JavaScript is currently switched off in your browser. Switch it on for a better experience.
 
       .status--highlight
-        p The petitioning period will open on 6 March 2018.
+        p The petitioning period will open on 26 March 2018.
 
   section
     .container
@@ -63,10 +63,11 @@ block content
         h3.milli You will usually be invited to give evidence to the committee about your petition. Hearings are scheduled for spring/summer 2018.
 
       .section--major
-        //- noscript
-        .status--highlight.theme--warning
-          p JavaScript is currently switched off in your browser. This might mean that #[+link('https://beta.parliament.uk/meta/cookie-policy', 'Cookies')] are also blocked. You will need to allow all cookies to petition online.
-          p If you don’t want to allow all cookies, you can petition by email, post or in person.
+        noscript
+          .status--highlight.theme--warning
+            p JavaScript is switched off in your browser. This might mean #[+link('https://beta.parliament.uk/meta/cookie-policy', 'Cookies')] are blocked.
+            p Allow all cookies to petition online.
+            p If you don’t want to allow all cookies, you can petition by email, post or in person.
 
         +buttonLink('page03.html', 'Petition on our website', 'btn--primary')
         +buttonLink('page02.html', 'Petition by email, post or in person', 'btn--primary--inverse')
