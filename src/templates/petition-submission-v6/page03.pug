@@ -42,15 +42,15 @@ block content
       h2.typography--light Have you completed your petition template?
 
       +form(action='page04.html')
-        .block--border__bottom
+        .block--border__bottom(data-dropdown='holder')
           +fieldset
             .input-group__inline
-              +input('radio', 'Yes', 'petition-check', 'petition-check-yes')
+              +input('radio', 'Yes', 'petition-check', 'petition-check-yes')(data-dropdown='switch')
             .input-group__inline
               +input('radio', 'No', 'petition-check', 'petition-check-no')(checked, data-submit='disabled')
 
-          div
-            .status--highlight.theme--caution#petitionCheckStatus
+          div(data-dropdown-content='show')
+            .status--highlight.theme--caution
               p Complete your petition template before you continue
 
           div(data-browser='cookies')
