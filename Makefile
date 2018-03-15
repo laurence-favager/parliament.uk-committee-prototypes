@@ -71,6 +71,7 @@ documents:
 # Outputs pug files to html within public folder
 templates:
 	@$(PUG) $(SRC_FOLDER)/templates -P --out $(PUBLIC_FOLDER)/templates
+	@cp $(SRC_FOLDER)/templates/petition-emails/*.html $(PUBLIC_FOLDER)/templates/petition-emails/
 
 # Runs tests on javascript files
 lint:
