@@ -1,13 +1,11 @@
 // ***** User Research Page Specifics *****
 
-.list--pipe li {
-  .image--postit, .image--postit img {
-    display: block;
-    background-color: transparent;
-    width: 150px;
-    @include media($desktop) {
-      width: 350px;
-    }
+.image--postit, .image--postit img {
+  display: block;
+  background-color: transparent;
+  width: 150px;
+  @include media($large) {
+    width: 350px;
   }
 }
 
@@ -34,6 +32,10 @@
   input {
     width: 95%;
   }
+}
+
+.btn--align-v4 {
+  float: right;
 }
 
 .input--holder {
@@ -192,5 +194,5 @@ span.label {
 }
 
 .v6-check {
-  padding-bottom: 17px;
+  padding-top: 24px;
 }

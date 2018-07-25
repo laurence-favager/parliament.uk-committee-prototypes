@@ -16,15 +16,16 @@ block content
       h2 Committee members
       ol.list--block
         li
-          figure
-            a(href="#" tabindex="-1")
-              picture
-                img(src="https://api.parliament.uk/Staging/photo/ZY0Mx1bp.jpeg?crop=CU_1:1&width=186&quality=80" alt="Ms Harriet Harman")
-          .list--details
-            h3
-              a(href="#") Ms Harriet Harman
-            p Committee chair
-            p Labour | MP for Camberwell and Peckham
+          .card
+            figure.avatar--round
+              a(href="#" tabindex="-1")
+                picture
+                  img(src="https://api.parliament.uk/Staging/photo/ZY0Mx1bp.jpeg?crop=CU_1:1&width=186&quality=80" alt="Ms Harriet Harman")
+            .card__details
+              h3
+                a(href="#") Ms Harriet Harman
+              p Committee chair
+              p Labour | MP for Camberwell and Peckham
       p #[+link('committee-members.html', 'View all committee members')]
       
   section
