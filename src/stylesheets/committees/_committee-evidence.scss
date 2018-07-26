@@ -1,0 +1,263 @@
+/* Global */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+h2 {
+  padding-top: 10px;
+}
+
+li {
+  margin-bottom: 8px;
+  padding-right: 40px;
+  font-size: 18px;
+}
+
+/* Forms */
+
+form {
+  padding-top: 10px;
+}
+
+.user-type {
+  margin-top: -20px;
+}
+
+input[type="text"] {
+  display: block;
+  width: 300px;
+  padding: 10px;
+  font-size: 18px;
+}
+
+input[type="submit"] {
+  -webkit-appearance: none;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+}
+
+legend {
+  font-size: 25px;
+  padding: 10px 0 25px 0;
+}
+
+fieldset {
+  margin: 0 0 15px 0;
+  padding: 0;
+  border: 0;
+}
+
+textarea {
+  width: 99%;
+  height: 200px;
+  padding: 10px 0 10px 1%;
+  font-size: 18px;
+}
+
+input[type="radio"] {
+  transform: scale(2);
+  margin: 25px 15px 15px 10px;
+  vertical-align: baseline;
+}
+
+input[type="checkbox"] {
+  width: 30px !important;
+  height: 30px !important;
+  vertical-align: middle;
+  margin: 5px 0;
+}
+
+.check-holder {
+  width: 450px;
+  background-color: #EFEFEF;
+  border-radius: 5px;
+  padding: 3px 0 0 10px;
+}
+
+.check-text {
+  font-size: 18px;
+}
+
+.radio-holder {
+  width: 600px;
+  background-color: #EFEFEF;
+  border-radius: 5px;
+  padding: 0 0 8px 10px;
+}
+
+.small {
+  width: 200px;
+}
+
+.large {
+  width: 650px;
+}
+
+.radio-holder > label {
+  font-size: 18px;
+}
+
+/* Header */
+
+header {
+  width: 100%;
+  padding: 15px 0 10px 0;
+  border-bottom: solid 5px #CCCCCC;
+}
+
+.logo {
+  height: 54px;
+  padding-left: 20px;
+}
+
+/* Main Content */
+
+main {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.status {
+  margin-top: 10px;
+  background-color: #DEDEDE;
+}
+
+.sec_title {
+  display: inline-block;
+  width: 90%;
+  padding: 5px 0;
+  text-indent: 10px;
+}
+
+.sec_number {
+  float: right;
+  width: 9%;
+  padding: 5px 0;
+  background-color: #222;
+  color: white;
+  text-align: center;
+}
+
+.box {
+  width: 99.2%;
+  border: dashed 3px #CCCCCC;
+}
+
+.box > p {
+  text-align: center;
+}
+
+.box-input {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border: solid 3px #CCCCCC;
+}
+
+.box-input > h2, .box-input > h3 {
+  padding: 0 0 0 10px;
+}
+
+.highlight {
+  background-color: #EFEFEF;
+  border-left: solid 10px #CCCCCC;
+  text-indent: 10px;
+  padding: 5px 0;
+}
+
+.subtitle {
+  font-weight: bold;
+}
+
+.edit-details {
+  padding: 10px 0;
+}
+
+/* Tables */
+
+table {
+  width: 100%;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+tr {
+  width: 100%;
+}
+
+th {
+  padding: 5px;
+  background-color: #CCC;
+  text-align: left;
+}
+
+td {
+  padding: 5px;
+  border: solid 1px #CCC;
+}
+
+.add_evidence {
+  padding: 20px 0 20px 5px;
+}
+
+/* Dividers */
+
+.divider {
+  clear: both;
+  height: 20px;
+  margin: 0 auto;
+}
+
+.divider-large {
+  clear: both;
+  height: 70px;
+  margin: 0 auto;
+}
+
+/* Links & Buttons */
+
+.title-link {
+  cursor: pointer;
+  color: blue;
+  text-decoration: underline;
+}
+
+.title-link:hover {
+  text-decoration: none;
+}
+
+.slider-link {
+  margin-top: 5px;
+  cursor: pointer;
+  color: blue;
+  text-decoration: underline;
+}
+
+.slider-link:hover{
+  text-decoration: none;
+}
+
+.button, .button > a {
+  width: 250px;
+  margin: 15px 0 5px 0;
+  padding: 15px 0;
+  background-color: #CCCCCC;
+  color: #222222;
+  cursor: pointer;
+  text-decoration: underline;
+  text-align: center;
+  border: none;
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+.button:hover, .button > a:hover {
+  text-decoration: none;
+}

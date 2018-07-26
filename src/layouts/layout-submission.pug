@@ -1,0 +1,11 @@
+doctype html
+html(lang="en")
+  include ../../src/elements/head-submission.pug
+  body
+    script.
+      document.body.className = ((document.body.className) ? document.body.className + ' has-js' : 'has-js');
+    include ../../src/components/header-timeline.pug
+    main
+      block content
+    script(src="/javascripts/overrides.js")
+    block script

@@ -1,0 +1,42 @@
+extends ../../layouts/layout-submission.pug
+
+block content
+  <div class="status">
+    <div class="sec_title">Section 4: Your submission</div>
+    <div class="sec_number">4 of 5</div>
+  </div>
+
+  <h1>Public Parks inquiry - send a submission</h1>
+
+  <h2>Upload your submission</h2>
+  <form action="evidence_10.html">
+
+    <div class="box">
+      <p class="title-link" onclick="showDocument();">browse your files</p>
+    </div>
+
+    <br />
+
+    <table id="updoc" style="display:none;">
+     <tr>
+       <th>Description</th>
+       <th>Date</th>
+       <th>Type</th>
+       <th>Remove</th>
+     </tr>
+     <tr>
+       <td>My evidence</td>
+       <td>04 Jul 2017</td>
+       <td>Word Document</td>
+       <td><img src="../../images/remove.png" width="15px" style="vertical-align:middle;"/>&nbsp;<a href="#">remove submission</a></td>
+     </tr>
+    </table>
+
+    <br />
+    <input type="submit" value="Continue" class="button"/>
+  </form>
+
+  <br />
+  <p>&nbsp;&lt;&nbsp;<a href="evidence_7.html">back</a><p>
+
+  <div class="divider-large"></div>

@@ -1,0 +1,26 @@
+extends ../../layouts/layout-submission.pug
+
+block content
+  <div class="status">
+    <div class="sec_title">Section 2: Who are you?</div>
+    <div class="sec_number">2 of 5</div>
+  </div>
+
+  <h1>Public Parks inquiry - send a submission</h1>
+
+  <form id="user_type" class="user-type">
+    <fieldset>
+      <legend>You are submitting as:</legend>
+      <div class="radio-holder"><input type="radio" name="who are you" id="individual" onclick="userTypeInd();">
+      <label for="individual">an individual</label></div>
+      <br />
+      <div class="radio-holder"><input type="radio" name="who are you" id="organisation" onclick="userTypeOrg();">
+      <label for="organisation">part of an organisation</label></div>
+    </fieldset>
+    <input type="submit" value="Continue" class="button"/>
+  </form>
+
+  <br />
+  <p>&nbsp;&lt;&nbsp;<a href="evidence_1.html">back</a><p>
+
+  <div class="divider-large"></div>
