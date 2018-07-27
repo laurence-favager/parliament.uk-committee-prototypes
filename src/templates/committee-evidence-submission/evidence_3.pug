@@ -1,27 +1,27 @@
 extends ../../layouts/layout-submission.pug
 
 block content
-  <div class="status">
-    <div class="sec_title">Section 3: Contact details</div>
-    <div class="sec_number">3 of 5</div>
-  </div>
+  .status
+    .sec_title Section 3: Contact details
+    .sec_number 3 of 5
 
-  <h1>Public Parks inquiry - send a submission</h1>
+  h1 Public Parks inquiry - send a submission
 
-  <form action="evidence_5.html">
-    <label for="inp_title">Title</label>
-    <input type="text" id="inp_title" />
-    <br />
-    <label for="inp_fname">First name</label>
-    <input type="text" id="inp_fname" />
-    <br />
-    <label for="inp_lname">Last name</label>
-    <input type="text" id="inp_lname" />
-    <br />
-    <input type="submit" value="Continue" class="button"/>
-  </form>
+  form(action='evidence_5.html')
+    label(for='inp_title') Title
+    input#inp_title(type='text')
+    br
+    label(for='inp_fname') First name
+    input#inp_fname(type='text')
+    br
+    label(for='inp_lname') Last name
+    input#inp_lname(type='text')
+    br
+    input.button(type='submit' value='Continue')
 
-  <br />
-  <p>&nbsp;&lt;&nbsp;<a href="evidence_2.html">back</a><p>
+  br
 
-  <div class="divider-large"></div>
+  p
+    a(href='evidence_2.html') back
+
+  .divider-large

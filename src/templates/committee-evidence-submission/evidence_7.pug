@@ -1,43 +1,42 @@
 extends ../../layouts/layout-submission.pug
 
 block content
-  <div class="status">
-    <div class="sec_title">Section 4: Your submission</div>
-    <div class="sec_number">4 of 5</div>
-  </div>
+  .status
+    .sec_title Section 4: Your submission
+    .sec_number 4 of 5
 
-  <h1>Public Parks inquiry - send a submission</h1>
+  h1 Public Parks inquiry - send a submission
 
-  <h2>Submission guidelines</h2>
+  h2 Submission guidelines
 
-  <p>Each submission should:</p>
+  p Each submission should:
 
-  <div class="box-input">
-    <ul>
-      <li>State clearly who the submission is from, i.e. whether from yourself in a personal capacity or sent on behalf of an organisation, for example the submission could be headed 'Written evidence submitted by xxxxxx'</li>
-      <li>Be concise - we recommend no more than 3,000 words in length, unless otherwise stated in the inquiry terms of reference</li>
-      <li>Begin with an executive summary in bullet point form of the main points made in the submission</li>
-      <li>Include a brief introduction about yourself/your organisation and your reason for submitting evidence</li>
-      <li>Have numbered paragraphs</li>
-      <li>Include any factual information you have to offer from which the committee might be able to draw conclusions, or which could be put to other witnesses for their reactions</li>
-      <li>Include any recommendations for action by the Government or others which you would like the committee to consider</li>
-    </ul>
-  </div>
+  .box-input
+    ul
+      li State clearly who the submission is from, i.e. whether from yourself in a personal capacity or sent on behalf of an organisation, for example the submission could be headed &apos;Written evidence submitted by xxxxxx&apos;
+      li Be concise - we recommend no more than 3,000 words in length, unless otherwise stated in the inquiry terms of reference
+      li Begin with an executive summary in bullet point form of the main points made in the submission
+      li Include a brief introduction about yourself/your organisation and your reason for submitting evidence
+      li Have numbered paragraphs
+      li Include any factual information you have to offer from which the committee might be able to draw conclusions, or which could be put to other witnesses for their reactions
+      li Include any recommendations for action by the Government or others which you would like the committee to consider
 
-  <form id="evidence_type">
-    <fieldset>
-      <legend>Your submission</legend>
-      <div class="radio-holder"><input type="radio" name="add evidence" id="write" onclick="wrtEvdType();">
-      <label for="write">Write your submission</label></div>
-      <br />
-      <div class="radio-holder"><input type="radio" name="add evidence" id="upload" onclick="updEvdType();">
-      <label for="upload">Upload your submission</label></div>
-    </fieldset>
-    <br />
-    <input type="submit" value="Continue" class="button"/>
-  </form>
+  form#evidence_type
+    fieldset
+      legend Your submission
+      .radio-holder
+        input#write(type='radio' name='add evidence' onclick='wrtEvdType();')
+        label(for='write') Write your submission
+      br
+      .radio-holder
+        input#upload(type='radio' name='add evidence' onclick='updEvdType();')
+        label(for='upload') Upload your submission
+    br
+    input.button(type='submit' value='Continue')
 
-  <br />
-  <p>&nbsp;&lt;&nbsp;<a href="evidence_6.html">back</a><p>
+  br
 
-  <div class="divider-large"></div>
+  p
+    a(href='evidence_6.html') back
+
+  .divider-large

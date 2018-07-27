@@ -1,23 +1,30 @@
 extends ../../layouts/layout-submission.pug
 
 block content
-  <h1>Thank you for your submission</h1>
-  <p>The committee looks at all submissions made to the inquiry. You will be emailed if your submission is published.</p>
+  h1 Thank you for your submission
 
-  <h2>Updates</h2>
+  p The committee looks at all submissions made to the inquiry. You will be emailed if your submission is published.
 
-  <p>If you want email updates on this inquiry or the work of the committee choose from the options below.</p>
+  h2 Updates
 
-  <h3>Update me on:</h3>
+  p If you want email updates on this inquiry or the work of the committee choose from the options below.
 
-  <form action="index.html">
-    <div class="check-holder large"><input type="checkbox" name="chk_aims" value="evidence">&nbsp;&nbsp;&nbsp;<span class="check-text">other submissions made to the Public Parks inquiry</span></div>
-    <br />
-    <div class="check-holder large"><input type="checkbox" name="chk_aims" value="inquiry">&nbsp;&nbsp;&nbsp;<span class="check-text">progress of the Public Parks inquiry</span></div>
-    <br />
-    <div class="check-holder large"><input type="checkbox" name="chk_aims" value="committee">&nbsp;&nbsp;&nbsp;<span class="check-text">the Community and Local Government Committee’s work</span></div>
-    <br /><br />
-    <input type="submit" value="Finish" class="button"/>
-  </form>
+  h3 Update me on:
 
-  <div class="divider-large"></div>
+  form(action='index.html')
+    .check-holder.large
+      input(type='checkbox' name='chk_aims' value='evidence')
+      span.check-text other submissions made to the Public Parks inquiry
+    br
+    .check-holder.large
+      input(type='checkbox' name='chk_aims' value='inquiry')
+      span.check-text progress of the Public Parks inquiry
+    br
+    .check-holder.large
+      input(type='checkbox' name='chk_aims' value='committee')
+      span.check-text the Community and Local Government Committee&rsquo;s work
+    br
+    br
+    input.button(type='submit' value='Finish')
+
+  .divider-large

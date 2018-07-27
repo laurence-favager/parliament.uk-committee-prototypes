@@ -1,27 +1,24 @@
 extends ../../layouts/layout-submission.pug
 
 block content
-  <div class="status">
-    <div class="sec_title">Section 4: Your submission</div>
-    <div class="sec_number">4 of 5</div>
-  </div>
+  .status
+    .sec_title Section 4: Your submission
+    .sec_number 4 of 5
 
-  <h1>Public Parks inquiry - send a submission</h1>
+  h1 Public Parks inquiry - send a submission
 
-  <h2>Write your submission</h2>
+  h2 Write your submission
 
-  <form action="evidence_10.html">
+  form(action='evidence_10.html')
+    .box-input
+      textarea
+      img(src='../../images/wsiwig.png' width='100%' align='absbottom')
+    br
+    input.button(type='submit' value='Continue')
 
-    <div class="box-input">
-      <textarea></textarea>
-      <img src="../../images/wsiwig.png" width="100%" align="absbottom" />
-    </div>
+  br
 
-    <br />
-    <input type="submit" value="Continue" class="button"/>
-  </form>
+  p
+    a(href='evidence_7.html') back
 
-  <br />
-  <p>&nbsp;&lt;&nbsp;<a href="evidence_7.html">back</a><p>
-
-  <div class="divider-large"></div>
+  .divider-large

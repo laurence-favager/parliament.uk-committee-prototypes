@@ -1,36 +1,38 @@
 extends ../../layouts/layout-submission.pug
 
 block content
-  <div class="status">
-    <div class="sec_title">Section 4: Your submission</div>
-    <div class="sec_number">4 of 5</div>
-  </div>
+  .status
+    .sec_title Section 4: Your submission
+    .sec_number 4 of 5
 
-  <h1>Public Parks inquiry - send a submission</h1>
+  h1 Public Parks inquiry - send a submission
 
-  <h2>Your submission</h2>
+  h2 Your submission
 
-  <table>
-   <tr>
-     <th>Title</th>
-     <th>Date</th>
-     <th>Type</th>
-     <th>Remove</th>
-   </tr>
-   <tr>
-     <td>My evidence</td>
-     <td>04 Jul 2017</td>
-     <td id="eType"></td>
-     <td><img src="../../images/remove.png" width="15px" style="vertical-align:middle;"/>&nbsp;<a href="#">remove submission</a></td>
-   </tr>
-   <tr>
-     <td colspan="4" class="add_evidence"><img src="../../images/plus.png" width="15px" style="vertical-align:middle;"/>&nbsp;<a href="evidence_7.html">add another submission</a></td>
-   </tr>
-  </table>
+  table
+    tr
+      th Title
+      th Date
+      th Type
+      th Remove
+    tr
+      td My evidence
+      td 04 Jul 2017
+      td#eType
+      td
+        img(src='../../images/remove.png' width='15px' style='vertical-align:middle;')
+        a(href='#') remove submission
+    tr
+      td.add_evidence(colspan='4')
+        img(src='../../images/plus.png' width='15px' style='vertical-align:middle;')
+        a(href='evidence_7.html') add another submission
 
-  <p class="button"><a href="evidence_11.html">Continue</a></p>
+  p.button
+    a(href='evidence_11.html') Continue
 
-  <br />
-  <p>&nbsp;&lt;&nbsp;<a href="evidence_7.html">back</a><p>
+  br
 
-  <div class="divider-large"></div>
+  p
+    a(href='evidence_7.html') back
+
+  .divider-large

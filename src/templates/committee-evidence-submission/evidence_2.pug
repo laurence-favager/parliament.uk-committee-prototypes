@@ -1,26 +1,27 @@
 extends ../../layouts/layout-submission.pug
 
 block content
-  <div class="status">
-    <div class="sec_title">Section 2: Who are you?</div>
-    <div class="sec_number">2 of 5</div>
-  </div>
+  .status
+    .sec_title Section 2: Who are you?
+    .sec_number 2 of 5
 
-  <h1>Public Parks inquiry - send a submission</h1>
+  h1 Public Parks inquiry - send a submission
 
-  <form id="user_type" class="user-type">
-    <fieldset>
-      <legend>You are submitting as:</legend>
-      <div class="radio-holder"><input type="radio" name="who are you" id="individual" onclick="userTypeInd();">
-      <label for="individual">an individual</label></div>
-      <br />
-      <div class="radio-holder"><input type="radio" name="who are you" id="organisation" onclick="userTypeOrg();">
-      <label for="organisation">part of an organisation</label></div>
-    </fieldset>
-    <input type="submit" value="Continue" class="button"/>
-  </form>
+  form#user_type.user-type
+    fieldset
+      legend You are submitting as:
+      .radio-holder
+        input#individual(type='radio' name='who are you' onclick='userTypeInd();')
+        label(for='individual') an individual
+      br
+      .radio-holder
+        input#organisation(type='radio' name='who are you' onclick='userTypeOrg();')
+        label(for='organisation') part of an organisation
+    input.button(type='submit' value='Continue')
 
-  <br />
-  <p>&nbsp;&lt;&nbsp;<a href="evidence_1.html">back</a><p>
+  br
 
-  <div class="divider-large"></div>
+  p
+    a(href='evidence_1.html') back
+  
+  .divider-large

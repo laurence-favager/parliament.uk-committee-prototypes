@@ -1,71 +1,78 @@
 extends ../../layouts/layout-submission.pug
 
 block content
-  <div class="status">
-    <div class="sec_title">Section 5: Review and send</div>
-    <div class="sec_number">5 of 5</div>
-  </div>
+  .status
+    .sec_title Section 5: Review and send
+    .sec_number 5 of 5
 
-  <h1>Public Parks inquiry - send a submission</h1>
+  h1 Public Parks inquiry - send a submission
 
-  <h2>Review and send your submission</h2>
+  h2 Review and send your submission
 
-  <h3>About you</h3>
+  h3 About you
 
-  <p><span class="subtitle">Name:</span> Nick Day</p>
-  <p><span class="subtitle">Submitting as:</span> <span id="uType"></span></p>
-  <p><span class="subtitle">Email:</span> nick@test.com</p>
-  <p><span class="subtitle">Phone:</span> 01234 567890</p>
-  <p><span class="subtitle">Post Code:</span> ABC 123</p>
+  p
+    span.subtitle Name:
+    |  Nick Day
+  p
+    span.subtitle Submitting as:
+    span#uType
+  p
+    span.subtitle Email:
+    |  nick@test.com
+  p
+    span.subtitle Phone:
+    |  01234 567890
+  p
+    span.subtitle Post Code:
+    |  ABC 123
 
-  <p class="edit-details"><a href="evidence_4.html">Edit</a></p>
+  p.edit-details
+    a(href='evidence_4.html') Edit
 
-  <h3>Your submission</h3>
+  h3 Your submission
 
-  <table>
-   <tr>
-     <th>Title</th>
-     <th>Date</th>
-     <th>Type</th>
-   </tr>
-   <tr>
-     <td>My evidence</td>
-     <td>04 Jul 2017</td>
-     <td id="eType"></td>
-   </tr>
-  </table>
-  <p class="edit-details"><a href="evidence_9.html">Edit</a></p>
+  table
+    tr
+      th Title
+      th Date
+      th Type
+    tr
+      td My evidence
+      td 04 Jul 2017
+      td#eType
 
-  <form action="evidence_12.html">
+  p.edit-details
+    a(href='evidence_9.html') Edit
 
-    <p>Are you happy for your submission and name to be published?</p>
+  form(action='evidence_12.html')
+    p Are you happy for your submission and name to be published?
+    fieldset
+      .radio-holder.small
+        input#pyes(type='radio' name='privacy' value='0' onclick='privacyContent(this);')
+        label(for='pyes') Yes
+        input#pno(type='radio' name='privacy' value='1' onclick='privacyContent(this);')
+        label(for='pno') No
+        div
+    #prv(style='display:none;')
+      br
+      fieldset
+        .radio-holder
+          input#partial(type='radio' name='evidence visibilty')
+          label(for='partial') Publish the submission without my name
+        br
+        .radio-holder
+          input#private(type='radio' name='evidence visibilty')
+          label(for='private') Don&rsquo;t publish the submission or my name
+      p
+        b
+          | It is the committee&apos;s decision whether or not to publish material submitted to the inquiry.
+    br
+    input.button(type='submit' value='Send my submission')
 
-    <fieldset>
-      <div class="radio-holder small">
-        <input type="radio" name="privacy" id="pyes" value="0" onclick="privacyContent(this);">
-        <label for="pyes">Yes</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="radio" name="privacy" id="pno" value="1" onclick="privacyContent(this);">
-        <label for="pno">No</label>
-      <div>
-    </fieldset>
+  br
 
-    <div id="prv" style="display:none;">
-      <br />
-      <fieldset>
-        <div class="radio-holder"><input type="radio" name="evidence visibilty" id="partial">
-        <label for="partial">Publish the submission without my name</label></div>
-        <br />
-        <div class="radio-holder"><input type="radio" name="evidence visibilty" id="private">
-        <label for="private">Don’t publish the submission or my name</label></div>
-      </fieldset>
-      <p><b>It is the committee's decision whether or not to publish material submitted to the inquiry.</b></p>
-    </div>
+  p
+    a(href='evidence_10.html') back
 
-    <br />
-    <input type="submit" value="Send my submission" class="button"/>
-  </form>
-
-  <br />
-  <p>&nbsp;&lt;&nbsp;<a href="evidence_10.html">back</a><p>
-
-  <div class="divider-large"></div>
+  .divider-large

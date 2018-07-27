@@ -46,7 +46,8 @@ css:
 js:
 	@mkdir -p $(PUBLIC_FOLDER)/javascripts
 	@$(UGLIFY_JS) $(PUGIN)/$(JAVASCRIPTS_LOC)/*.js -m -o $(PUBLIC_FOLDER)/javascripts/main.js
-	@$(UGLIFY_JS) $(JAVASCRIPTS_LOC)/*.js -m -o $(PUBLIC_FOLDER)/javascripts/overrides.js
+	@$(UGLIFY_JS) $(JAVASCRIPTS_LOC)/overrides.js -m -o $(PUBLIC_FOLDER)/javascripts/overrides.js
+	@$(UGLIFY_JS) $(JAVASCRIPTS_LOC)/timeline-and-submission.js -m -o $(PUBLIC_FOLDER)/javascripts/timeline-and-submission.js
 
 # Minifies json file
 json:
