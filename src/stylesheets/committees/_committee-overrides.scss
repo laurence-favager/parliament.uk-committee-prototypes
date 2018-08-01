@@ -8,3 +8,26 @@
     width: 350px;
   }
 }
+
+// Form error messaging
+
+.message--error {
+  color: $warning--dark;
+  + input,
+  + textarea {
+    border: solid 2px $warning--dark;
+    box-shadow: none;
+    &:focus {
+      box-shadow: 0 0 0 3px $warning--dark;
+    }
+  }
+  + select {
+    outline: solid 2px $warning--dark;
+    outline-offset: -2px;
+    box-shadow: none;
+    &:focus {
+      outline: 5px solid $warning--dark;
+      outline-offset: -2px;
+    }
+  }
+}
