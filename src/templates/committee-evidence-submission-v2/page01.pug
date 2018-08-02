@@ -8,7 +8,7 @@ block content
   section
     .container
       h2.typography--light Who are you submitting evidence for?
-      +form(id='submitterType' action='page02-1.html')
+      +form('page02-1.html', '')(id='submitterType', data-evidence='form')
         .block--border__bottom
           +fieldset('Who are you submitting a petition for?', 'sr-only')
             ol.list--block

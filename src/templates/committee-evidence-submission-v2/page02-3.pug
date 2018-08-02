@@ -9,13 +9,23 @@ block content
   section
     .container
       h2.typography--light Complete the fields below
+
       +form('page02-4.html')
-        .block--border__bottom
+        h3 Your details
+        .section--minor
           +input--text('first-name', 'txtFirstName', 'First name(s)')(required, data-error='Please enter a first name')
           +input--text('last-name', 'txtLastName', 'Last name')(required, data-error='Please enter a last name')
           +input--validate('email', 'email', 'txtEmail', '[^@]+@[^@]+\\.[^@]+', null, 'Email', null)(data-error='Please enter a valid email address')
           +input--text('telephone', 'txtPhone', 'Phone (optional)')(maxlength='15')
+        
+        h3 Details of person you are submitting on behalf of
+        .section--minor
+          .block--border__bottom
+            +input--text('first-agt-name', 'txtAgtFirstName', 'First name(s)')(required, data-error='Please enter a first name')
+            +input--text('last-agt-name', 'txtAgtLastName', 'Last name')(required, data-error='Please enter a last name')
+            +input--validate('email', 'agt-email', 'txtAgtEmail', '[^@]+@[^@]+\\.[^@]+', null, 'Email', null)(data-error='Please enter a valid email address')
+            +input--text('agt-telephone', 'txtAgtPhone', 'Phone (optional)')(maxlength='15')
 
         +button('Next', 'btn--primary', 'submit')
 
-      p #[+link('page02-2.html', 'Back')]
+      p #[+link('page02-1.html', 'Back')]

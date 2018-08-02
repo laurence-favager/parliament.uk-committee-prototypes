@@ -8,6 +8,34 @@ if (window.NodeList && !NodeList.prototype.forEach) {
   };
 }
 
+UK_Parliament.submitterIdentification = function () {
+  if (document.querySelector('[data-evidence="form"]')) {
+    var form = document.querySelector('[data-evidence="form"]');
+
+    form.onsubmit = function (e) {
+      //e.preventDefault();
+
+      // Grab name of radio group and then collection of same name
+      var radiosArray = document.getElementsByName('submitter-type');
+
+      // function to set submit button type from radio selection
+      getSubmitterType = function (radio) {
+        if (radio.checked) {
+          console.log(radio.id);
+          localStorage.submitter = radio.id;
+        }
+      };
+
+      // Loop radio group and grab clicked radio button
+      for (var x = 0; x < radiosArray.length; x++) {
+        getSubmitterType(radiosArray[x]);
+      }
+    };
+  }
+};
+
+UK_Parliament.submitterIdentification();
+
 // Function to listen for checked radio buttons and change form action
 UK_Parliament.radioRouting = function () {
   if (document.getElementById('submitterType')) {

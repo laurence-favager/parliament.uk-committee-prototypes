@@ -3,21 +3,19 @@ extends ../../layouts/layout.pug
 block content
   #content.hero.theme--white
     .container
-      h1 Are you submitting for yourself or on behalf of someone else?
+      h1 Individual submitter information
       p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ac libero urna.
 
   section
     .container
-      h2.typography--light Who are you submitting evidence for?
-      +form(id='submitterType' action='page02-4.html')
+      h2.typography--light Complete the fields below
+      +form('page02-4.html')
         .block--border__bottom
-          +fieldset('Who are you submitting a petition for?', 'sr-only')
-            ol.list--block
-              li
-                +radio--checkbox__verbose('radio', 'submitter-type', 'you', 'You are submitting evidence as yourself.', 'Yourself')(data-route='page02-4.html', checked)
-              li
-                +radio--checkbox__verbose('radio', 'submitter-type', 'alt', 'You are submitting evidence on behalf of someone else.', 'Another Person')(data-route='page02-3.html')
+          +input--text('first-name', 'txtFirstName', 'First name(s)')(required, data-error='Please enter a first name')
+          +input--text('last-name', 'txtLastName', 'Last name')(required, data-error='Please enter a last name')
+          +input--validate('email', 'email', 'txtEmail', '[^@]+@[^@]+\\.[^@]+', null, 'Email', null)(data-error='Please enter a valid email address')
+          +input--text('telephone', 'txtPhone', 'Phone (optional)')(maxlength='15')
 
         +button('Next', 'btn--primary', 'submit')
 
-        p #[+link('page02-1.html', 'Back')]
+      p #[+link('page02-1.html', 'Back')]
