@@ -1,0 +1,23 @@
+extends ../../layouts/layout.pug
+
+block content
+  #content.hero.theme--white
+    .container
+      h1 Do you have an affilition to an institution or organisation?
+      p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ac libero urna.
+
+  section
+    .container
+      h2.typography--light Do you have a professional affilition?
+      +form(id='submitterType' action='page02-5.html')
+        .block--border__bottom
+          +fieldset('Do you have a professional affilition?', 'sr-only')
+            ol.list--block
+              li
+                +radio--checkbox__verbose('radio', 'submitter-type', 'afy', 'You have a professional affilition.', 'Yes')(data-route='page02-5.html', checked)
+              li
+                +radio--checkbox__verbose('radio', 'submitter-type', 'afn', 'You do not have a professional affilition.', 'No')(data-route='page04.html')
+
+        +button('Next', 'btn--primary', 'submit')
+
+        p #[+link('page02-2.html', 'Back')]

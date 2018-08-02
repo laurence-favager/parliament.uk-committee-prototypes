@@ -1,0 +1,22 @@
+extends ../../layouts/layout.pug
+
+block content
+  #content.hero.theme--white
+    .container
+      h1 Are you an individual or organisation?
+      
+  section
+    .container
+      h2.typography--light Who are you submitting evidence for?
+      +form(id='submitterType' action='page02-1.html')
+        .block--border__bottom
+          +fieldset('Who are you submitting a petition for?', 'sr-only')
+            ol.list--block
+              li
+                +radio--checkbox__verbose('radio', 'submitter-type', 'ind', 'You are submitting evidence for one person.', 'Individual')(data-route='page02-1.html', checked)
+              li
+                +radio--checkbox__verbose('radio', 'submitter-type', 'org', 'You are submitting evidence for a business or organisation.', 'Organisation')(data-route='page03-1.html')
+
+        +button('Next', 'btn--primary', 'submit')
+
+        p #[+link('index.html', 'Back')]

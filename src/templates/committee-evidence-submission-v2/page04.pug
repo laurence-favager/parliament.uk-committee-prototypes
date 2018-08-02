@@ -1,0 +1,40 @@
+extends ../../layouts/layout.pug
+
+block content
+  #content.section--primary
+    .container
+      h1 Confirm your acceptance
+
+  section
+    .container
+      h2 Terms of reference
+      p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ac libero urna.
+
+  section
+    .container
+      h2 Submission guidelines
+      p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ac libero urna.
+
+  section
+    .container
+      h2 Have you read all guidelines?
+
+      +form(action='page05.html')
+        .block--border__bottom(class='open', data-toggle='item')
+          +fieldset
+            +radio--checkbox__inline('radio', 'guideline-check', 'guideline-check-yes', 'Yes')(data-toggle='parent-item')
+            +radio--checkbox__inline('radio', 'guideline-check', 'guideline-check-no', 'No')(class='open', data-toggle='parent-item', checked, data-submit='disabled')
+
+          div(class='open', data-toggle='content')
+            br
+            .status--highlight.theme--caution
+              p Please read the terms of reference and submission guidelines before you continue
+
+        +button('Next', 'btn--primary', 'submit')
+
+      p #[+link('page01.html', 'Back')]
+
+      br
+      .block.accent--mint
+        h3 Help and support
+        p For more information email #[+link('#', 'committee@parliament.uk')] or phone #[+link('tel:01234567890', '01234 567 890')]

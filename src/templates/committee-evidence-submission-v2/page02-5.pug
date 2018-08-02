@@ -1,0 +1,19 @@
+extends ../../layouts/layout.pug
+
+block content
+  #content.hero.theme--white
+    .container
+      h1 Affiliation details
+      p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ac libero urna.
+
+  section
+    .container
+      h2.typography--light Complete the fields below
+      +form('page04.html')
+        .block--border__bottom
+          +input--text('aff-name', 'txtAffName', 'Institution name')(required, data-error='Please enter the institution name')
+          +input--text('aff-role', 'txtAffRole', 'Role within institution')(required, data-error='Please enter your role at the institution')
+
+        +button('Next', 'btn--primary', 'submit')
+
+      p #[+link('page02-4.html', 'Back')]

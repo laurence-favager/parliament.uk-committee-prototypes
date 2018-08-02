@@ -1,0 +1,18 @@
+extends ../../layouts/layout.pug
+
+block content
+  #content.hero.theme--white
+    .container
+      h1 Organisation details
+      p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ac libero urna.
+
+  section
+    .container
+      h2.typography--light Complete the fields below
+      +form('page03-2.html')
+        .block--border__bottom
+          +input--text('name', 'txtOrgName', 'Organisation name')(required, data-error='Please enter the organisation name')
+
+        +button('Next', 'btn--primary', 'submit')
+
+      p #[+link('page01.html', 'Back')]

@@ -1,0 +1,37 @@
+extends ../../layouts/layout.pug
+
+block content
+  #content.section--primary
+    .container
+      h1 Upload your evidence
+
+  section
+    .container
+      h2 Uploaded file must
+
+      ul.list--bullet
+        li be less than 25 MB in size
+
+      br
+
+      +form(action='page06-1.html')
+        ol.list--pipe__deep
+          li
+            .card
+              figure.svg--icon(data-file-upload='icon')
+                  include ../../icons/file.svg
+              .card__details
+                h3 Upload your evidence
+
+                +input--file('file-uploader', 'fileUpload', 'Choose file', 'btn--primary')(required, data-file-size='26214400', data-error='Please upload your file')
+
+                p(data-file-upload='status') No file(s) selected
+
+        +button('Next', 'btn--primary', 'submit')(id='file-upload-check')
+
+      p #[+link('page04.html', 'Back')]
+
+      br
+      .block.accent--mint
+        h3 Help and support
+        p For more information email #[+link('#', 'committee@parliament.uk')] or phone #[+link('tel:01234567890', '01234 567 890')]
