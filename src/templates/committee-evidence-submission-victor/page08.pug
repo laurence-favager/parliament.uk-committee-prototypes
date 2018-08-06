@@ -4,12 +4,9 @@ block content
   #content.hero.theme--grey-4
     .container
       h1
+        small #[+link('#', 'The advertising industry inquiry')]
         span Inquiry updates
-        span.sr-only
-          | .
-        span.context The advertising industry inquiry
-
-      h2.typography--light Step 6
+        span.context Step 6
   
   section
     .container
@@ -21,7 +18,7 @@ block content
               +radio--checkbox__inline('radio', 'updates-check', 'updates-check-yes', 'Yes')(data-toggle='parent-item')
               +radio--checkbox__inline('radio', 'updates-check', 'updates-check-no', 'No')(data-toggle='parent-item', checked)
 
-            div.section--minor(data-toggle='content')        
+            div.section--minor(data-toggle='content')
               +fieldset('Choose from the options below.')
                 +radio--checkbox('checkbox', 'update-1', 'update1', 'Other submissions made to the advertising industry inquiry')
                 +radio--checkbox('checkbox', 'update-2', 'update2', 'Progress of the advertising industry inquiry')

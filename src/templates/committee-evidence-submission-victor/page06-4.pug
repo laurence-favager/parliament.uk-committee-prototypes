@@ -4,13 +4,10 @@ block content
   #content.hero.theme--grey-4
     .container
       h1
+        small #[+link('#', 'The advertising industry inquiry')]
         span Individual diversity questions
-        span.sr-only
-          | .
-        span.context The advertising industry inquiry
+        span.context Step 5 - Question 4
 
-      h2.typography--light Step 5
-  
   section
     .container
       h2.typography--light Disability
@@ -18,11 +15,11 @@ block content
 
       +form(action='page08.html')
         .block--border__bottom
-          +fieldset('Do you consider yourself to have a disability?', 'gamma')
+          +fieldset('Do you consider yourself to have a disability?')
             .section--minor
               +radio--checkbox__inline('radio', 'diversity-4', 'rdDiv4-1', 'Yes')
               +radio--checkbox__inline('radio', 'diversity-4', 'rdDiv4-2', 'No')
-              +radio--checkbox__inline('radio', 'diversity-4', 'rdDiv4-3', 'Prefer not to say')(checked)
+              +radio--checkbox__inline('radio', 'diversity-4', 'rdDiv4-3', 'Prefer not to say')
 
         +button('Next', 'btn--primary', 'submit')
         

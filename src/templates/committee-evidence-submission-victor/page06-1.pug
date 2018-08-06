@@ -4,13 +4,10 @@ block content
   #content.hero.theme--grey-4
     .container
       h1
+        small #[+link('#', 'The advertising industry inquiry')]
         span Individual diversity questions
-        span.sr-only
-          | .
-        span.context The advertising industry inquiry
+        span.context Step 5 - Question 1
 
-      h2.typography--light Step 5
-  
   section
     .container
       h2.typography--light Employment
@@ -18,6 +15,7 @@ block content
         .block--border__bottom
           +input--text('pro-name', 'txtProName', 'Job title (optional)')
           +input--text('pro-role', 'txtProRole', 'Company (optional)')
+
         +button('Next', 'btn--primary', 'submit')
         
       p #[+link('page05.html', 'Back')]
