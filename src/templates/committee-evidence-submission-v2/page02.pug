@@ -1,0 +1,28 @@
+extends ../../layouts/layout.pug
+
+block content
+  #content.hero.theme--grey-4
+    .container
+      h1
+        small #[+link('#', 'The advertising industry inquiry')]
+        span Submit evidence online - individual
+        span.context Step 2
+
+  section.section--major
+    .container
+      h2.sr-only Complete the fields below
+      +form('page04.html')
+        .block--border__bottom
+          +input--text('title', 'txtTitle', 'Title (optional)')(class='input__md')
+          +input--text('first-name', 'txtFirstName', 'First name(s)')(required, data-error='Please enter a first name')
+          +input--text('last-name', 'txtLastName', 'Last name')(required, data-error='Please enter a last name')
+
+          p If your evidence is published, your name may appear online.
+          .section--minor
+
+            +input--validate('email', 'email', 'txtEmail', '[^@]+@[^@]+\\.[^@]+', null, 'Email', null)(data-error='Please enter a valid email address')
+            +input--text('telephone', 'txtPhone', 'Phone (optional)')(maxlength='15')
+
+        +button('Next', 'btn--primary', 'submit')
+
+      p #[+link('page01.html', 'Back')]

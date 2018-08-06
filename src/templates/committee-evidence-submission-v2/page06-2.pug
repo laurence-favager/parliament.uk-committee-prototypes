@@ -1,34 +1,23 @@
 extends ../../layouts/layout.pug
 
 block content
-  #content.section--primary
+  #content.hero.theme--grey-4
     .container
-      h1 Organisation diversity questions
-      p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ac libero urna.
-
-      +form(action='page07.html')
+      h1
+        small #[+link('#', 'The advertising industry inquiry')]
+        span Individual diversity questions
+        span.context Step 5 - Question 2
+  
+  section
+    .container
+      h2.typography--light Ethnic background
+      +form(action='page06-3.html')
         .block--border__bottom
-
-          .section--minor
-            +fieldset('Question 1')
-              +radio--checkbox__inline('radio', 'diversity-1', 'rdDiv1-1', 'Opt 1')
-              +radio--checkbox__inline('radio', 'diversity-1', 'rdDiv1-2', 'Opt 2')
-              +radio--checkbox__inline('radio', 'diversity-1', 'rdDiv1-3', 'Opt 3')
-              +radio--checkbox__inline('radio', 'diversity-1', 'rdDiv1-4', 'Prefer not to say')(checked)
-
-          .section--minor
-            +fieldset('Question 2')
-              +radio--checkbox__inline('radio', 'diversity-2', 'rdDiv2-1', 'Opt 1')
-              +radio--checkbox__inline('radio', 'diversity-2', 'rdDiv2-2', 'Opt 2')
-              +radio--checkbox__inline('radio', 'diversity-2', 'rdDiv2-3', 'Prefer not to say')(checked)
-
-          .section--minor
-            +fieldset('Question 3')
-              +radio--checkbox__inline('radio', 'diversity-3', 'rdDiv3-1', 'Opt 1')
-              +radio--checkbox__inline('radio', 'diversity-3', 'rdDiv3-2', 'Opt 2')
-              +radio--checkbox__inline('radio', 'diversity-3', 'rdDiv3-3', 'Opt 3')
-              +radio--checkbox__inline('radio', 'diversity-3', 'rdDiv3-4', 'Prefer not to say')(checked)
+          +fieldset('Which of the following do you feel you most identify with?')
+            +radio--checkbox('radio', 'diversity-2', 'rdDiv2-1', 'Opt 1')
+            +radio--checkbox('radio', 'diversity-2', 'rdDiv2-2', 'Opt 2')
+            +radio--checkbox('radio', 'diversity-2', 'rdDiv2-3', 'Prefer not to say')
 
         +button('Next', 'btn--primary', 'submit')
-
-      p #[+link('page05.html', 'Back')]
+        
+      p #[+link('page06-1.html', 'Back')]

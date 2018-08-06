@@ -1,0 +1,38 @@
+extends ../../layouts/layout.pug
+
+block content
+  #content.hero.theme--grey-4
+    .container
+      h1
+        small #[+link('#', 'The advertising industry inquiry')]
+        span Organisation diversity questions
+        span.context Step 5 - Question 3
+  
+  section
+    .container
+      h2.typography--light Organisation type
+      +form(action='page08.html')
+        .block--border__bottom
+          +select('org-type', 'orgType', 'What is this organisation’s main line of business?')
+            +option('Agriculture, Forestry and Fishing', '01')
+            +option('Mining, Quarrying and Utilities', '02')
+            +option('Manufacturing', '03')
+            +option('Construction', '04')
+            +option('Motor Trades', '05')
+            +option('Wholesale', '06')
+            +option('Retail', '07')
+            +option('Transport and Storage (inc Postal)', '08')
+            +option('Accommodation and Food Services', '09')
+            +option('Information and Communication', '10')
+            +option('Finance and Insurance', '11')
+            +option('Property', '12')
+            +option('Professional, Scientific and Technical', '13')
+            +option('Business Administration and Support Services', '14')
+            +option('Education', '15')
+            +option('Health', '16')
+            +option('Public Administration', '17')
+            +option('Other', '18')
+
+        +button('Next', 'btn--primary', 'submit')
+
+      p #[+link('page07-2.html', 'Back')]

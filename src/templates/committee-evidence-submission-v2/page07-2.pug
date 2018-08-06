@@ -1,0 +1,33 @@
+extends ../../layouts/layout.pug
+
+block content
+  #content.hero.theme--grey-4
+    .container
+      h1
+        small #[+link('#', 'The advertising industry inquiry')]
+        span Organisation diversity questions
+        span.context Step 5 - Question 2
+  
+  section
+    .container
+      h2.typography--light Organisation location
+      +form(action='page07-3.html')
+        .block--border__bottom
+          +select('org-location', 'orgLocation', 'Where is this organisation’s main place of work?')
+            +option('North East England', '01')
+            +option('North West England', '02')
+            +option('Yorkshire and The Humber', '03')
+            +option('East Midlands', '04')
+            +option('West Midlands', '05')
+            +option('East of England', '06')
+            +option('London', '07')
+            +option('South East England', '08')
+            +option('South West England', '09')
+            +option('Wales', '10')
+            +option('Scotland', '11')
+            +option('Northern Ireland', '12')
+            +option('Outside the United Kingdom', '13')
+
+        +button('Next', 'btn--primary', 'submit')
+
+      p #[+link('page07-1.html', 'Back')]
