@@ -4,9 +4,11 @@ block content
   #content.hero.theme--grey-4
     .container
       h1
-        small #[+link('#', 'The advertising industry inquiry')]
+        small The advertising industry inquiry
         span Submit evidence online
         span.context Step 1
+
+      p #[+link('index.html', 'Back to previous page')]
 
   section
     .container
@@ -21,5 +23,3 @@ block content
                 +radio--checkbox__verbose('radio', 'submitter-type', 'org', 'You are submitting evidence for a business or an organisation.', 'Organisation')(data-route='page03.html')
 
         +button('Next', 'btn--primary', 'submit')
-
-      p #[+link('index.html', 'Back')]

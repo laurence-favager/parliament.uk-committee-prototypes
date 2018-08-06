@@ -4,13 +4,16 @@ block content
   #content.hero.theme--grey-4
     .container
       h1
-        small #[+link('#', 'The advertising industry inquiry')]
+        small The advertising industry inquiry
         span Inquiry updates
         span.context Step 6
-  
+
+      p #[+link('page06-1.html', 'Back to previous page')]
+
+
   section
     .container
-      h2.typography--light Would you like email updates from the committee?
+      h2.typography--light Would you like email updates from the Committee?
       +form(action='page09.html')
         .block--border__bottom
           div(data-toggle='item')
@@ -25,5 +28,3 @@ block content
                 +radio--checkbox('checkbox', 'update-3', 'update3', 'The Communications Committee’s work')
 
         +button('Send submission', 'btn--primary', 'submit')
-
-      p #[+link('page06-1.html', 'Back')]

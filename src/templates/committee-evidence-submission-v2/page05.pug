@@ -4,9 +4,12 @@ block content
   #content.hero.theme--grey-4
     .container
       h1
-        small #[+link('#', 'The advertising industry inquiry')]
+        small The advertising industry inquiry
         span Upload your evidence
         span.context Step 4
+
+      p #[+link('page04.html', 'Back to previous page')]
+
 
   section
     .container
@@ -17,24 +20,24 @@ block content
         li be a single Word document (rtf, txt ooxml or odt format)
         li not contain logos
 
-      .section--minor
-        +form(action='page06-1.html')(id='fileUploadForm')
-          ol.list--pipe__deep
-            li
-              .card
-                figure.svg--icon(data-file-upload='icon')
-                    include ../../icons/file.svg
-                .card__details
-                  h3 Upload your evidence
+  section
+    .container
+      h2.sr-only Upload your evidence
+      +form(action='page06-1.html')(id='fileUploadForm')
+        ol.list--pipe__deep
+          li
+            .card
+              figure.svg--icon(data-file-upload='icon')
+                  include ../../icons/file.svg
+              .card__details
+                h3 Upload your evidence
 
-                  +input--file('file-uploader', 'fileUpload', 'Choose file', 'btn--primary')
-                  //-(required, data-file-size='26214400', data-error='Please upload your file')
+                +input--file('file-uploader', 'fileUpload', 'Choose file', 'btn--primary')
+                //-(required, data-file-size='26214400', data-error='Please upload your file')
 
-                  p(data-file-upload='status') No file(s) selected
+                p(data-file-upload='status') No file(s) selected
 
-          +button('Next', 'btn--primary', 'submit')(id='file-upload-check')
-
-          p #[+link('page04.html', 'Back')]
+        +button('Next', 'btn--primary', 'submit')(id='file-upload-check')
 
       .section--minor
         .block.accent--mint

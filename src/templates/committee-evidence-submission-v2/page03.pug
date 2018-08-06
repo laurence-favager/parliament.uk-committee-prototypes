@@ -4,9 +4,11 @@ block content
   #content.hero.theme--grey-4
     .container
       h1
-        small #[+link('#', 'The advertising industry inquiry')]
+        small The advertising industry inquiry
         span Submit evidence online - organisation
         span.context Step 2
+
+      p #[+link('page01.html', 'Back to previous page')]
 
   section
     .container
@@ -16,7 +18,7 @@ block content
           h3.beta.typography--light Organisation details
           +input--text('name', 'txtOrgName', 'Organisation name')(required, data-error='Please enter the organisation name')
 
-          p If your evidence is published, your organisation's name may appear online.
+          p If your evidence is published, your organisation's name will appear online.
           
           h3.beta.typography--light Contact details
           +input--text('title', 'txtTitle', 'Title (optional)')(class='input__md')
@@ -26,5 +28,3 @@ block content
           +input--text('telephone', 'txtPhone', 'Phone (optional)')(maxlength='15')
 
         +button('Next', 'btn--primary', 'submit')
-
-      p #[+link('page01.html', 'Back')]

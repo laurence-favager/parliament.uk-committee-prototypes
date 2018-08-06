@@ -4,10 +4,12 @@ block content
   #content.hero.theme--grey-4
     .container
       h1
-        small #[+link('#', 'The advertising industry inquiry')]
-        span Organisation diversity questions
-        span.context Step 5 - Question 1
-  
+        small The advertising industry inquiry
+        span Diversity questions
+        span.context Step 5 - question 1
+
+      p #[+link('page05.html', 'Back to previous page')]
+
   section
     .container
       h2.typography--light Organisation size
@@ -21,5 +23,3 @@ block content
               +radio--checkbox('radio', 'diversity-1', 'rdDiv1-4', 'Prefer not to say')
 
         +button('Next', 'btn--primary', 'submit')
-
-      p #[+link('page05.html', 'Back')]

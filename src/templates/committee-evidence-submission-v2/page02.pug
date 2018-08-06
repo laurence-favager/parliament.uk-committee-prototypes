@@ -4,9 +4,11 @@ block content
   #content.hero.theme--grey-4
     .container
       h1
-        small #[+link('#', 'The advertising industry inquiry')]
+        small The advertising industry inquiry
         span Submit evidence online - individual
         span.context Step 2
+
+      p #[+link('page01.html', 'Back to previous page')]
 
   section.section--major
     .container
@@ -17,12 +19,10 @@ block content
           +input--text('first-name', 'txtFirstName', 'First name(s)')(required, data-error='Please enter a first name')
           +input--text('last-name', 'txtLastName', 'Last name')(required, data-error='Please enter a last name')
 
-          p If your evidence is published, your name may appear online.
+          p If your evidence is published, your name will appear online.
           .section--minor
 
             +input--validate('email', 'email', 'txtEmail', '[^@]+@[^@]+\\.[^@]+', null, 'Email', null)(data-error='Please enter a valid email address')
             +input--text('telephone', 'txtPhone', 'Phone (optional)')(maxlength='15')
 
         +button('Next', 'btn--primary', 'submit')
-
-      p #[+link('page01.html', 'Back')]

@@ -4,14 +4,16 @@ block content
   #content.hero.theme--grey-4
     .container
       h1
-        small #[+link('#', 'The advertising industry inquiry')]
-        span Terms of reference and submission guidelines
+        small The advertising industry inquiry
+        span Inquiry details and submission guidelines
         span.context Step 3
+
+      p #[+link('', 'Back to previous page')]
 
   section
     .container
-      h2 Terms of reference
-      p #[+link('https://www.parliament.uk/documents/lords-committees/communications/advertising-industry/Final-Call-for-evidence.pdf', 'Terms of reference')(target='_blank')]#[span.sr-only (This link will open in a new window)]
+      h2 Inquiry details
+      p #[+link('https://www.parliament.uk/documents/lords-committees/communications/advertising-industry/Final-Call-for-evidence.pdf', 'The advertising industry inquiry details')(target='_blank')]#[span.sr-only (This link will open in a new window)]
 
   section
     .container
@@ -20,7 +22,7 @@ block content
 
   section
     .container
-      h2 Have you read the terms of reference and submission guidelines?
+      h2 Have you read the inquiry details and submission guidelines?
 
       +form(action='page05.html')
         .block--border__bottom(class='open', data-toggle='item')
@@ -31,11 +33,9 @@ block content
           div(class='open', data-toggle='content')
             br
             .status--highlight.theme--caution
-              p Before you submit your evidence, please read the terms of reference and submission guidelines.
+              p Before you continue, read the inquiry details and submission guidelines.
 
         +button('Next', 'btn--primary', 'submit')
-
-      p #[+link('', 'Back')]
 
       .section--minor
         .block.accent--mint
