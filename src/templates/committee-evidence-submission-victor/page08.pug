@@ -1,0 +1,32 @@
+extends ../../layouts/layout.pug
+
+block content
+  #content.hero.theme--grey-4
+    .container
+      h1
+        span Inquiry updates
+        span.sr-only
+          | .
+        span.context The advertising industry inquiry
+
+      h2.typography--light Step 6
+  
+  section
+    .container
+      h2.typography--light Would you like email updates from the committee?
+      +form(action='page09.html')
+        .block--border__bottom
+          div(data-toggle='item')
+            +fieldset
+              +radio--checkbox__inline('radio', 'updates-check', 'updates-check-yes', 'Yes')(data-toggle='parent-item')
+              +radio--checkbox__inline('radio', 'updates-check', 'updates-check-no', 'No')(data-toggle='parent-item', checked)
+
+            div.section--minor(data-toggle='content')        
+              +fieldset('Choose from the options below.')
+                +radio--checkbox('checkbox', 'update-1', 'update1', 'Other submissions made to the advertising industry inquiry')
+                +radio--checkbox('checkbox', 'update-2', 'update2', 'Progress of the advertising industry inquiry')
+                +radio--checkbox('checkbox', 'update-3', 'update3', 'The Communications Committee’s work')
+
+        +button('Send submission', 'btn--primary', 'submit')
+
+      p #[+link('page06-1.html', 'Back')]

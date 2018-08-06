@@ -1,0 +1,25 @@
+extends ../../layouts/layout.pug
+
+block content
+  #content.section--primary
+    .container
+      h1
+        span The advertising industry inquiry
+
+  section
+    .container
+      h2 Terms of reference
+      p #[+link('https://www.parliament.uk/documents/lords-committees/communications/advertising-industry/Final-Call-for-evidence.pdf', 'Terms of reference')(target='_blank')]#[span.sr-only (This link will open in a new window)]
+
+  section
+    .container
+      h2 Submission guidelines
+      p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ac libero urna.
+
+  section
+    .container
+      .block--border__bottom
+        h2 Anonimity
+        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ac libero urna.
+
+      +buttonLink('page01.html', 'Next', 'btn--primary')

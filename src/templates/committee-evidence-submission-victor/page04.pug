@@ -1,0 +1,46 @@
+extends ../../layouts/layout.pug
+
+block content
+  #content.hero.theme--grey-4
+    .container
+      h1
+        span Terms of reference and submission guidelines
+        span.sr-only
+          | .
+        span.context The advertising industry inquiry
+
+      h2.typography--light Step 3
+
+  section
+    .container
+      h2 Terms of reference
+      p #[+link('https://www.parliament.uk/documents/lords-committees/communications/advertising-industry/Final-Call-for-evidence.pdf', 'Terms of reference')(target='_blank')]#[span.sr-only (This link will open in a new window)]
+
+  section
+    .container
+      h2 Submission guidelines
+      p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ac libero urna.
+
+  section#acceptGuidelines
+    .container
+      h2 Have you read the terms of reference and submission guidelines?
+
+      +form(action='page05.html')
+        .block--border__bottom(class='open', data-toggle='item')
+          +fieldset
+            +radio--checkbox__inline('radio', 'guideline-check', 'guideline-check-yes', 'Yes')(data-toggle='parent-item')
+            +radio--checkbox__inline('radio', 'guideline-check', 'guideline-check-no', 'No')(class='open', data-toggle='parent-item', checked, data-submit='disabled')
+
+          div(class='open', data-toggle='content')
+            br
+            .status--highlight.theme--caution
+              p Before you submit your evidence, please read the terms of reference and submission guidelines.
+
+        +button('Next', 'btn--primary', 'submit')
+
+      p#submitterId #[+link('', 'Back')]
+
+      br
+      .block.accent--mint
+        h3 Help and support
+        p For more information email #[+link('mailto:holcommunications@parliament.uk', 'holcommunications@parliament.uk')] or phone #[+link('tel:02072198662', '020 7219 8662')]

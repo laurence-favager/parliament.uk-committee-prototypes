@@ -1,0 +1,31 @@
+extends ../../layouts/layout.pug
+
+block content
+  #content.hero.theme--grey-4
+    .container
+      h1
+        span Organisation diversity questions
+        span.sr-only
+          | .
+        span.context The advertising industry inquiry
+
+      h2.typography--light Step 5
+  
+  section.section--major
+    .container
+
+      p Before completing your submission, complete the diversity questions below.
+
+      +form(action='page07-2.html')
+        .block--border__bottom
+
+          .section--minor
+            +fieldset('Question 1')
+              +radio--checkbox__inline('radio', 'diversity-1', 'rdDiv1-1', 'Opt 1')
+              +radio--checkbox__inline('radio', 'diversity-1', 'rdDiv1-2', 'Opt 2')
+              +radio--checkbox__inline('radio', 'diversity-1', 'rdDiv1-3', 'Opt 3')
+              +radio--checkbox__inline('radio', 'diversity-1', 'rdDiv1-4', 'Prefer not to say')(checked)
+
+        +button('Next', 'btn--primary', 'submit')
+
+      p #[+link('page05.html', 'Back')]

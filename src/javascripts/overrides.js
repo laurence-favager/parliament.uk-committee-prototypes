@@ -8,12 +8,13 @@ if (window.NodeList && !NodeList.prototype.forEach) {
   };
 }
 
+// Function to grab and store submitter type
 UK_Parliament.submitterIdentification = function () {
   if (document.querySelector('[data-evidence="form"]')) {
     var form = document.querySelector('[data-evidence="form"]');
 
     form.onsubmit = function (e) {
-      //e.preventDefault();
+      e.preventDefault();
 
       // Grab name of radio group and then collection of same name
       var radiosArray = document.getElementsByName('submitter-type');
@@ -23,6 +24,7 @@ UK_Parliament.submitterIdentification = function () {
         if (radio.checked) {
           console.log(radio.id);
           localStorage.submitter = radio.id;
+          form.submit();
         }
       };
 
@@ -33,6 +35,24 @@ UK_Parliament.submitterIdentification = function () {
     };
   }
 };
+
+// Function to route users correctly depending on submitter type
+UK_Parliament.submitterRouting = function () {
+
+  var submitterType = localStorage.getItem('submitter');
+
+  if (document.getElementById('fileUploadForm')) {
+    var submitterLink = document.getElementById('fileUploadForm');
+    console.log(submitterLink);
+    if (submitterType == 'ind') {
+      submitterLink.action = 'page06-1.html';
+    } else if (submitterType == 'org') {
+      submitterLink.action = 'page07-1.html';
+    }
+  }
+};
+
+UK_Parliament.submitterRouting();
 
 UK_Parliament.submitterIdentification();
 
