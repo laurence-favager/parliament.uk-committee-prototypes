@@ -6,18 +6,29 @@ block content
       h1
         small The advertising industry inquiry
         span Diversity questions
-        span.context Step 5 of 6 - question 2 of 4
+        span.context Step 4 of 5 - question 2 of 3
 
       p #[+link('#', 'Back to previous page')(onclick='goBack()')]
 
   section
     .container
-      h2.typography--light Ethnic background
+      h2.typography--light Organisation location
       +form(action='page06-3.html')
         .block--border__bottom
-          +fieldset('Which of the following do you feel you most identify with?')
-            +radio--checkbox('radio', 'diversity-2', 'rdDiv2-1', 'Opt 1')
-            +radio--checkbox('radio', 'diversity-2', 'rdDiv2-2', 'Opt 2')
-            +radio--checkbox('radio', 'diversity-2', 'rdDiv2-3', 'Prefer not to say')
+          +select('org-location', 'orgLocation', 'Where is this organisation’s main place of work?')
+            +option('Prefer not to say', '00')
+            +option('North East England', '01')
+            +option('North West England', '02')
+            +option('Yorkshire and The Humber', '03')
+            +option('East Midlands', '04')
+            +option('West Midlands', '05')
+            +option('East of England', '06')
+            +option('London', '07')
+            +option('South East England', '08')
+            +option('South West England', '09')
+            +option('Wales', '10')
+            +option('Scotland', '11')
+            +option('Northern Ireland', '12')
+            +option('Outside the United Kingdom', '13')
 
         +button('Next', 'btn--primary', 'submit')

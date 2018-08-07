@@ -6,30 +6,34 @@ block content
       h1
         small The advertising industry inquiry
         span Diversity questions
-        span.context Step 5 of 6 - question 3 of 4
+        span.context Step 4 of 5 - question 3 of 3
 
       p #[+link('#', 'Back to previous page')(onclick='goBack()')]
 
   section
     .container
-      h2.typography--light Gender identity
-
-      +form(action='page06-4.html')
+      h2.typography--light Organisation type
+      +form(action='page07.html')
         .block--border__bottom
-          +fieldset('What is your gender identity?')
-            .section--minor(data-dropdown='holder')
-              +radio--checkbox('radio', 'diversity-3a', 'rdDiv3a-1', 'Man (including trans man)')
-              +radio--checkbox('radio', 'diversity-3a', 'rdDiv3a-2', 'Woman (including trans woman)')
-              +radio--checkbox('radio', 'diversity-3a', 'rdDiv3a-3', 'Other gender identity')(data-dropdown='switch')
-              .indent-cv(data-dropdown-content='hide')
-                +input--text('identity', 'txtIndentity', 'Specify gender identity (optional)')
-              +radio--checkbox('radio', 'diversity-3a', 'rdDiv3a-4', 'Prefer not to say')(checked)
-
-          .section--minor
-            +fieldset('Is your gender identity different from the gender you were assigned at birth?')
-              .section--minor
-                +radio--checkbox__inline('radio', 'diversity-3b', 'rdDiv3b-1', 'Yes')
-                +radio--checkbox__inline('radio', 'diversity-3b', 'rdDiv3b-2', 'No')
-                +radio--checkbox__inline('radio', 'diversity-3b', 'rdDiv3b-4', 'Prefer not to say')(checked)
+          +select('org-type', 'orgType', 'What is this organisation’s main line of business?')
+            +option('Prefer not to say', '00')
+            +option('Agriculture, Forestry and Fishing', '01')
+            +option('Mining, Quarrying and Utilities', '02')
+            +option('Manufacturing', '03')
+            +option('Construction', '04')
+            +option('Motor Trades', '05')
+            +option('Wholesale', '06')
+            +option('Retail', '07')
+            +option('Transport and Storage (inc Postal)', '08')
+            +option('Accommodation and Food Services', '09')
+            +option('Information and Communication', '10')
+            +option('Finance and Insurance', '11')
+            +option('Property', '12')
+            +option('Professional, Scientific and Technical', '13')
+            +option('Business Administration and Support Services', '14')
+            +option('Education', '15')
+            +option('Health', '16')
+            +option('Public Administration', '17')
+            +option('Other', '18')
 
         +button('Next', 'btn--primary', 'submit')

@@ -1,0 +1,35 @@
+extends ../../layouts/layout.pug
+
+block content
+  #content.hero.theme--grey-4
+    .container
+      h1
+        small The advertising industry inquiry
+        span Diversity questions
+        span.context Step 4 of 5 - question 2 of 3
+
+      p #[+link('#', 'Back to previous page')(onclick='goBack()')]
+
+  section
+    .container
+      h2.typography--light Gender identity
+
+      +form(action='page05-3.html')
+        .block--border__bottom
+          +fieldset('What is your gender identity?')
+            .section--minor(data-dropdown='holder')
+              +radio--checkbox('radio', 'diversity-3a', 'rdDiv3a-1', 'Man (including trans man)')
+              +radio--checkbox('radio', 'diversity-3a', 'rdDiv3a-2', 'Woman (including trans woman)')
+              +radio--checkbox('radio', 'diversity-3a', 'rdDiv3a-3', 'Other gender identity')(data-dropdown='switch')
+              .indent-cv(data-dropdown-content='hide')
+                +input--text('identity', 'txtIndentity', 'Specify gender identity (optional)')
+              +radio--checkbox('radio', 'diversity-3a', 'rdDiv3a-4', 'Prefer not to say')(checked)
+
+          .section--minor
+            +fieldset('Is your gender identity different from the gender you were assigned at birth?')
+              .section--minor
+                +radio--checkbox__inline('radio', 'diversity-3b', 'rdDiv3b-1', 'Yes')
+                +radio--checkbox__inline('radio', 'diversity-3b', 'rdDiv3b-2', 'No')
+                +radio--checkbox__inline('radio', 'diversity-3b', 'rdDiv3b-4', 'Prefer not to say')(checked)
+
+        +button('Next', 'btn--primary', 'submit')

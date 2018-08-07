@@ -52,9 +52,9 @@ UK_Parliament.submitterRouting = function () {
     var submitterLink = document.getElementById('fileUploadForm');
     console.log(submitterLink);
     if (submitterType == 'ind') {
-      submitterLink.action = 'page06-1.html';
+      submitterLink.action = 'page05-1.html';
     } else if (submitterType == 'org') {
-      submitterLink.action = 'page07-1.html';
+      submitterLink.action = 'page06-1.html';
     }
   }
 };

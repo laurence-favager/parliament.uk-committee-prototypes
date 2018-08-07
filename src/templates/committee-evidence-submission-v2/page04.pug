@@ -5,37 +5,39 @@ block content
     .container
       h1
         small The advertising industry inquiry
-        span Inquiry details and submission guidelines
-        span.context Step 3 of 6
+        span Upload your evidence
+        span.context Step 3 of 5
 
       p #[+link('#', 'Back to previous page')(onclick='goBack()')]
 
-  section
-    .container
-      h2 Inquiry details
-      p #[+link('https://www.parliament.uk/documents/lords-committees/communications/advertising-industry/Final-Call-for-evidence.pdf', 'The advertising industry inquiry details')(target='_blank')]#[span.sr-only (This link will open in a new window)]
 
   section
     .container
-      h2 Submission guidelines
-      p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ac libero urna.
+      h2 Your uploaded file must
+
+      ul.list--bullet
+        li be less than 25MB
+        li be a single Word document
+        li not contain logos
 
   section
     .container
-      h2 Have you read the inquiry details and submission guidelines?
+      h2.sr-only Upload your evidence
+      +form(action='page05-1.html')(id='fileUploadForm')
+        ol.list--pipe__deep
+          li
+            .card
+              figure.svg--icon(data-file-upload='icon')
+                  include ../../icons/file.svg
+              .card__details
+                h3 Upload your evidence
 
-      +form(action='page05.html')
-        .block--border__bottom(class='open', data-toggle='item')
-          +fieldset
-            +radio--checkbox__inline('radio', 'guideline-check', 'guideline-check-yes', 'Yes')(data-toggle='parent-item')
-            +radio--checkbox__inline('radio', 'guideline-check', 'guideline-check-no', 'No')(class='open', data-toggle='parent-item', checked, data-submit='disabled')
+                +input--file('file-uploader', 'fileUpload', 'Choose file', 'btn--primary')
+                //-(required, data-file-size='26214400', data-error='Please upload your file')
 
-          div(class='open', data-toggle='content')
-            br
-            .status--highlight.theme--caution
-              p Before you continue, read the inquiry details and submission guidelines.
+                p(data-file-upload='status') No file(s) selected
 
-        +button('Next', 'btn--primary', 'submit')
+        +button('Next', 'btn--primary', 'submit')(id='file-upload-check')
 
       .section--minor
         .block.accent--mint
