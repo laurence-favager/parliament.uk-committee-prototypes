@@ -6,9 +6,9 @@ block content
       h1
         small The advertising industry inquiry
         span Diversity questions
-        span.context Step 5 - question 2
+        span.context Step 5 of 6 - question 2 of 3
 
-      p #[+link('page07-1.html', 'Back to previous page')]
+      p #[+link('#', 'Back to previous page')(onclick='goBack()')]
 
   section
     .container
@@ -16,6 +16,7 @@ block content
       +form(action='page07-3.html')
         .block--border__bottom
           +select('org-location', 'orgLocation', 'Where is this organisation’s main place of work?')
+            +option('Prefer not to say', '00')
             +option('North East England', '01')
             +option('North West England', '02')
             +option('Yorkshire and The Humber', '03')
@@ -29,6 +30,5 @@ block content
             +option('Scotland', '11')
             +option('Northern Ireland', '12')
             +option('Outside the United Kingdom', '13')
-            +option('Prefer not to say', '14')
 
         +button('Next', 'btn--primary', 'submit')

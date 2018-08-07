@@ -6,9 +6,9 @@ block content
       h1
         small The advertising industry inquiry
         span Diversity questions
-        span.context Step 5 - question 4
+        span.context Step 5 of 6 - question 4 of 4
 
-      p #[+link('page06-3.html', 'Back to previous page')]
+      p #[+link('#', 'Back to previous page')(onclick='goBack()')]
 
   section
     .container
@@ -21,6 +21,6 @@ block content
             .section--minor
               +radio--checkbox__inline('radio', 'diversity-4', 'rdDiv4-1', 'Yes')
               +radio--checkbox__inline('radio', 'diversity-4', 'rdDiv4-2', 'No')
-              +radio--checkbox__inline('radio', 'diversity-4', 'rdDiv4-3', 'Prefer not to say')
+              +radio--checkbox__inline('radio', 'diversity-4', 'rdDiv4-3', 'Prefer not to say')(checked)
 
         +button('Next', 'btn--primary', 'submit')

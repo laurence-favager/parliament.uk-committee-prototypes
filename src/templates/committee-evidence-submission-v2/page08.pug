@@ -6,9 +6,9 @@ block content
       h1
         small The advertising industry inquiry
         span Inquiry updates
-        span.context Step 6
+        span.context Step 6 of 6
 
-      p #[+link('page06-1.html', 'Back to previous page')]
+      p #[+link('#', 'Back to previous page')(onclick='goBack()')]
 
 
   section
@@ -23,7 +23,6 @@ block content
 
             div.section--minor(data-toggle='content')
               +fieldset('Choose from the options below.')
-                +radio--checkbox('checkbox', 'update-1', 'update1', 'Other submissions made to the advertising industry inquiry')
                 +radio--checkbox('checkbox', 'update-2', 'update2', 'Progress of the advertising industry inquiry')
                 +radio--checkbox('checkbox', 'update-3', 'update3', 'The Communications Committee’s work')
 

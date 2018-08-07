@@ -6,9 +6,9 @@ block content
       h1
         small The advertising industry inquiry
         span Diversity questions
-        span.context Step 5 - question 3
+        span.context Step 5 of 6 - question 3 of 3
 
-      p #[+link('page07-2.html', 'Back to previous page')]
+      p #[+link('#', 'Back to previous page')(onclick='goBack()')]
 
   section
     .container
@@ -16,6 +16,7 @@ block content
       +form(action='page08.html')
         .block--border__bottom
           +select('org-type', 'orgType', 'What is this organisation’s main line of business?')
+            +option('Prefer not to say', '00')
             +option('Agriculture, Forestry and Fishing', '01')
             +option('Mining, Quarrying and Utilities', '02')
             +option('Manufacturing', '03')
@@ -34,6 +35,5 @@ block content
             +option('Health', '16')
             +option('Public Administration', '17')
             +option('Other', '18')
-            +option('Prefer not to say', '19')
 
         +button('Next', 'btn--primary', 'submit')

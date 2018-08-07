@@ -6,14 +6,14 @@ block content
       h1
         small The advertising industry inquiry
         span Submit evidence online
-        span.context Step 1
+        span.context Step 1 of 6
 
-      p #[+link('index.html', 'Back to previous page')]
+      p #[+link('#', 'Back to previous page')(onclick='goBack()')]
 
   section
     .container
       h2.typography--light Who are you submitting evidence for?
-      +form('page02.html', '')(id='submitterType', data-evidence='form')
+      +form('page02.html')(id='submitterType', data-evidence='form')
         .block--border__bottom
           +fieldset('Who are you submitting evidence for?', 'sr-only')
             ol.list--block
