@@ -4,9 +4,9 @@ block content
   #content.hero.theme--grey-4
     .container
       h1
-        small The advertising industry inquiry
-        span Diversity questions
-        span.context Step 4 of 5 - question 1 of 3
+        span Diversity question 1
+        span.sr-only .
+        span.context The advertising industry inquiry
 
       p #[+link('#', 'Back to previous page')(onclick='goBack()')]
 
@@ -20,6 +20,6 @@ block content
               +radio--checkbox('radio', 'diversity-1', 'rdDiv1-1', '0 to 49')
               +radio--checkbox('radio', 'diversity-1', 'rdDiv1-2', '50 to 249')
               +radio--checkbox('radio', 'diversity-1', 'rdDiv1-3', 'Over 250')
-              +radio--checkbox('radio', 'diversity-1', 'rdDiv1-4', 'Prefer not to say')(checked)
+              +radio--checkbox('radio', 'diversity-1', 'rdDiv1-4', 'Prefer not to say')
 
-        +button('Next', 'btn--primary', 'submit')
+        +button('Continue', 'btn--primary', 'submit')

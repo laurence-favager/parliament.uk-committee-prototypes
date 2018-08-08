@@ -4,9 +4,9 @@ block content
   #content.hero.theme--grey-4
     .container
       h1
-        small The advertising industry inquiry
-        span Diversity questions
-        span.context Step 4 of 5 - question 2 of 3
+        span Diversity question 2
+        span.sr-only .
+        span.context The advertising industry inquiry
 
       p #[+link('#', 'Back to previous page')(onclick='goBack()')]
 
@@ -29,6 +29,7 @@ block content
             +option('Wales', '10')
             +option('Scotland', '11')
             +option('Northern Ireland', '12')
-            +option('Outside the United Kingdom', '13')
+            +option('Nationwide')
+            +option('Outside the United Kingdom', '14')
 
-        +button('Next', 'btn--primary', 'submit')
+        +button('Continue', 'btn--primary', 'submit')

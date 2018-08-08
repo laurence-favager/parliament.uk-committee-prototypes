@@ -4,12 +4,11 @@ block content
   #content.hero.theme--grey-4
     .container
       h1
-        small The advertising industry inquiry
         span Inquiry updates
-        span.context Step 5 of 5
+        span.sr-only .
+        span.context The advertising industry inquiry
 
       p #[+link('#', 'Back to previous page')(onclick='goBack()')]
-
 
   section
     .container
@@ -26,4 +25,4 @@ block content
                 +radio--checkbox('checkbox', 'update-2', 'update2', 'the progress of the advertising industry inquiry')
                 +radio--checkbox('checkbox', 'update-3', 'update3', 'the Communications Committee’s work')
 
-        +button('Send submission', 'btn--primary', 'submit')
+        +button('Send evidence', 'btn--primary', 'submit')

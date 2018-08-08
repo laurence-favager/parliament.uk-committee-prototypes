@@ -4,9 +4,9 @@ block content
   #content.hero.theme--grey-4
     .container
       h1
-        small The advertising industry inquiry
         span Submit evidence online
-        span.context Step 1 of 5
+        span.sr-only .
+        span.context The advertising industry inquiry
 
       p #[+link('#', 'Back to previous page')(onclick='goBack()')]
 
@@ -22,4 +22,4 @@ block content
               li
                 +radio--checkbox__verbose('radio', 'submitter-type', 'org', 'You are submitting evidence for a business or an organisation.', 'Organisation')(data-route='page03.html')
 
-        +button('Next', 'btn--primary', 'submit')
+        +button('Continue', 'btn--primary', 'submit')

@@ -4,9 +4,9 @@ block content
   #content.hero.theme--grey-4
     .container
       h1
-        small The advertising industry inquiry
         span Upload your evidence
-        span.context Step 3 of 5
+        span.sr-only .
+        span.context The advertising industry inquiry
 
       p #[+link('#', 'Back to previous page')(onclick='goBack()')]
 
@@ -37,7 +37,7 @@ block content
 
                 p(data-file-upload='status') No file(s) selected
 
-        +button('Next', 'btn--primary', 'submit')(id='file-upload-check')
+        +button('Continue', 'btn--primary', 'submit')(id='file-upload-check')
 
       .section--minor
         .block.accent--mint

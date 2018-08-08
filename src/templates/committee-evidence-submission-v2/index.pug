@@ -4,8 +4,9 @@ block content
   #content.section--primary.section--wide
     .container
       h1
-        small #[+link('#', 'The advertising industry inquiry')]
         span Inquiry details and submission guidelines
+        span.sr-only .
+        span.context #[+link('#', 'The advertising industry inquiry')]
 
   section
     .container
@@ -64,4 +65,4 @@ block content
             .status--highlight.theme--caution
               p Before you continue, read the inquiry details and submission guidelines.
 
-        +button('Next', 'btn--primary', 'submit')
+        +button('Start', 'btn--primary', 'submit')

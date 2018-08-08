@@ -4,9 +4,9 @@ block content
   #content.hero.theme--grey-4
     .container
       h1
-        small The advertising industry inquiry
         span Submit evidence online - organisation
-        span.context Step 2 of 5
+        span.sr-only .
+        span.context The advertising industry inquiry
 
       p #[+link('#', 'Back to previous page')(onclick='goBack()')]
 
@@ -27,7 +27,7 @@ block content
           +input--validate('email', 'email', 'txtEmail', '[^@]+@[^@]+\\.[^@]+', null, 'Email', null)(data-error='Please enter a valid email address')
           +input--text('telephone', 'txtPhone', 'Phone (optional)')(maxlength='15')
 
-        +button('Next', 'btn--primary', 'submit')
+        +button('Continue', 'btn--primary', 'submit')
 
       .section--minor
         .block.accent--mint

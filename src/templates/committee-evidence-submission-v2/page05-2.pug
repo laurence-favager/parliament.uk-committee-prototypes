@@ -4,9 +4,9 @@ block content
   #content.hero.theme--grey-4
     .container
       h1
-        small The advertising industry inquiry
-        span Diversity questions
-        span.context Step 4 of 5 - question 2 of 3
+        span Diversity question 2
+        span.sr-only .
+        span.context The advertising industry inquiry
 
       p #[+link('#', 'Back to previous page')(onclick='goBack()')]
 
@@ -18,18 +18,18 @@ block content
         .block--border__bottom
           +fieldset('What is your gender identity?')
             .section--minor(data-dropdown='holder')
-              +radio--checkbox('radio', 'diversity-3a', 'rdDiv3a-1', 'Man (including trans man)')
-              +radio--checkbox('radio', 'diversity-3a', 'rdDiv3a-2', 'Woman (including trans woman)')
-              +radio--checkbox('radio', 'diversity-3a', 'rdDiv3a-3', 'Other gender identity')(data-dropdown='switch')
+              +radio--checkbox('radio', 'diversity-2a', 'rdDiv2a-1', 'Man (including trans man)')
+              +radio--checkbox('radio', 'diversity-2a', 'rdDiv2a-2', 'Woman (including trans woman)')
+              +radio--checkbox('radio', 'diversity-2a', 'rdDiv2a-3', 'Other gender identity')(data-dropdown='switch')
               .indent-cv(data-dropdown-content='hide')
                 +input--text('identity', 'txtIndentity', 'Specify gender identity (optional)')
-              +radio--checkbox('radio', 'diversity-3a', 'rdDiv3a-4', 'Prefer not to say')(checked)
+              +radio--checkbox('radio', 'diversity-2a', 'rdDiv2a-4', 'Prefer not to say')
 
           .section--minor
             +fieldset('Is your gender identity different from the gender you were assigned at birth?')
               .section--minor
-                +radio--checkbox__inline('radio', 'diversity-3b', 'rdDiv3b-1', 'Yes')
-                +radio--checkbox__inline('radio', 'diversity-3b', 'rdDiv3b-2', 'No')
-                +radio--checkbox__inline('radio', 'diversity-3b', 'rdDiv3b-4', 'Prefer not to say')(checked)
+                +radio--checkbox__inline('radio', 'diversity-2b', 'rdDiv2b-1', 'Yes')
+                +radio--checkbox__inline('radio', 'diversity-2b', 'rdDiv2b-2', 'No')
+                +radio--checkbox__inline('radio', 'diversity-2b', 'rdDiv2b-4', 'Prefer not to say')
 
-        +button('Next', 'btn--primary', 'submit')
+        +button('Continue', 'btn--primary', 'submit')
