@@ -92,6 +92,11 @@ UK_Parliament.enableSubmit = function () {
 
   if (document.querySelector('[data-submit="disabled"]')) {
 
+    // Reload DOM if page loaded from browser history
+    if (performance.navigation.type == 2) {
+      location.reload(true);
+    }
+
     var forms = document.querySelectorAll('form');
 
     // Enabled button attribute and styling
@@ -314,6 +319,7 @@ UK_Parliament.dropdownSwitch = function () {
 
         // Loop radio group and grab clicked radio button
         inputSwitchNamesArray.forEach(function (radios, index) {
+
           radios.addEventListener('click', function () {
 
             if (this.getAttribute('data-dropdown') === 'switch' && this.checked) {

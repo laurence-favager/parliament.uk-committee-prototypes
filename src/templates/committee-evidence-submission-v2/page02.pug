@@ -20,11 +20,10 @@ block content
           +input--text('last-name', 'txtLastName', 'Last name')(required, data-error='Please enter a last name')
 
           p If your evidence is published, your name will appear online.
-          .section--minor
 
+          .section--minor
             +input--validate('email', 'email', 'txtEmail', '[^@]+@[^@]+\\.[^@]+', null, 'Email', null)(data-error='Please enter a valid email address')
             +input--text('telephone', 'txtPhone', 'Phone (optional)')(maxlength='15')
-
             +input--text('pro-name', 'txtProName', 'Job title (optional)')
             +input--text('pro-role', 'txtProRole', 'Organisation (optional)')
 

@@ -12,7 +12,7 @@ block content
 
   section
     .container
-      h2.typography--light Who are you submitting evidence for?
+      h2 Who are you submitting evidence for?
       +form('page02.html')(id='submitterType', data-evidence='form')
         .block--border__bottom
           +fieldset('Who are you submitting evidence for?', 'sr-only')
@@ -20,6 +20,10 @@ block content
               li
                 +radio--checkbox__verbose('radio', 'submitter-type', 'ind', 'You are submitting evidence for one person.', 'Individual')(data-route='page02.html', checked)
               li
+                +radio--checkbox__verbose('radio', 'submitter-type', 'grp', 'You are submitting evidence for a group of people.', 'Group of individuals')(data-route='page02-1.html')
+              li
                 +radio--checkbox__verbose('radio', 'submitter-type', 'org', 'You are submitting evidence for a business or an organisation.', 'Organisation')(data-route='page03.html')
+              li
+                +radio--checkbox__verbose('radio', 'submitter-type', 'orgs', 'You are submitting evidence for a group of businesses or organisations.', 'Group of organisations')(data-route='page03-1.html')
 
         +button('Continue', 'btn--primary', 'submit')

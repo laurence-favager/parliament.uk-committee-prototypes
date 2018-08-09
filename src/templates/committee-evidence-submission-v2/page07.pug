@@ -12,17 +12,16 @@ block content
 
   section
     .container
-      h2.typography--light Would you like email updates from the Committee?
+      h2 Would you like email updates from the Committee?
       +form(action='page08.html')
         .block--border__bottom
           div(data-toggle='item')
-            +fieldset
-              +radio--checkbox__inline('radio', 'updates-check', 'updates-check-yes', 'Yes')(data-toggle='parent-item')
-              +radio--checkbox__inline('radio', 'updates-check', 'updates-check-no', 'No')(data-toggle='parent-item', checked)
+            +radio--checkbox__inline('radio', 'updates-check', 'updates-check-yes', 'Yes')(data-toggle='parent-item')
+            +radio--checkbox__inline('radio', 'updates-check', 'updates-check-no', 'No')(data-toggle='parent-item', checked)
 
-            div.section--minor(data-toggle='content')
+            .section--major(data-toggle='content')
               +fieldset('I would like updates on:')
-                +radio--checkbox('checkbox', 'update-2', 'update2', 'the progress of the advertising industry inquiry')
-                +radio--checkbox('checkbox', 'update-3', 'update3', 'the Communications Committee’s work')
+                +radio--checkbox('checkbox', 'update-1', 'update1', 'the progress of the advertising industry inquiry')
+                +radio--checkbox('checkbox', 'update-2', 'update2', 'the Communications Committee’s work')
 
         +button('Send evidence', 'btn--primary', 'submit')

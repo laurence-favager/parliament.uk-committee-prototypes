@@ -10,7 +10,6 @@ block content
 
       p #[+link('#', 'Back to previous page')(onclick='goBack()')]
 
-
   section
     .container
       h2 Your uploaded file must
@@ -20,9 +19,6 @@ block content
         li be a single Word document
         li not contain logos
 
-  section
-    .container
-      h2.sr-only Upload your evidence
       +form(action='page05-1.html')(id='fileUploadForm')
         ol.list--pipe__deep
           li
@@ -32,8 +28,7 @@ block content
               .card__details
                 h3 Upload your evidence
 
-                +input--file('file-uploader', 'fileUpload', 'Choose file', 'btn--primary')
-                //-(required, data-file-size='26214400', data-error='Please upload your file')
+                +input--file('file-uploader', 'fileUpload', 'Choose file', 'btn--primary')(required, data-file-size='26214400', data-error='Please upload your file')
 
                 p(data-file-upload='status') No file(s) selected
 
