@@ -4,7 +4,7 @@ block content
   #content.hero.theme--grey-4
     .container
       h1
-        span Submit evidence online - individual
+        span Individual's details
         span.sr-only .
         span.context The advertising industry inquiry
 
@@ -22,10 +22,10 @@ block content
           p If your evidence is published, your name will appear online.
 
           .section--minor
-            +input--validate('email', 'email', 'txtEmail', '[^@]+@[^@]+\\.[^@]+', null, 'Email', null)(data-error='Please enter a valid email address')
-            +input--text('telephone', 'txtPhone', 'Phone (optional)')(maxlength='15')
             +input--text('pro-name', 'txtProName', 'Job title (optional)')
             +input--text('pro-role', 'txtProRole', 'Organisation (optional)')
+            +input--validate('email', 'email', 'txtEmail', '[^@]+@[^@]+\\.[^@]+', null, 'Email', null)(data-error='Please enter a valid email address')
+            +input--text('telephone', 'txtPhone', 'Phone (optional)')(maxlength='15')
 
         +button('Continue', 'btn--primary', 'submit')
 
