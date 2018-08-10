@@ -1,0 +1,27 @@
+extends ../../layouts/layout.pug
+
+block content
+  #content.hero.theme--grey-4
+    .container
+      h1
+        span Committee updates
+        span.sr-only .
+        span.context The advertising industry inquiry
+
+      p #[+link('#', 'Back to previous page')(onclick='goBack()')]
+
+  section
+    .container
+      h2 Would you like email updates from the Committee?
+      +form(action='page10.html')
+        .block--border__bottom
+          div(data-toggle='item')
+            +radio--checkbox__inline('radio', 'updates-check', 'updates-check-yes', 'Yes')(data-toggle='parent-item')
+            +radio--checkbox__inline('radio', 'updates-check', 'updates-check-no', 'No')(data-toggle='parent-item', checked)
+
+            .section--major(data-toggle='content')
+              +fieldset('I would like updates on:')
+                +radio--checkbox('checkbox', 'update-1', 'update1', 'the progress of the advertising industry inquiry')
+                +radio--checkbox('checkbox', 'update-2', 'update2', 'all Communications Committee work')
+
+        +button('Send evidence', 'btn--primary', 'submit')

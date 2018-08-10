@@ -1,0 +1,35 @@
+extends ../../layouts/layout.pug
+
+block content
+  #content.hero.theme--grey-4
+    .container
+      h1
+        span Diversity question 2 of 3
+        span.sr-only .
+        span.context The advertising industry inquiry
+
+      p #[+link('#', 'Back to previous page')(onclick='goBack()')]
+
+  section
+    .container
+      h2 Organisation location
+      +form(action='page08-3.html')
+        .block--border__bottom
+          +select('org-location', 'orgLocation', 'Where is your organisation based?')
+            +option('Prefer not to say', '00')
+            +option('North East England', '01')
+            +option('North West England', '02')
+            +option('Yorkshire and The Humber', '03')
+            +option('East Midlands', '04')
+            +option('West Midlands', '05')
+            +option('East of England', '06')
+            +option('London', '07')
+            +option('South East England', '08')
+            +option('South West England', '09')
+            +option('Wales', '10')
+            +option('Scotland', '11')
+            +option('Northern Ireland', '12')
+            +option('Nationwide')
+            +option('Outside the United Kingdom', '14')
+
+        +button('Continue', 'btn--primary', 'submit')

@@ -52,9 +52,9 @@ UK_Parliament.submitterRouting = function () {
     var submitterLink = document.getElementById('fileUploadForm');
     console.log(submitterLink);
     if (submitterType == 'ind') {
-      submitterLink.action = 'page05-1.html';
+      submitterLink.action = 'page07-1.html';
     } else if (submitterType == 'org') {
-      submitterLink.action = 'page06-1.html';
+      submitterLink.action = 'page08-1.html';
     }
   }
 };
@@ -343,3 +343,192 @@ UK_Parliament.dropdownSwitch = function () {
 };
 
 UK_Parliament.dropdownSwitch();
+
+// Add additional organisations to multi org forms
+UK_Parliament.addNewOrganisation = function () {
+
+  // Functions to add additional inputs to form
+  if (document.getElementById('addNewOrg')) {
+
+    var o = 1;
+
+    // Functionality to add/remove organisation name inputs
+    document.getElementById('addNewOrg').addEventListener('click', function (e) {
+      e.preventDefault();
+
+      if (o <= 9) {
+
+        var is = document.createElement('div'),
+            ih = document.createElement('h2'),
+            il = document.createElement('label'),
+            it = document.createElement('input'),
+            ir = document.createElement('a');
+
+        is.setAttribute('class', 'radiv-cv');
+        is.setAttribute('aria-live', 'polite');
+        il.innerHTML = 'Organisation name';
+        it.setAttribute('type', 'text');
+        it.setAttribute('name', 'name');
+        it.setAttribute('required', 'required');
+        it.setAttribute('data-error', 'Please enter the organisation name');
+        ir.setAttribute('class', 'link--remove-cv');
+        ir.innerHTML = 'remove';
+
+        increment();
+
+        ih.innerHTML = 'Additional organisation ' + o;
+        il.setAttribute('for', 'txtOrgName' + o);
+        it.setAttribute('id', 'txtOrgName' + o);
+
+        is.appendChild(ih);
+        is.appendChild(il);
+        is.appendChild(it);
+
+        ir.setAttribute('onclick', "removeElement('id_" + o + "')");
+
+        is.appendChild(ir);
+
+        is.setAttribute('id', 'id_' + o);
+
+        document.getElementById('multiOrgs').insertAdjacentElement('beforeend', is);
+
+        UK_Parliament.formValidation();
+
+      } else {
+        var vm = document.createElement('div');
+        var vp = document.createElement('p');
+        vm.setAttribute('class', 'status--highlight theme--caution');
+        vm.setAttribute('aria-live', 'polite');
+        vp.innerHTML = 'You can\'t add more than 10 organisation names to this form.\n\n If there are more organisations on the submission make sure they\'re included in your evidence.';
+        vm.appendChild(vp);
+        document.getElementById('addNewOrg').insertAdjacentElement('beforebegin', vm);
+      }
+    });
+  }
+
+  // Function to do standard incrementation
+  increment = function () {
+    o += 1;
+  };
+
+  // Function to do standard incrementation
+  decrement = function () {
+    o -= 1;
+  };
+
+  // Function to remove fom elements dynamically
+  removeElement = function (org) {
+    var orgDelete = document.getElementById(org);
+    orgDelete.remove();
+    decrement();
+  };
+};
+
+UK_Parliament.addNewOrganisation();
+
+// Add additional individuals to group forms
+UK_Parliament.addNewIndividual = function () {
+
+  // Functions to add additional inputs to form
+  if (document.getElementById('addNewInd')) {
+
+    var i = 1;
+
+    // Functionality to add/remove organisation name inputs
+    document.getElementById('addNewInd').addEventListener('click', function (e) {
+      e.preventDefault();
+
+      if (i <= 9) {
+
+        var is = document.createElement('div'),
+            ih = document.createElement('h2'),
+            il1 = document.createElement('label'),
+            it1 = document.createElement('input'),
+            il2 = document.createElement('label'),
+            it2 = document.createElement('input'),
+            il3 = document.createElement('label'),
+            it3 = document.createElement('input'),
+            ir = document.createElement('a');
+
+        is.setAttribute('class', 'radiv-cv');
+        is.setAttribute('aria-live', 'polite');
+        il1.innerHTML = 'Title (optional)';
+        it1.setAttribute('type', 'text');
+        it1.setAttribute('name', 'title');
+
+        il2.innerHTML = 'First name(s)';
+        it2.setAttribute('type', 'text');
+        it2.setAttribute('name', 'first-name');
+        it2.setAttribute('required', 'required');
+        it2.setAttribute('data-error', 'Please enter a first name');
+
+        il3.innerHTML = 'Last name';
+        it3.setAttribute('type', 'text');
+        it3.setAttribute('name', 'last-name');
+        it3.setAttribute('required', 'required');
+        it3.setAttribute('data-error', 'Please enter a last name');
+
+        ir.setAttribute('class', 'link--remove-cv');
+        ir.innerHTML = 'remove';
+
+        increment();
+
+        ih.innerHTML = 'Additional individual ' + i;
+
+        il1.setAttribute('for', 'txtTitle' + i);
+        it1.setAttribute('id', 'txtTitle' + i);
+        it1.setAttribute('class', 'input__md');
+        il2.setAttribute('for', 'txtFirstName' + i);
+        it2.setAttribute('id', 'txtFirstName' + i);
+        il2.setAttribute('for', 'txtLastName' + i);
+        it2.setAttribute('id', 'txtLastName' + i);
+
+        is.appendChild(ih);
+        is.appendChild(il1);
+        is.appendChild(it1);
+        is.appendChild(il2);
+        is.appendChild(it2);
+        is.appendChild(il3);
+        is.appendChild(it3);
+
+        ir.setAttribute('onclick', "removeElement('id_" + i + "')");
+
+        is.appendChild(ir);
+
+        is.setAttribute('id', 'id_' + i);
+
+        document.getElementById('multiInds').insertAdjacentElement('beforeend', is);
+
+        UK_Parliament.formValidation();
+
+      } else {
+        var vm = document.createElement('div');
+        var vp = document.createElement('p');
+        vm.setAttribute('class', 'status--highlight theme--caution');
+        vm.setAttribute('aria-live', 'polite');
+        vp.innerHTML = 'You can\'t add more than 10 names to this form.\n\n If there are more names on the submission make sure they\'re included in your evidence.';
+        vm.appendChild(vp);
+        document.getElementById('addNewind').insertAdjacentElement('beforebegin', vm);
+      }
+    });
+  }
+
+  // Function to do standard incrementation
+  increment = function () {
+    i += 1;
+  };
+
+  // Function to do standard incrementation
+  decrement = function () {
+    i -= 1;
+  };
+
+  // Function to remove fom elements dynamically
+  removeElement = function (ind) {
+    var indDelete = document.getElementById(ind);
+    indDelete.remove();
+    decrement();
+  };
+};
+
+UK_Parliament.addNewIndividual();

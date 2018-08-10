@@ -1,0 +1,26 @@
+extends ../../layouts/layout.pug
+
+block content
+  #content.section--primary
+    .container
+      h1
+        span Thank you for your submission
+        span.context #[+link('index.html', 'The advertising industry inquiry')]
+
+      .status--highlight
+        p.lead Your submission reference is <b>PPI123XYZ</b>
+
+        p This will be sent to test@test.com in the next 15 minutes.
+
+  section
+    .container
+      h2 What happens next
+
+      p We'll contact you by email to let you know whether your evidence has been published.
+
+      p For more information email #[+link('mailto:holcommunications@parliament.uk', 'holcommunications@parliament.uk')] or phone #[+link('tel:02072198662', '020 7219 8662')].
+
+  section
+    .container
+      h2 Give feedback
+      p Help us improve this submission process by completing our #[+link('#', 'feedback form')(target='_blank')]#[span.sr-only (This link will open in a new window)].

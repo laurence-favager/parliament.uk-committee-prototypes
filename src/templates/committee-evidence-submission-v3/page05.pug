@@ -1,0 +1,38 @@
+extends ../../layouts/layout.pug
+
+block content
+  #content.hero.theme--grey-4
+    .container
+      h1
+        span Group of organisations' details
+        span.sr-only .
+        span.context The advertising industry inquiry
+
+      p #[+link('#', 'Back to previous page')(onclick='goBack()')]
+
+  section
+    .container
+      h2.sr-only Complete the fields below
+      +form('page05-1.html')
+        .block--border__bottom
+          h3.beta Lead organisation details
+          +input--text('name', 'txtOrgName', 'Organisation name')(required, data-error='Please enter the organisation name')
+
+          p If your evidence is published, your organisation's name will appear online.
+
+        .radiv-cv 
+          h3.beta Additional organisation 1
+          +input--text('name', 'txtOrgName1', 'Organisation name')(required, data-error='Please enter the organisation name')
+
+        #multiOrgs
+
+        .block--border__bottom
+          .section--major 
+            +buttonLink('#', 'Add another organisation', 'btn--ghost--primary')(id='addNewOrg')
+
+        +button('Continue', 'btn--primary', 'submit')
+
+      .section--minor
+        .block.accent--mint
+          h3 Help and support
+          p For more information email #[+link('mailto:holcommunications@parliament.uk', 'holcommunications@parliament.uk')] or phone #[+link('tel:02072198662', '020 7219 8662')]

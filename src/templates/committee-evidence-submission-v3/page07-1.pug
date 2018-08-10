@@ -1,0 +1,52 @@
+extends ../../layouts/layout.pug
+
+block content
+  #content.hero.theme--grey-4
+    .container
+      h1
+        span Diversity question 1 of 3
+        span.sr-only .
+        span.context The advertising industry inquiry
+
+      p #[+link('#', 'Back to previous page')(onclick='goBack()')]
+
+  section.section--wide
+    .container
+      h2 Ethnic background
+      +form(action='page07-2.html')
+        +fieldset('Choose one option that best describes your ethnic group or background')
+          h3 Asian
+          .radiv-cv
+            +radio--checkbox__inline('radio', 'diversity-1', 'rdDiv1-1', 'Bangladeshi')
+            +radio--checkbox__inline('radio', 'diversity-1', 'rdDiv1-2', 'Indian')
+            +radio--checkbox__inline('radio', 'diversity-1', 'rdDiv1-3', 'Pakistani')
+            +radio--checkbox__inline('radio', 'diversity-1', 'rdDiv1-4', 'Any other Asian background')
+          h3 Black
+          .radiv-cv
+            +radio--checkbox__inline('radio', 'diversity-1', 'rdDiv1-5', 'African')
+            +radio--checkbox__inline('radio', 'diversity-1', 'rdDiv1-6', 'Caribbean')
+            +radio--checkbox__inline('radio', 'diversity-1', 'rdDiv1-7', 'Any other Black background')
+          h3 Chinese
+          .radiv-cv
+            +radio--checkbox__inline('radio', 'diversity-1', 'rdDiv1-8', 'Any Chinese background')
+          h3 Mixed ethnic background
+          .radiv-cv
+            +radio--checkbox__inline('radio', 'diversity-1', 'rdDiv1-9', 'Asian and White')
+            +radio--checkbox__inline('radio', 'diversity-1', 'rdDiv1-10', 'Black African and White')
+            +radio--checkbox__inline('radio', 'diversity-1', 'rdDiv1-11', 'Black Caribbean and White')
+            +radio--checkbox__inline('radio', 'diversity-1', 'rdDiv1-12', 'Any other mixed ethnic background')
+          h3 White
+          .radiv-cv
+            +radio--checkbox__inline('radio', 'diversity-1', 'rdDiv1-13', 'Any White background')
+          h3 Other ethnic background
+          .radiv-cv
+            +radio--checkbox__inline('radio', 'diversity-1', 'rdDiv1-14', 'Arab')
+            +radio--checkbox__inline('radio', 'diversity-1', 'rdDiv1-15', 'Latin American')
+            +radio--checkbox__inline('radio', 'diversity-1', 'rdDiv1-16', 'Gypsy or Irish Traveller')
+            +radio--checkbox__inline('radio', 'diversity-1', 'rdDiv1-17', 'Any other ethnic background')
+          h3 Prefer not to say
+          .radiv-cv
+            +radio--checkbox__inline('radio', 'diversity-1', 'rdDiv1-18', 'Prefer not to say')
+
+        .section--minor
+          +button('Continue', 'btn--primary', 'submit')

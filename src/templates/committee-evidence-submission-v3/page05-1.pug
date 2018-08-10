@@ -1,0 +1,30 @@
+extends ../../layouts/layout.pug
+
+block content
+  #content.hero.theme--grey-4
+    .container
+      h1
+        span Lead organisation's details
+        span.sr-only .
+        span.context The advertising industry inquiry
+
+      p #[+link('#', 'Back to previous page')(onclick='goBack()')]
+
+  section
+    .container
+      h2.sr-only Complete the fields below
+      +form('page06.html')
+        .block--border__bottom
+          h3.beta Contact details
+          +input--text('title', 'txtTitle', 'Title (optional)')(class='input__md')
+          +input--text('first-name', 'txtFirstName', 'First name(s)')(required, data-error='Please enter a first name')
+          +input--text('last-name', 'txtLastName', 'Last name')(required, data-error='Please enter a last name')
+          +input--validate('email', 'email', 'txtEmail', '[^@]+@[^@]+\\.[^@]+', null, 'Email', null)(data-error='Please enter a valid email address')
+          +input--text('telephone', 'txtPhone', 'Phone (optional)')(maxlength='15')
+
+        +button('Continue', 'btn--primary', 'submit')
+
+      .section--minor
+        .block.accent--mint
+          h3 Help and support
+          p For more information email #[+link('mailto:holcommunications@parliament.uk', 'holcommunications@parliament.uk')] or phone #[+link('tel:02072198662', '020 7219 8662')]
