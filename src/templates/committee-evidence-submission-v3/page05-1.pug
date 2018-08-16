@@ -12,10 +12,9 @@ block content
 
   section
     .container
-      h2.sr-only Complete the fields below
+      h2 Contact details
       +form('page06.html')
-        .block--border__bottom
-          h3.beta Contact details
+        .input-wrapper
           +input--text('title', 'txtTitle', 'Title (optional)')(class='input__md')
           +input--text('first-name', 'txtFirstName', 'First name(s)')(required, data-error='Please enter a first name')
           +input--text('last-name', 'txtLastName', 'Last name')(required, data-error='Please enter a last name')

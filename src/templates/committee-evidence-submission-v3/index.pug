@@ -30,6 +30,7 @@ block content
       h2 Submitting your evidence
 
       p Your uploaded file must:
+
       ul
         li be less than 25MB
         li be a single Word document
@@ -44,24 +45,23 @@ block content
       h2 After submitting your evidence
       
       p If your submission is accepted:
+
       ul
         li it is usually published online
         li it is subject to #[+link('https://www.parliament.uk/site-information/copyright-parliament/', 'parliamentary copyright')] and is protected by #[+link('https://www.parliament.uk/site-information/glossary/parliamentary-privilege/', 'parliamentary privilege')]
         li you must get permission from the clerk of the committee if you want to publish it somewhere else
-
 
   section
     .container
       h2 Have you read the inquiry details and guidelines?
 
       +form(action='page01.html')
-        .block--border__bottom(class='open', data-toggle='item')
+        .input-wrapper(class='open', data-toggle='item')
           +fieldset
             +radio--checkbox__inline('radio', 'guideline-check', 'guideline-check-yes', 'Yes')(data-toggle='parent-item')
             +radio--checkbox__inline('radio', 'guideline-check', 'guideline-check-no', 'No')(class='open', data-toggle='parent-item', checked, data-submit='disabled')
 
           div(class='open', data-toggle='content')
-            br
             .status--highlight.theme--caution
               p Before you continue, read the inquiry details and submission guidelines.
 

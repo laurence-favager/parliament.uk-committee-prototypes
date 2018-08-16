@@ -14,12 +14,11 @@ block content
     .container
       h2 Organisation size
       +form(action='page08-2.html')
-        .block--border__bottom
+        .input-wrapper
           +fieldset('How many people are employed by your organisation?')
-            .section--minor
-              +radio--checkbox('radio', 'diversity-1', 'rdDiv1-1', '0 to 49')
-              +radio--checkbox('radio', 'diversity-1', 'rdDiv1-2', '50 to 249')
-              +radio--checkbox('radio', 'diversity-1', 'rdDiv1-3', 'Over 250')
-              +radio--checkbox('radio', 'diversity-1', 'rdDiv1-4', 'Prefer not to say')
+            +radio--checkbox('radio', 'diversity-1', 'rdDiv1-1', '0 to 49')
+            +radio--checkbox('radio', 'diversity-1', 'rdDiv1-2', '50 to 249')
+            +radio--checkbox('radio', 'diversity-1', 'rdDiv1-3', 'Over 250')
+            +radio--checkbox('radio', 'diversity-1', 'rdDiv1-4', 'Prefer not to say')
 
         +button('Continue', 'btn--primary', 'submit')

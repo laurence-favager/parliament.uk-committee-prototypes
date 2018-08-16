@@ -32,6 +32,8 @@
   }
 }
 
+// Hero & Heading tweaks
+
 .hero {
   padding-top: 48px;
   h1:after {
@@ -39,15 +41,45 @@
   }
 }
 
+h3 {
+  margin-bottom: $base-spacing-unit-small;
+}
+
+// Input wrappers
+
+form > :last-child {
+  border-bottom: none;
+}
+
+.input-wrapper, .input-group__extended {
+  margin-bottom: $base-spacing-unit-extra-large;
+  border-bottom: solid 1px $grey-3;
+  & > :last-child {
+    margin-bottom: $base-spacing-unit-extra-large;
+  }
+}
+
+.input-group__inline {
+  margin-bottom: $base-spacing-unit-small;
+}
+
+legend {
+  margin-bottom: $base-spacing-unit-small;
+}
+
+// Input indentations
+
+.radiv-cv {
+  padding-bottom: $base-spacing-unit-medium;
+  border-bottom: solid 1px $grey-3;
+}
+
 .indent-cv {
   padding-left: ($base-spacing-unit-medium * 2);
   padding-bottom: $base-spacing-unit-medium;
 }
 
-.radiv-cv {
-  padding-bottom: 18px;
-  border-bottom: solid 1px $grey-3;
-}
+// Link styling
 
 .link--remove-cv {
   color: $warning--dark;
@@ -55,8 +87,4 @@
   &:hover {
     color: $warning;
   }
-}
-
-h3 {
-  margin-bottom: $base-spacing-unit-tiny;
 }

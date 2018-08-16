@@ -350,21 +350,22 @@ UK_Parliament.addNewOrganisation = function () {
   // Functions to add additional inputs to form
   if (document.getElementById('addNewOrg')) {
 
-    var o = 1;
+    var j = 1;
 
     // Functionality to add/remove organisation name inputs
     document.getElementById('addNewOrg').addEventListener('click', function (e) {
       e.preventDefault();
 
-      if (o <= 9) {
+      if (j <= 2) {
 
         var is = document.createElement('div'),
             ih = document.createElement('h2'),
             il = document.createElement('label'),
             it = document.createElement('input'),
+            ip = document.createElement('p'),
             ir = document.createElement('a');
 
-        is.setAttribute('class', 'radiv-cv');
+        is.setAttribute('class', 'input-group__extended');
         is.setAttribute('aria-live', 'polite');
         il.innerHTML = 'Organisation name';
         it.setAttribute('type', 'text');
@@ -374,21 +375,22 @@ UK_Parliament.addNewOrganisation = function () {
         ir.setAttribute('class', 'link--remove-cv');
         ir.innerHTML = 'remove';
 
-        increment();
+        incrementOrg();
 
-        ih.innerHTML = 'Additional organisation ' + o;
-        il.setAttribute('for', 'txtOrgName' + o);
-        it.setAttribute('id', 'txtOrgName' + o);
+        ih.innerHTML = 'Additional organisation ' + j;
+        il.setAttribute('for', 'txtOrgName' + j);
+        it.setAttribute('id', 'txtOrgName' + j);
 
         is.appendChild(ih);
         is.appendChild(il);
         is.appendChild(it);
 
-        ir.setAttribute('onclick', "removeElement('id_" + o + "')");
+        ir.setAttribute('onclick', "removeOrgElement('id_" + j + "')");
 
-        is.appendChild(ir);
+        ip.appendChild(ir);
+        is.appendChild(ip);
 
-        is.setAttribute('id', 'id_' + o);
+        is.setAttribute('id', 'id_' + j);
 
         document.getElementById('multiOrgs').insertAdjacentElement('beforeend', is);
 
@@ -397,6 +399,7 @@ UK_Parliament.addNewOrganisation = function () {
       } else {
         var vm = document.createElement('div');
         var vp = document.createElement('p');
+        vm.setAttribute('id', 'orgError');
         vm.setAttribute('class', 'status--highlight theme--caution');
         vm.setAttribute('aria-live', 'polite');
         vp.innerHTML = 'You can\'t add more than 10 organisation names to this form.\n\n If there are more organisations on the submission make sure they\'re included in your evidence.';
@@ -407,20 +410,24 @@ UK_Parliament.addNewOrganisation = function () {
   }
 
   // Function to do standard incrementation
-  increment = function () {
-    o += 1;
+  incrementOrg = function () {
+    j += 1;
   };
 
   // Function to do standard incrementation
-  decrement = function () {
-    o -= 1;
+  decrementOrg = function () {
+    j -= 1;
   };
 
   // Function to remove fom elements dynamically
-  removeElement = function (org) {
-    var orgDelete = document.getElementById(org);
-    orgDelete.remove();
-    decrement();
+  removeOrgElement = function (org) {
+    document.getElementById(org).remove();
+
+    if (document.getElementById('orgError')) {
+      document.getElementById('orgError').remove();
+    }
+
+    decrementOrg();
   };
 };
 
@@ -438,7 +445,7 @@ UK_Parliament.addNewIndividual = function () {
     document.getElementById('addNewInd').addEventListener('click', function (e) {
       e.preventDefault();
 
-      if (i <= 9) {
+      if (i <= 2) {
 
         var is = document.createElement('div'),
             ih = document.createElement('h2'),
@@ -448,9 +455,10 @@ UK_Parliament.addNewIndividual = function () {
             it2 = document.createElement('input'),
             il3 = document.createElement('label'),
             it3 = document.createElement('input'),
+            ip = document.createElement('p'),
             ir = document.createElement('a');
 
-        is.setAttribute('class', 'radiv-cv');
+        is.setAttribute('class', 'input-group__extended');
         is.setAttribute('aria-live', 'polite');
         il1.innerHTML = 'Title (optional)';
         it1.setAttribute('type', 'text');
@@ -493,7 +501,8 @@ UK_Parliament.addNewIndividual = function () {
 
         ir.setAttribute('onclick', "removeElement('id_" + i + "')");
 
-        is.appendChild(ir);
+        ip.appendChild(ir);
+        is.appendChild(ip);
 
         is.setAttribute('id', 'id_' + i);
 
@@ -504,6 +513,7 @@ UK_Parliament.addNewIndividual = function () {
       } else {
         var vm = document.createElement('div');
         var vp = document.createElement('p');
+        vm.setAttribute('id', 'indError');
         vm.setAttribute('class', 'status--highlight theme--caution');
         vm.setAttribute('aria-live', 'polite');
         vp.innerHTML = 'You can\'t add more than 10 names to this form.\n\n If there are more names on the submission make sure they\'re included in your evidence.';
@@ -525,8 +535,12 @@ UK_Parliament.addNewIndividual = function () {
 
   // Function to remove fom elements dynamically
   removeElement = function (ind) {
-    var indDelete = document.getElementById(ind);
-    indDelete.remove();
+    document.getElementById(ind).remove();
+
+    if (document.getElementById('indError')) {
+      document.getElementById('indError').remove();
+    }
+
     decrement();
   };
 };

@@ -12,23 +12,21 @@ block content
 
   section
     .container
-      h2.sr-only Complete the fields below
+      h2 Lead organisation details
       +form('page05-1.html')
-        .block--border__bottom
-          h3.beta Lead organisation details
-          +input--text('name', 'txtOrgName', 'Organisation name')(required, data-error='Please enter the organisation name')
+        .input-wrapper
+          .input-group__extended
+            +input--text('name', 'txtOrgName', 'Organisation name')(required, data-error='Please enter the organisation name')
 
-          p If your evidence is published, your organisation's name will appear online.
+            p If your evidence is published, your organisation's name will appear online.
 
-        .radiv-cv 
-          h3.beta Additional organisation 1
-          +input--text('name', 'txtOrgName1', 'Organisation name')(required, data-error='Please enter the organisation name')
+          .input-group__extended
+            h2 Additional organisation 1
+            +input--text('name', 'txtOrgName1', 'Organisation name')(required, data-error='Please enter the organisation name')
 
-        #multiOrgs
+          #multiOrgs
 
-        .block--border__bottom
-          .section--major 
-            +buttonLink('#', 'Add another organisation', 'btn--ghost--primary')(id='addNewOrg')
+          +buttonLink('#', 'Add another organisation', 'btn--ghost--primary')(id='addNewOrg')
 
         +button('Continue', 'btn--primary', 'submit')
 

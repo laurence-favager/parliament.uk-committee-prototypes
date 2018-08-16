@@ -14,12 +14,12 @@ block content
     .container
       h2 Would you like email updates from the Committee?
       +form(action='page10.html')
-        .block--border__bottom
+        .input-wrapper
           div(data-toggle='item')
             +radio--checkbox__inline('radio', 'updates-check', 'updates-check-yes', 'Yes')(data-toggle='parent-item')
             +radio--checkbox__inline('radio', 'updates-check', 'updates-check-no', 'No')(data-toggle='parent-item', checked)
 
-            .section--major(data-toggle='content')
+            div(data-toggle='content')
               +fieldset('I would like updates on:')
                 +radio--checkbox('checkbox', 'update-1', 'update1', 'the progress of the advertising industry inquiry')
                 +radio--checkbox('checkbox', 'update-2', 'update2', 'all Communications Committee work')

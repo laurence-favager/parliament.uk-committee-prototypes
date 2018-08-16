@@ -14,8 +14,8 @@ block content
     .container
       h2 Who are you submitting evidence for?
       +form('page02.html')(id='submitterType', data-evidence='form')
-        .block--border__bottom
-          +fieldset('Who are you submitting evidence for?', 'sr-only')
+        .input-wrapper
+          +fieldset('Please choose from one of the following options', 'sr-only')
             ol.list--block
               li
                 +radio--checkbox__verbose('radio', 'submitter-type', 'ind', 'You are submitting evidence for one person.', 'Individual')(data-route='page02.html', checked)

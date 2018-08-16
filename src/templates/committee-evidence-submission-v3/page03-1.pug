@@ -12,9 +12,9 @@ block content
 
   section
     .container
-      h2 Mr Victor Hwang
+      h2 Lead individual's name
       +form('page06.html')
-        .block--border__bottom
+        .input-wrapper
           +input--text('pro-name', 'txtProName', 'Job title (optional)')
           +input--text('pro-role', 'txtProRole', 'Organisation (optional)')
           +input--validate('email', 'email', 'txtEmail', '[^@]+@[^@]+\\.[^@]+', null, 'Email', null)(data-error='Please enter a valid email address')

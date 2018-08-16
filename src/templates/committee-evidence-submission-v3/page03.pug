@@ -14,14 +14,14 @@ block content
     .container
       h2 Lead individual's details
       +form('page03-1.html')
-        .block--border__bottom
-          +input--text('title', 'txtTitle', 'Title (optional)')(class='input__md')
-          +input--text('first-name', 'txtFirstName', 'First name(s)')(required, data-error='Please enter a first name')
-          +input--text('last-name', 'txtLastName', 'Last name')(required, data-error='Please enter a last name')
+        .input-wrapper
+          .input-group__extended
+            +input--text('title', 'txtTitle', 'Title (optional)')(class='input__md')
+            +input--text('first-name', 'txtFirstName', 'First name(s)')(required, data-error='Please enter a first name')
+            +input--text('last-name', 'txtLastName', 'Last name')(required, data-error='Please enter a last name')
 
-          p If your evidence is published, your name will appear online.
+            p If your evidence is published, your name will appear online.
 
-        .radiv-cv 
           h2 Additional individual 1
           +input--text('title', 'txtTitle1', 'Title (optional)')(class='input__md')
           +input--text('first-name', 'txtFirstName1', 'First name(s)')(required, data-error='Please enter a first name')
@@ -29,9 +29,8 @@ block content
 
         #multiInds
 
-        .block--border__bottom
-          .section--major 
-            +buttonLink('#', 'Add another individual', 'btn--ghost--primary')(id='addNewInd')
+        .input-group__extended
+          +buttonLink('#', 'Add another individual', 'btn--ghost--primary')(id='addNewInd')
 
         +button('Continue', 'btn--primary', 'submit')
 
