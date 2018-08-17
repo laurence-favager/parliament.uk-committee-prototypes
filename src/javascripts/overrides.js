@@ -27,7 +27,6 @@ UK_Parliament.submitterIdentification = function () {
       // function to set submit button type from radio selection
       getSubmitterType = function (radio) {
         if (radio.checked) {
-          console.log(radio.id);
           localStorage.submitter = radio.id;
           form.submit();
         }
@@ -44,13 +43,12 @@ UK_Parliament.submitterIdentification = function () {
 UK_Parliament.submitterIdentification();
 
 // Function to route users correctly depending on submitter type
-UK_Parliament.submitterRouting = function () {
+UK_Parliament.submitterRoutingV2 = function () {
 
   var submitterType = localStorage.getItem('submitter');
 
-  if (document.getElementById('fileUploadForm')) {
-    var submitterLink = document.getElementById('fileUploadForm');
-    console.log(submitterLink);
+  if (document.getElementById('fileUploadFormV2')) {
+    var submitterLink = document.getElementById('fileUploadFormV2');
     if (submitterType == 'ind') {
       submitterLink.action = 'page05-1.html';
     } else if (submitterType == 'org') {
@@ -59,7 +57,24 @@ UK_Parliament.submitterRouting = function () {
   }
 };
 
-UK_Parliament.submitterRouting();
+UK_Parliament.submitterRoutingV2();
+
+// Function to route users correctly depending on submitter type
+UK_Parliament.submitterRoutingV3 = function () {
+
+  var submitterType = localStorage.getItem('submitter');
+
+  if (document.getElementById('fileUploadFormV3')) {
+    var submitterLink = document.getElementById('fileUploadFormV3');
+    if (submitterType == 'ind' || submitterType == 'grp') {
+      submitterLink.action = 'page07-1.html';
+    } else if (submitterType == 'org' || submitterType == 'orgs') {
+      submitterLink.action = 'page08-1.html';
+    }
+  }
+};
+
+UK_Parliament.submitterRoutingV3();
 
 // Function to listen for checked radio buttons and change form action
 UK_Parliament.radioRouting = function () {
