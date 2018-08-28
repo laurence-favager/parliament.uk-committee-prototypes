@@ -88,3 +88,27 @@ legend {
     color: $warning;
   }
 }
+
+// Theme success dark
+
+.theme--success-dark {
+  text-align: center;
+  background-color: $mint;
+  h1, p {
+    //color: $white;
+  }
+}
+
+// File uploader
+
+.uploader-container {
+  padding: $base-spacing-unit-medium;
+  border: dashed 2px $link;
+  margin-bottom: $base-spacing-unit-extra-large;
+}
+
+[data-file-upload="newstatus"] {
+  display: none;
+}
+
+// Buttons double padding + lead font size

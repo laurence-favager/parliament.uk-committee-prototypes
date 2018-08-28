@@ -1,35 +1,68 @@
 extends ../../layouts/layout.pug
 
 block content
-  #content.hero.theme--grey-4
+  #content.section--primary
     .container
-      h1
-        span Individual's details
+      h1 
+        span Call for evidence
         span.sr-only .
         span.context The advertising industry inquiry
 
-      p #[+link('#', 'Back to previous page')(onclick='goBack()')]
+      //-ul.list--inline
+          li
+            .card--inline
+              .card__details
+                include ../../icons/download.svg
+                +link('https://www.parliament.uk/documents/lords-committees/communications/advertising-industry/Final-Call-for-evidence.pdf', 'Download as a PDF (271 KB)')
+          li.visually-hidden(aria-hidden='true')
+            .card--inline
+              .card__details
+                include ../../icons/print.svg
+                +link('#', 'Print research')(onclick='printPage()').btn--print
+      
+      p The Committee seeks to receive written evidence which addresses the following list of questions. Witnesses should not feel that they must answer every question. On the other hand, witnesses may address issues that are not covered below provided that they are salient to the aims of the inquiry as set out above. Witnesses are also encouraged to suggest recommendations and to discuss whether the evidence bases and available data that contribute to their answers are adequate.
+
+      +dropdownToggle("Questions")
+
+        h3 Skills and research
+
+        ol
+          li What specific skills are required to support the advertising industry in the production and distribution of advertising? Witnesses are invited to address the different skills required for the creative, technical, accounts, business and analytical aspects of the industry.
+          li Is the current system of education and training for advertising adequate? What are the respective roles of universities and industry in teaching skills? What gaps exist in such provision of training?
+          li Where should research money be allocated, and why? Are the current levels of investment sufficient? If not, which measures should be adopted to ensure this investment and why?
+          li How much of advertising budget for universities comes from EU sources? How well does the current visa system for students support the advertising industry?
+
+        h3 International
+
+        ol
+          li To what extent is the UK advertising industry integrated with the global economy? For example, to what extent does advertising rely on services and talent based outside the UK?
+          li What are the concerns for the UK advertising industry regarding continued access to international markets? What measures could the Government implement to make the UK an attractive place for foreign companies to buy advertising services?
+          li How could immigration policy better support the industry?
+
+        h3 Clusters and Entrepreneurship
+
+        ol
+          li What role do entrepreneurs, start-ups and Small and Medium Sized Enterprises (SMEs) play in the UK’s advertising industry? What are the benefits and disadvantages of employment practices, such as freelancing and virtual working, with respect to the development of skills and access to talent?
+          li How do creative and business clusters form? Does such clustering contribute to the past success and future growth of the advertising industry? What type of companies and skillsets are required to form clusters that are beneficial to advertising? To what extent can virtual working contribute to the development of clusters?
+          li What is the role, if any, of the Government in promoting the growth of clusters? How could an appropriate balance be struck between regional growth and the concentration of clusters in the South-East of England?
+
+        h3 Digital
+
+        ol
+          li How is the UK advertising industry adapting to the shift to digital media advertising? How does this compare with other countries and other industries? What role can the Government play to support the industry in this regard?
+          li What is the future of television, print, radio, out of home and other forms of non-digital advertising?
+          li Is the current digital media market fair, open and competitive? What legislative measures, if any, should be adopted?
+          li Is there any role for the Advertising Standards Authority or other regulators in respect of digital advertising?
 
   section
     .container
-      h2 Complete the fields below
-      +form('page06.html')
-        .input-wrapper
-          .input-group__extended
-            +input--text('title', 'txtTitle', 'Title (optional)')(class='input__md')
-            +input--text('first-name', 'txtFirstName', 'First name(s)')(required, data-error='Please enter a first name')
-            +input--text('last-name', 'txtLastName', 'Last name')(required, data-error='Please enter a last name')
+      h2 Submit evidence to this inquiry
 
-            p If your evidence is published, your name will appear online.
+      p To submit evidence to this inquiry, you will need to:
 
-          +input--text('pro-name', 'txtProName', 'Job title (optional)')
-          +input--text('pro-role', 'txtProRole', 'Organisation (optional)')
-          +input--validate('email', 'email', 'txtEmail', '[^@]+@[^@]+\\.[^@]+', null, 'Email', null)(data-error='Please enter a valid email address')
-          +input--text('telephone', 'txtPhone', 'Phone (optional)')(maxlength='15')
+      ol
+        li read the submission guidelines
+        li provide your details
+        li upload your evidence 
 
-        +button('Continue', 'btn--primary', 'submit')
-
-      .section--minor
-        .block.accent--mint
-          h3 Help and support
-          p For more information email #[+link('mailto:holcommunications@parliament.uk', 'holcommunications@parliament.uk')] or phone #[+link('tel:02072198662', '020 7219 8662')]
+      +buttonLink('page03.html', 'Read the submission guidelines', 'btn--primary')

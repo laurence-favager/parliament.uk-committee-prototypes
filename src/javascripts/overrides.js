@@ -13,6 +13,11 @@ function goBack() {
   window.history.back();
 }
 
+// Function to open print dialog in browser window
+function printPage() {
+  window.print();
+}
+
 // Function to grab and store submitter type
 UK_Parliament.submitterIdentification = function () {
   if (document.querySelector('[data-evidence="form"]')) {
@@ -64,12 +69,12 @@ UK_Parliament.submitterRoutingV3 = function () {
 
   var submitterType = localStorage.getItem('submitter');
 
-  if (document.getElementById('fileUploadFormV3')) {
-    var submitterLink = document.getElementById('fileUploadFormV3');
+  if (document.getElementById('confirmPageLink')) {
+    var submitterLink = document.getElementById('confirmPageLink');
     if (submitterType == 'ind' || submitterType == 'grp') {
-      submitterLink.action = 'page07-1.html';
+      submitterLink.action = 'page11-1.html';
     } else if (submitterType == 'org' || submitterType == 'orgs') {
-      submitterLink.action = 'page08-1.html';
+      submitterLink.action = 'page12-1.html';
     }
   }
 };
@@ -470,6 +475,10 @@ UK_Parliament.addNewIndividual = function () {
             it2 = document.createElement('input'),
             il3 = document.createElement('label'),
             it3 = document.createElement('input'),
+            il4 = document.createElement('label'),
+            it4 = document.createElement('input'),
+            il5 = document.createElement('label'),
+            it5 = document.createElement('input'),
             ip = document.createElement('p'),
             ir = document.createElement('a');
 
@@ -491,6 +500,14 @@ UK_Parliament.addNewIndividual = function () {
         it3.setAttribute('required', 'required');
         it3.setAttribute('data-error', 'Please enter a last name');
 
+        il4.innerHTML = 'Job title (optional)';
+        it4.setAttribute('type', 'text');
+        it4.setAttribute('name', 'pro-name');
+
+        il5.innerHTML = 'Organisation (optional)';
+        it5.setAttribute('type', 'text');
+        it5.setAttribute('name', 'pro-role');
+
         ir.setAttribute('class', 'link--remove-cv');
         ir.innerHTML = 'remove';
 
@@ -503,8 +520,12 @@ UK_Parliament.addNewIndividual = function () {
         it1.setAttribute('class', 'input__md');
         il2.setAttribute('for', 'txtFirstName' + i);
         it2.setAttribute('id', 'txtFirstName' + i);
-        il2.setAttribute('for', 'txtLastName' + i);
-        it2.setAttribute('id', 'txtLastName' + i);
+        il3.setAttribute('for', 'txtLastName' + i);
+        it3.setAttribute('id', 'txtLastName' + i);
+        il4.setAttribute('for', 'txtProName' + i);
+        it4.setAttribute('id', 'txtProName' + i);
+        il5.setAttribute('for', 'txtProRole' + i);
+        it5.setAttribute('id', 'txtProRole' + i);
 
         is.appendChild(ih);
         is.appendChild(il1);
@@ -513,6 +534,10 @@ UK_Parliament.addNewIndividual = function () {
         is.appendChild(it2);
         is.appendChild(il3);
         is.appendChild(it3);
+        is.appendChild(il4);
+        is.appendChild(it4);
+        is.appendChild(il5);
+        is.appendChild(it5);
 
         ir.setAttribute('onclick', "removeElement('id_" + i + "')");
 
@@ -533,7 +558,7 @@ UK_Parliament.addNewIndividual = function () {
         vm.setAttribute('aria-live', 'polite');
         vp.innerHTML = 'You can\'t add more than 10 names to this form.\n\n If there are more names on the submission make sure they\'re included in your evidence.';
         vm.appendChild(vp);
-        document.getElementById('addNewind').insertAdjacentElement('beforebegin', vm);
+        document.getElementById('addNewInd').insertAdjacentElement('beforebegin', vm);
       }
     });
   }
@@ -561,3 +586,62 @@ UK_Parliament.addNewIndividual = function () {
 };
 
 UK_Parliament.addNewIndividual();
+
+// Show file name, file upload status and check file size
+
+UK_Parliament.fileUploaderV2 = function () {
+
+  var fileInput = document.querySelector('[data-file-upload="newbutton"]');
+
+  if (fileInput) {
+
+    // Local variables
+    var
+      fileIcon = document.querySelector('[data-file-upload="add"]'),
+      fileStatus = document.querySelector('[data-file-upload="newstatus"]'),
+      fileSizeLimit = fileInput.getAttribute('data-file-size') ? fileInput.getAttribute('data-file-size') : '5242880',
+      fileSizeLimitFormatted = fileSizeLimit.substring(0, 1);
+
+    fileInput.onchange = function () {
+
+      // Grab file object reference, determine size and construct filename
+      var
+        fileObject = this.files,
+        fileObjectSize = fileObject[0].size,
+        fileName = this.value.split(/(\\|\/)/g).pop(),
+        fileNameFormatted = '<strong>\'' + fileName + '\'</strong>';
+
+      // Check for aria attribute and manage addition / class removal accordingly
+      fileStatus.hasAttribute('aria-live') ? fileStatus.classList.remove('theme--warning') : fileStatus.setAttribute('aria-live', 'polite');
+
+      // Check if file exceeds size limit passed in data-file-size attribute (default set to 5MB in binary)
+      if (fileObjectSize > fileSizeLimit) {
+        fileStatus.classList.add('theme--warning');
+        fileStatus.innerHTML = 'The file you have uploaded is too big. Please make sure it is smaller than ' + fileSizeLimitFormatted + 'MB.';
+        fileIcon.setAttribute('data-file-upload', 'add');
+
+      // Check if linked file object is present
+      } else if (fileObject) {
+        fileStatus.innerHTML = fileNameFormatted + ' is ready to be uploaded';
+        fileIcon.setAttribute('data-file-upload', 'good');
+
+      // Return text to default state if no linked file object exists
+      } else {
+        fileStatus.innerHTML = 'No file(s) selected';
+        fileIcon.setAttribute('data-file-upload', 'add');
+      }
+    };
+
+    // Check if element is in focus and add class for Firefox
+    fileInput.addEventListener('focus', function () {
+      fileInput.classList.add('js-has-focus');
+    });
+
+    // Check if element is out of focus and remove class for Firefox
+    fileInput.addEventListener('blur', function () {
+      fileInput.classList.remove('js-has-focus');
+    });
+  }
+};
+
+UK_Parliament.fileUploaderV2();

@@ -13,9 +13,12 @@ block content
   section.section--wide
     .container
       h2 Ethnic background
-      +form(action='page07-2.html')
+      +form(action='page11-2.html')
         .input-wrapper
           +fieldset('Choose one option that best describes your ethnic group or background')
+            .input-group__extended
+              h3 Prefer not to say
+              +radio--checkbox('radio', 'diversity-1', 'rdDiv1-18', 'Prefer not to say')
             .input-group__extended
               h3 Asian
               +radio--checkbox__inline('radio', 'diversity-1', 'rdDiv1-1', 'Bangladeshi')
@@ -39,13 +42,10 @@ block content
             .input-group__extended
               h3 White
               +radio--checkbox('radio', 'diversity-1', 'rdDiv1-13', 'Any White background')
-            .input-group__extended
-              h3 Other ethnic background
-              +radio--checkbox__inline('radio', 'diversity-1', 'rdDiv1-14', 'Arab')
-              +radio--checkbox__inline('radio', 'diversity-1', 'rdDiv1-15', 'Latin American')
-              +radio--checkbox__inline('radio', 'diversity-1', 'rdDiv1-16', 'Gypsy or Irish Traveller')
-              +radio--checkbox__inline('radio', 'diversity-1', 'rdDiv1-17', 'Any other ethnic background')
-            h3 Prefer not to say
-            +radio--checkbox('radio', 'diversity-1', 'rdDiv1-18', 'Prefer not to say')
+            h3 Other ethnic background
+            +radio--checkbox__inline('radio', 'diversity-1', 'rdDiv1-14', 'Arab')
+            +radio--checkbox__inline('radio', 'diversity-1', 'rdDiv1-15', 'Latin American')
+            +radio--checkbox__inline('radio', 'diversity-1', 'rdDiv1-16', 'Gypsy or Irish Traveller')
+            +radio--checkbox__inline('radio', 'diversity-1', 'rdDiv1-17', 'Any other ethnic background')
 
         +button('Continue', 'btn--primary', 'submit')

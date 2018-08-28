@@ -4,7 +4,7 @@ block content
   #content.hero.theme--grey-4
     .container
       h1
-        span Upload your evidence
+        span Submitting as a group of individuals
         span.sr-only .
         span.context The advertising industry inquiry
 
@@ -12,29 +12,35 @@ block content
 
   section
     .container
-      h2 Your uploaded file must
+      +form('page06-1.html')
+        .input-wrapper
+          .input-group__extended
+            h2 Lead individual
+            p If your evidence is published, all individuals’ names will appear online.
 
-      ul
-        li be less than 25MB
-        li be a single Word document
-        li not contain logos
+            +input--text('title', 'txtTitle', 'Title (optional)')(class='input__md')
+            +input--text('first-name', 'txtFirstName', 'First name(s)')(required, data-error='Please enter a first name')
+            +input--text('last-name', 'txtLastName', 'Last name')(required, data-error='Please enter a last name')
 
-      +form(action='page07-1.html', id='fileUploadFormV3')
-        ol.list--pipe__deep
-          li
-            .card
-              figure.svg--icon(data-file-upload='icon')
-                  include ../../icons/file.svg
-              .card__details
-                h3 Upload your evidence
+            +input--text('pro-name', 'txtProName', 'Job title (optional)')
+            +input--text('pro-role', 'txtProRole', 'Organisation (optional)')
+          .input-group__extended
+            h2 Additional individual 1
 
-                +input--file('file-uploader', 'fileUpload', 'Choose file', 'btn--primary')(required, data-file-size='26214400', data-error='Please upload your file')
+            +input--text('title', 'txtTitle1', 'Title (optional)')(class='input__md')
+            +input--text('first-name', 'txtFirstName1', 'First name(s)')(required, data-error='Please enter a first name')
+            +input--text('last-name', 'txtLastName1', 'Last name')(required, data-error='Please enter a last name')
 
-                p(data-file-upload='status') No file(s) selected
+            +input--text('pro-name', 'txtProName', 'Job title (optional)')
+            +input--text('pro-role', 'txtProRole', 'Organisation (optional)')
 
-        +button('Continue', 'btn--primary', 'submit')(id='file-upload-check')
+          #multiInds
+
+          +buttonLink('#', 'Add another individual', 'btn--ghost--primary')(id='addNewInd')
+
+        +button('Continue', 'btn--primary', 'submit')
 
       .section--minor
         .block.accent--mint
           h3 Help and support
-          p For more information email #[+link('mailto:holcommunications@parliament.uk', 'holcommunications@parliament.uk')] or phone #[+link('tel:02072198662', '020 7219 8662')]
+          p If you need help submitting evidence, email the Communications Committee (#[+link('mailto:holcommunications@parliament.uk', 'holcommunications@parliament.uk')]) or phone #[+link('tel:02072198662', '020 7219 8662')].

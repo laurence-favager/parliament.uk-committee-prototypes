@@ -1,68 +1,50 @@
 extends ../../layouts/layout.pug
 
 block content
-  #content.section--primary.section--wide
+  #content.section--primary
     .container
-      h1
-        span Inquiry details and submission guidelines
-        span.sr-only .
-        span.context #[+link('#', 'The advertising industry inquiry')]
+      h1 Communications Committee
+      p.delta Joint (Commons and Lords) select committee
 
   section
     .container
-      h2 What’s the inquiry looking into?
+      h2 About the committee
+      p We evaluate the media and creative industries, and broadcasting public policy.
+
+  section
+    .container
+      h2 Open inquiries
+      ol.list--pipe
+        li #[+link('page01.html', 'The advertising inquiry')]
+        li #[+link('#', 'The Internet: to regulate or not to regulate?')]
+
+  section
+    .container
+      h2 Committee members
+      ol.list--block
+        li
+          .card
+            figure.avatar--round
+              a(href="#" tabindex="-1")
+                picture
+                  img(src="https://api.parliament.uk/Staging/photo/iGmLaCTP.jpeg?crop=CU_1:1&width=186&quality=80" alt="Lord Gilbert of Panteg")
+            .card__details
+              h3
+                a(href="#") Lord Gilbert of Panteg
+              p Committee chair
+              p Conservative member of the House of Lords
+      p #[+link('#', 'View all 13 committee members')]
+
+  section
+    .container
+      h2 Contact us
       
-      p The advertising industry inquiry has been launched by the Communications Committee. To find out what evidence the Committee is interested in, read the #[+link('https://www.parliament.uk/documents/lords-committees/communications/advertising-industry/Final-Call-for-evidence.pdf', 'advertising industry inquiry details')(target='_blank')]#[span.sr-only (This link will open in a new window)].
-
-  section
-    .container
-      h2 Writing your evidence
-
-      p Your submission should:
-      ul
-        li be no more than 3,000 words
-        li include an introduction to yourself or your organisation and the reason for submitting evidence
-        li not already be published
-        li not include any confidential information
-
-  section
-    .container
-      h2 Submitting your evidence
-
-      p Your uploaded file must:
-
-      ul
-        li be less than 25MB
-        li be a single Word document
-        li not contain logos
-
-      p If you want to submit evidence anonymously or do not want your evidence to be published, email #[+link('mailto:holcommunications@parliament.uk', 'holcommunications@parliament.uk')] or phone #[+link('tel:02072198662', '020 7219 8662')].
-
-      p It is the committee's decision whether or not to publish evidence anonymously.
-
-  section
-    .container
-      h2 After submitting your evidence
-      
-      p If your submission is accepted:
-
-      ul
-        li it is usually published online
-        li it is subject to #[+link('https://www.parliament.uk/site-information/copyright-parliament/', 'parliamentary copyright')] and is protected by #[+link('https://www.parliament.uk/site-information/glossary/parliamentary-privilege/', 'parliamentary privilege')]
-        li you must get permission from the clerk of the committee if you want to publish it somewhere else
-
-  section
-    .container
-      h2 Have you read the inquiry details and guidelines?
-
-      +form(action='page01.html')
-        .input-wrapper(class='open', data-toggle='item')
-          +fieldset
-            +radio--checkbox__inline('radio', 'guideline-check', 'guideline-check-yes', 'Yes')(data-toggle='parent-item')
-            +radio--checkbox__inline('radio', 'guideline-check', 'guideline-check-no', 'No')(class='open', data-toggle='parent-item', checked, data-submit='disabled')
-
-          div(class='open', data-toggle='content')
-            .status--highlight.theme--caution
-              p Before you continue, read the inquiry details and submission guidelines.
-
-        +button('Start', 'btn--primary', 'submit')
+      .block
+        dl.list--definition
+          dt Email:
+          dd
+            +link('mailto:holcommunications@parliament.uk', 'holcommunications@parliament.uk')
+          dt Phone:
+          dd #[+link('tel:02072198662', '020 7219 8662')]
+          dt Address:
+          dd Communications Committee, House of Lords, London, SW1A 0PW

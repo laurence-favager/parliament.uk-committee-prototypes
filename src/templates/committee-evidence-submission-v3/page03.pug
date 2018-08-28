@@ -4,37 +4,57 @@ block content
   #content.hero.theme--grey-4
     .container
       h1
-        span Group of individual's details
+        span Submission guidelines
         span.sr-only .
         span.context The advertising industry inquiry
 
-      p #[+link('#', 'Back to previous page')(onclick='goBack()')]
+  section
+    .container
+      br
+      .block.theme--purple
+        h2 Before you continue
+
+        p Make sure you have read the #[+link('page02.html', 'advertising industry inquiry call for evidence')].
+
+        h3 Writing your evidence
+
+        p Your submission should:
+
+        ul
+          li be no more than 3,000 words
+          li include an introduction to yourself or your organisation and the reason for submitting evidence
+          li not already be published
+          li not include any confidential information
+
+        h3 Uploading your evidence
+
+        p Your uploaded file must:
+
+        ul
+          li be less than 25MB
+          li be a single Word, ODT or RTF document
+          li not contain logos
 
   section
     .container
-      h2 Lead individual's details
-      +form('page03-1.html')
-        .input-wrapper
-          .input-group__extended
-            +input--text('title', 'txtTitle', 'Title (optional)')(class='input__md')
-            +input--text('first-name', 'txtFirstName', 'First name(s)')(required, data-error='Please enter a first name')
-            +input--text('last-name', 'txtLastName', 'Last name')(required, data-error='Please enter a last name')
+      h2 After submitting your evidence
+      
+      p If your submission is accepted:
 
-            p If your evidence is published, your name will appear online.
+      ul
+        li it is usually published online
+        li it is subject to #[+link('https://www.parliament.uk/site-information/copyright-parliament/', 'parliamentary copyright')] and is protected by #[+link('https://www.parliament.uk/site-information/glossary/parliamentary-privilege/', 'parliamentary privilege')]
 
-          h2 Additional individual 1
-          +input--text('title', 'txtTitle1', 'Title (optional)')(class='input__md')
-          +input--text('first-name', 'txtFirstName1', 'First name(s)')(required, data-error='Please enter a first name')
-          +input--text('last-name', 'txtLastName1', 'Last name')(required, data-error='Please enter a last name')
+      p You must get permission from the clerk of the committee if you want to publish it somewhere else
 
-        #multiInds
+  section
+    .container
+      h2 Submitting anonymously
 
-        .input-group__extended
-          +buttonLink('#', 'Add another individual', 'btn--ghost--primary')(id='addNewInd')
+      p If you want to submit evidence anonymously or do not want your evidence to be published, contact the Committee to give reasons why.
 
-        +button('Continue', 'btn--primary', 'submit')
+      p You can email your reasons to the Communications Committee (#[+link('mailto:holcommunications@parliament.uk', 'holcommunications@parliament.uk')]) or phone #[+link('tel:02072198662', '020 7219 8662')] to discuss them.
 
-      .section--minor
-        .block.accent--mint
-          h3 Help and support
-          p For more information email #[+link('mailto:holcommunications@parliament.uk', 'holcommunications@parliament.uk')] or phone #[+link('tel:02072198662', '020 7219 8662')]
+      p It is the Committee's decision whether or not to accept evidence anonymously.
+
+      +buttonLink('page04.html', 'Start', 'btn--primary')
