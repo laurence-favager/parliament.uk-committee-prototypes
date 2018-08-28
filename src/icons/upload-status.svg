@@ -1,14 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" viewBox="0 0 90 90" aria-hidden="true">
   <title>File icon set</title>
-  <g data-icon="upload">
-    <g data-icon="add">
+    <g data-icon="upload">
       <circle cx="45" cy="45" r="45" fill="#2B57AB"/>
       <rect x="40.9092" y="22.5" width="8.18182" height="45" fill="white"/>
       <rect x="22.5" y="49.0908" width="8.18182" height="45" transform="rotate(-90 22.5 49.0908)" fill="white"/>
     </g>
-    <g data-icon="good">
+    <g data-icon="uploaded">
       <circle cx="45" cy="45" r="45" fill="#00B95D"/>
       <path d="M19 48.5L34.5 64L70.5 28" stroke="white" fill="none" stroke-width="8"/>
     </g>
-  </g>
 </svg>

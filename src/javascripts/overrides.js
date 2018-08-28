@@ -68,13 +68,14 @@ UK_Parliament.submitterRoutingV2();
 UK_Parliament.submitterRoutingV3 = function () {
 
   var submitterType = localStorage.getItem('submitter');
+  console.log(submitterType);
 
   if (document.getElementById('confirmPageLink')) {
     var submitterLink = document.getElementById('confirmPageLink');
     if (submitterType == 'ind' || submitterType == 'grp') {
-      submitterLink.action = 'page11-1.html';
+      submitterLink.href = 'page11-1.html';
     } else if (submitterType == 'org' || submitterType == 'orgs') {
-      submitterLink.action = 'page12-1.html';
+      submitterLink.href = 'page12-1.html';
     }
   }
 };
@@ -376,7 +377,7 @@ UK_Parliament.addNewOrganisation = function () {
     document.getElementById('addNewOrg').addEventListener('click', function (e) {
       e.preventDefault();
 
-      if (j <= 2) {
+      if (j <= 4) {
 
         var is = document.createElement('div'),
             ih = document.createElement('h2'),
@@ -416,16 +417,18 @@ UK_Parliament.addNewOrganisation = function () {
 
         UK_Parliament.formValidation();
 
-      } else {
-        var vm = document.createElement('div');
-        var vp = document.createElement('p');
-        vm.setAttribute('id', 'orgError');
-        vm.setAttribute('class', 'status--highlight theme--caution');
-        vm.setAttribute('aria-live', 'polite');
-        vp.innerHTML = 'You can\'t add more than 10 organisation names to this form.\n\n If there are more organisations on the submission make sure they\'re included in your evidence.';
-        vm.appendChild(vp);
-        document.getElementById('addNewOrg').insertAdjacentElement('beforebegin', vm);
       }
+
+   // else {
+      // var vm = document.createElement('div');
+      // var vp = document.createElement('p');
+      // vm.setAttribute('id', 'orgError');
+      // vm.setAttribute('class', 'status--highlight theme--caution');
+      // vm.setAttribute('aria-live', 'polite');
+      // vp.innerHTML = 'You can\'t add more than 10 organisation names to this form.\n\n If there are more organisations on the submission make sure they\'re included in your evidence.';
+      // vm.appendChild(vp);
+      // document.getElementById('addNewOrg').insertAdjacentElement('beforebegin', vm);
+   // }
     });
   }
 
@@ -465,7 +468,7 @@ UK_Parliament.addNewIndividual = function () {
     document.getElementById('addNewInd').addEventListener('click', function (e) {
       e.preventDefault();
 
-      if (i <= 2) {
+      if (i <= 4) {
 
         var is = document.createElement('div'),
             ih = document.createElement('h2'),
@@ -550,16 +553,18 @@ UK_Parliament.addNewIndividual = function () {
 
         UK_Parliament.formValidation();
 
-      } else {
-        var vm = document.createElement('div');
-        var vp = document.createElement('p');
-        vm.setAttribute('id', 'indError');
-        vm.setAttribute('class', 'status--highlight theme--caution');
-        vm.setAttribute('aria-live', 'polite');
-        vp.innerHTML = 'You can\'t add more than 10 names to this form.\n\n If there are more names on the submission make sure they\'re included in your evidence.';
-        vm.appendChild(vp);
-        document.getElementById('addNewInd').insertAdjacentElement('beforebegin', vm);
       }
+
+    // else {
+      // var vm = document.createElement('div');
+      // var vp = document.createElement('p');
+      // vm.setAttribute('id', 'indError');
+      // vm.setAttribute('class', 'status--highlight theme--caution');
+      // vm.setAttribute('aria-live', 'polite');
+      // vp.innerHTML = 'You can\'t add more than 10 names to this form.\n\n If there are more names on the submission make sure they\'re included in your evidence.';
+      // vm.appendChild(vp);
+      // document.getElementById('addNewInd').insertAdjacentElement('beforebegin', vm);
+    // }
     });
   }
 
@@ -597,10 +602,11 @@ UK_Parliament.fileUploaderV2 = function () {
 
     // Local variables
     var
-      fileIcon = document.querySelector('[data-file-upload="add"]'),
+      fileIcon = document.querySelector('[data-file-upload="upload"]'),
       fileStatus = document.querySelector('[data-file-upload="newstatus"]'),
       fileSizeLimit = fileInput.getAttribute('data-file-size') ? fileInput.getAttribute('data-file-size') : '5242880',
-      fileSizeLimitFormatted = fileSizeLimit.substring(0, 1);
+      fileSizeLimitFormatted = fileSizeLimit.substring(0, 2),
+      fileContainer = document.getElementById('uploader-container');
 
     fileInput.onchange = function () {
 
@@ -616,19 +622,25 @@ UK_Parliament.fileUploaderV2 = function () {
 
       // Check if file exceeds size limit passed in data-file-size attribute (default set to 5MB in binary)
       if (fileObjectSize > fileSizeLimit) {
+        fileContainer.classList.add('normal-cv');
+        fileContainer.classList.remove('success-cv');
         fileStatus.classList.add('theme--warning');
         fileStatus.innerHTML = 'The file you have uploaded is too big. Please make sure it is smaller than ' + fileSizeLimitFormatted + 'MB.';
-        fileIcon.setAttribute('data-file-upload', 'add');
+        fileIcon.setAttribute('data-file-upload', 'upload');
 
       // Check if linked file object is present
       } else if (fileObject) {
-        fileStatus.innerHTML = fileNameFormatted + ' is ready to be uploaded';
-        fileIcon.setAttribute('data-file-upload', 'good');
+        fileContainer.classList.remove('normal-cv');
+        fileContainer.classList.add('success-cv');
+        fileStatus.classList.add('theme--success');
+        fileStatus.innerHTML = 'Your file ' + fileNameFormatted + ' is ready to be uploaded';
+        fileIcon.setAttribute('data-file-upload', 'uploaded');
 
       // Return text to default state if no linked file object exists
       } else {
-        fileStatus.innerHTML = 'No file(s) selected';
-        fileIcon.setAttribute('data-file-upload', 'add');
+        fileContainer.classList.add('normal-cv');
+        fileContainer.classList.remove('success-cv');
+        fileIcon.setAttribute('data-file-upload', 'upload');
       }
     };
 

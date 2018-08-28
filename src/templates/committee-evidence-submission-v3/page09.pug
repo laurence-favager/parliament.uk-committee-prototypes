@@ -14,25 +14,25 @@ block content
     .container
       h2 Your uploaded file must
 
-      ul
+      ul.list-cv
         li be less than 25MB
         li be a single Word, ODT or RTF document
         li not contain logos
 
       +form(action='page10.html')
         .input-wrapper
-          .card.uploader-container
-            figure.svg--icon(data-file-upload='add')
+          .card.uploader-container.normal-cv#uploader-container
+            figure.svg--icon(data-file-upload='upload')
                 include ../../icons/upload-status.svg
             .card__details
               h3 Drag and drop your file here <b>or</b>
-              input(name="file-uploader" id="fileUpload" data-file-upload="newbutton" data-file-size="26214400" required="" data-error="Please upload your file" type="file")
+              input(name="file-uploader" id="fileUpload" data-file-upload="newbutton" data-file-size="25214400" required="" data-error="Please upload your file" type="file")
               label(class="btn--ghost--primary" for="fileUpload") Upload a file from this computer
           
           .status--highlight(data-file-upload='newstatus')
             p No file(s) selected
 
-        +button('Send evidence', 'btn--primary', 'submit')(id='file-upload-check')
+        +button('Send evidence', 'btn--primary btn--large-cv', 'submit')(id='file-upload-check')
 
       .section--minor
         .block.accent--mint

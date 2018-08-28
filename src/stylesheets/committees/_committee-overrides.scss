@@ -69,6 +69,14 @@ legend {
 
 // Input indentations
 
+.list-cv > li {
+  margin-bottom: $base-spacing-unit;
+}
+
+.list--large-cv > li {
+  margin-bottom: $base-spacing-unit-tiny;
+}
+
 .radiv-cv {
   padding-bottom: $base-spacing-unit-medium;
   border-bottom: solid 1px $grey-3;
@@ -89,26 +97,54 @@ legend {
   }
 }
 
+// Button styling (double padding + lead font size)
+
+.btn--large-cv {
+  padding: 8px 20px;
+  @include fontsize(24);
+}
+
 // Theme success dark
 
 .theme--success-dark {
   text-align: center;
-  background-color: $mint;
-  h1, p {
-    //color: $white;
-  }
+  background-color: $success--light;
 }
 
 // File uploader
 
 .uploader-container {
   padding: $base-spacing-unit-medium;
-  border: dashed 2px $link;
   margin-bottom: $base-spacing-unit-extra-large;
+}
+
+.normal-cv {
+  border: dashed 2px $link;
+}
+
+.success-cv {
+  border: solid 2px $success--dark;
 }
 
 [data-file-upload="newstatus"] {
   display: none;
 }
 
-// Buttons double padding + lead font size
+.theme--warning, .theme--success {
+  display: block;
+}
+
+[data-file-upload="upload"] svg {
+  [data-icon="uploaded"] {
+    display: none;
+  }
+}
+
+[data-file-upload="uploaded"] svg {
+  [data-icon="uploaded"] {
+    display: block;
+  }
+  [data-icon="upload"] {
+    display: none;
+  }
+}
