@@ -68,7 +68,6 @@ UK_Parliament.submitterRoutingV2();
 UK_Parliament.submitterRoutingV3 = function () {
 
   var submitterType = localStorage.getItem('submitter');
-  console.log(submitterType);
 
   if (document.getElementById('confirmPageLink')) {
     var submitterLink = document.getElementById('confirmPageLink');
@@ -610,37 +609,51 @@ UK_Parliament.fileUploaderV2 = function () {
 
     fileInput.onchange = function () {
 
-      // Grab file object reference, determine size and construct filename
-      var
-        fileObject = this.files,
-        fileObjectSize = fileObject[0].size,
-        fileName = this.value.split(/(\\|\/)/g).pop(),
-        fileNameFormatted = '<strong>\'' + fileName + '\'</strong>';
+      //console.log(this.files[0].size);
 
-      // Check for aria attribute and manage addition / class removal accordingly
-      fileStatus.hasAttribute('aria-live') ? fileStatus.classList.remove('theme--warning') : fileStatus.setAttribute('aria-live', 'polite');
+      if (this.files[0] === undefined) {
 
-      // Check if file exceeds size limit passed in data-file-size attribute (default set to 5MB in binary)
-      if (fileObjectSize > fileSizeLimit) {
         fileContainer.classList.add('normal-cv');
         fileContainer.classList.remove('success-cv');
-        fileStatus.classList.add('theme--warning');
-        fileStatus.innerHTML = 'The file you have uploaded is too big. Please make sure it is smaller than ' + fileSizeLimitFormatted + 'MB.';
+        fileStatus.className = '';
+        fileStatus.innerHTML = '';
         fileIcon.setAttribute('data-file-upload', 'upload');
-
-      // Check if linked file object is present
-      } else if (fileObject) {
-        fileContainer.classList.remove('normal-cv');
-        fileContainer.classList.add('success-cv');
-        fileStatus.classList.add('theme--success');
-        fileStatus.innerHTML = 'Your file ' + fileNameFormatted + ' is ready to be uploaded';
-        fileIcon.setAttribute('data-file-upload', 'uploaded');
-
-      // Return text to default state if no linked file object exists
       } else {
-        fileContainer.classList.add('normal-cv');
-        fileContainer.classList.remove('success-cv');
-        fileIcon.setAttribute('data-file-upload', 'upload');
+
+        // Grab file object reference, determine size and construct filename
+        var
+          fileObject = this.files,
+          fileObjectSize = fileObject[0].size,
+          fileName = this.value.split(/(\\|\/)/g).pop(),
+          fileNameFormatted = '<strong>\'' + fileName + '\'</strong>';
+
+        // Check for aria attribute and manage addition / class removal accordingly
+        fileStatus.hasAttribute('aria-live') ? fileStatus.classList.remove('theme--warning') : fileStatus.setAttribute('aria-live', 'polite');
+
+        // Check if file exceeds size limit passed in data-file-size attribute (default set to 5MB in binary)
+        if (fileObjectSize > fileSizeLimit) {
+          fileContainer.classList.add('normal-cv');
+          fileContainer.classList.remove('success-cv');
+          fileStatus.classList.add('status--highlight');
+          fileStatus.classList.add('theme--warning');
+          fileStatus.innerHTML = 'The file you have uploaded is too big. Please make sure it is smaller than ' + fileSizeLimitFormatted + 'MB.';
+          fileIcon.setAttribute('data-file-upload', 'upload');
+
+        // Check if linked file object is present
+        } else if (fileObject) {
+          fileContainer.classList.remove('normal-cv');
+          fileContainer.classList.add('success-cv');
+          fileStatus.classList.add('status--highlight');
+          fileStatus.classList.add('theme--success');
+          fileStatus.innerHTML = 'Your file ' + fileNameFormatted + ' is ready to be uploaded';
+          fileIcon.setAttribute('data-file-upload', 'uploaded');
+
+        // Return text to default state if no linked file object exists
+        } else {
+          fileContainer.classList.add('normal-cv');
+          fileContainer.classList.remove('success-cv');
+          fileIcon.setAttribute('data-file-upload', 'upload');
+        }
       }
     };
 
