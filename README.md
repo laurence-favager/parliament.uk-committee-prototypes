@@ -1,6 +1,6 @@
 
-# Parliament.uk-pugin-composition
-[Parliament.uk-pugin-composition][parliament.uk-pugin-composition] is a [Node][node] application designed to provide developers the ability to work with [Pugin][parliament.uk-pugin].
+# Parliament.uk-committee-prototypes
+[Parliament.uk-committee-prototypes][parliament.uk-committee-prototypes] is a [Node][node] application designed to provide developers the ability to work with [Pugin][parliament.uk-pugin].
 
 ### Contents
 - [Requirements](#requirements)
@@ -20,12 +20,12 @@
 ## Getting Started
 Clone the repository:
 ```bash
-git clone https://github.com/ukparliament/Parliament.uk-pugin-composition.git
-cd Parliament.uk-pugin-composition
+git clone https://github.com/ukparliament/Parliament.uk-committee-prototypes.git
+cd Parliament.uk-committee-prototypes
 ```
 
 ## Pugin Compose Application
-The [Parliament.uk-composition][parliament.uk-pugin-composition] application inherits [pugin][parliament.uk-pugin]; the [parliament.uk][parliament.uk] brand, its components and mixins enabling rapid prototyping and consistent branding across Parliamentary projects.
+The [Parliament.uk-committee-prototypes][parliament.uk-committee-prototypes] application inherits [pugin][parliament.uk-pugin]; the [parliament.uk][parliament.uk] brand, its components and mixins enabling rapid prototyping and consistent branding across Parliamentary projects.
 
 ### Running the application
 To run the application locally, run:
@@ -60,7 +60,7 @@ If you wish to submit a bug fix or feature, you can create a pull request and it
 ## License
 [Parliament.uk-pugin-composition][parliament.uk-pugin-composition] is available as open source under the terms of the [Open Parliament Licence][info-license].
 
-[parliament.uk-pugin-composition]:https://github.com/ukparliament/parliament.uk-pugin-composition
+[parliament.uk-committee-prototypes]:https://github.com/ukparliament/parliament.uk-committee-prototypes
 [parliamentary-digital-service]:	https://github.com/ukparliament
 [parliament.uk]:									http://www.parliament.uk/
 [parliament.uk-pugin]:						https://github.com/ukparliament/parliament.uk-pugin
