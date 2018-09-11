@@ -12,18 +12,16 @@ block content
 
   section
     .container
-      h2 Gender identity
-
-      +form(action='page11-3.html')
-        .input-wrapper
+      +form(action='page12-3.html')
+        .input-group__extended
+          h2 Gender identity
           +fieldset('What is your gender identity?')
             +radio--checkbox('radio', 'diversity-2a', 'rdDiv2a-1', 'Prefer not to say')
             +radio--checkbox('radio', 'diversity-2a', 'rdDiv2a-2', 'Man (including trans man)')
             +radio--checkbox('radio', 'diversity-2a', 'rdDiv2a-3', 'Woman (including trans woman)')
-            div(data-dropdown='holder')
-              +radio--checkbox('radio', 'diversity-2a', 'rdDiv2a-4', 'Other gender identity')(data-dropdown='switch')
-              .indent-cv(data-dropdown-content='hide')
-                +input--text('identity', 'txtIndentity', 'Specify gender identity (optional)')
+            +radio--checkbox('radio', 'diversity-2a', 'rdDiv2a-4', 'Other gender identity')
+            .indent-cv
+              +input--text('identity', 'txtIndentity', 'Specify gender identity (optional)')
 
           +fieldset('Is your gender identity different from the gender you were assigned at birth?')
             +radio--checkbox__inline('radio', 'diversity-2b', 'rdDiv2b-1', 'Prefer not to say')

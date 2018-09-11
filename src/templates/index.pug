@@ -10,21 +10,28 @@ block content
     .container
       h2 Current committee prototypes
       ul
-        li #[+link('/templates/committee-evidence-submission-v3/index.html', 'Committee evidence submission (Version 3)')]
+        li #[+link('/templates/committee-evidence-submission-v4/index.html', 'Committee evidence submission (Version 4)')]
         li #[+link('/templates/committee-pages-v3/index.html', 'Committee & membership pages (Version 3)')]
 
+  section.section--minor
+    .container
+      +dropdownToggle("Archived committee evidence submission prototypes")
+        ul
+          li #[+link('/templates/committee-evidence-submission-v1/index.html', 'Committee evidence submission (Version 1 - Jul 2017)')]
+          li #[+link('/templates/committee-evidence-submission-v2/index.html', 'Committee evidence submission (Version 2 - Jul 2018)')]
+          li #[+link('/templates/committee-evidence-submission-v3/index.html', 'Committee evidence submission (Version 3 - Aug 2018)')]
+
+      +dropdownToggle("Archived committee & membership prototypes")
+        ul
+          li #[+link('/templates/committee-pages-v1/index.html', 'Committee & membership pages (Version 1 - Jan 2018)')]
+          li #[+link('/templates/committee-pages-v2/index.html', 'Committee & membership pages (Version 2 - Jan 2018)')]
+
+      +dropdownToggle("Archived committee activity timeline prototypes")
+        ul
+          li #[+link('/templates/committee-activity-timeline/index.html', 'Committee activity timeline (Jun 2017)')]
+        
   section
     .container
       h2 User research guidance
       ul
         li #[+link('/templates/user-research-guidance/note-taking.html', 'Note taking guidance')]
-
-  section
-    .container
-      h2 Archived Committee prototypes
-      ul
-        li #[+link('/templates/committee-evidence-submission-v2/index.html', 'Committee evidence submission (Version 2)')]
-        li #[+link('/templates/committee-pages-v1/index.html', 'Committee & membership pages (Version 1)')]
-        li #[+link('/templates/committee-pages-v2/index.html', 'Committee & membership pages (Version 2)')]
-        li #[+link('/templates/committee-evidence-submission-v1/index.html', 'Committee evidence submission (July 2017)')]
-        li #[+link('/templates/committee-activity-timeline/index.html', 'Committee activity timeline (June 2017)')]

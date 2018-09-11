@@ -10,21 +10,29 @@ UK_Parliament.formValidation = function () {
 
       var
         elemValidity = this.validity,
-        elemIdError = (this.getAttribute('id') + 'Error'),
         elemParent = this.parentElement,
-        elemPrevSibling = this.previousElementSibling;
+        elemTarget,
+        elemTargetInline;
 
-      // If invalid or change event listener is fired and input fails certain validity check
-      if (elemValidity.valueMissing === true || elemValidity.patternMismatch === true || elemValidity.tooLong === true) {
+      if (elemParent.classList.contains('input-group') || elemParent.classList.contains('input-group__inline') || elemParent.classList.contains('input-group__verbose')) {
+        elemTarget = elemParent.previousElementSibling;
+        elemTargetInline = true;
+      } else {
+        elemTarget = this.previousElementSibling;
+      }
+
+      // If invalid or change event listener is fired run validity check
+      if (elemValidity.valueMissing === true || elemValidity.patternMismatch === true) {
+
+        // Construct inline error message
+        var
+          elemIdError = (this.getAttribute('id') + 'Error'),
+          errorText = this.getAttribute('data-error'),
+          errorMessage = document.createElement('p');
 
         // Set aria attritbute on invalid input field
         this.setAttribute('aria-invalid', 'true');
         this.setAttribute('aria-describedby', elemIdError);
-
-        // Construct inline error message
-        var
-          errorText = this.getAttribute('data-error'),
-          errorMessage = document.createElement('p');
 
         errorMessage.innerHTML = errorText;
         errorMessage.classList.add('message--error');
@@ -32,15 +40,22 @@ UK_Parliament.formValidation = function () {
         errorMessage.setAttribute('aria-live', 'polite');
 
         // Add error message and custom validity if it doesn't already exist
-        if (!elemPrevSibling || !elemPrevSibling.classList.contains('message--error')) {
-          elemParent.insertBefore(errorMessage, this);
+        if (!elemTarget || !elemTarget.classList.contains('message--error')) {
+
+          // Check if target element is within input group wrapper
+          if (elemTargetInline === true) {
+            elemParent.insertAdjacentElement('beforebegin', errorMessage);
+          } else {
+            elemParent.insertBefore(errorMessage, this);
+          }
+
           this.setCustomValidity(errorText);
         } else {
           return false;
         }
       }
 
-      // If change event listener is fired and input passes individual validity checks
+      // If change event listener is fired and input passes validity checks
       else {
 
         // Reset custom validity message
@@ -50,7 +65,7 @@ UK_Parliament.formValidation = function () {
         if (this.hasAttribute('aria-invalid')) {
           this.removeAttribute('aria-invalid');
           this.removeAttribute('aria-describedby');
-          elemPrevSibling.remove();
+          elemTarget.remove();
         }
       }
     };

@@ -1,0 +1,62 @@
+extends ../../layouts/layout.pug
+
+block content
+  #content.section--primary
+    .container
+      h1 
+        span The advertising industry inquiry
+        span.sr-only .
+        span.context Communications Committee
+
+  section
+    .container
+      h2 Inquiry status
+      p The inquiry is open and accepting written evidence submissions. 
+      p The deadline for written submissions is Friday 20 October 2018. 
+      p The Committee expects to hear oral evidence from invited witnesses from October to December 2018 and intends to report early in 2019.
+
+  section
+    .container
+      h2 About the inquiry
+      p The Communications Committee has launched an inquiry into the UK advertising industry.
+      p The UK is the world’s second biggest exporter of advertising services and has the largest advertising market in Europe.
+      p UK businesses use advertising to attract customers, which increases economic growth.
+
+      p The aim of this inquiry is to:
+
+      ul.list-cv
+        li examine the future of the UK advertising industry
+        li 
+          | investigate how policies and practices can help the industry keep its leading position
+        li consider how the UK can access talent that the industry needs
+
+      +dropdownToggle("Background")
+        .input-group__extended
+          p Advertising and marketing services added £13.3 billion to the economy in 2014, more than any of the other creative industries except IT.#[+link('#fb-01', '[1]')(id='ft-01')] The Advertising Association, an industry body, states that, by helping companies to attract customers, advertising generates £120 billion in economic activity. In the international arena, the UK is the second biggest exporter of advertising services in the world with exports amounting to £4.3 billion a year, and has the largest advertising market in Europe. The industry claims to support one million jobs in the UK.#[+link('#fb-02', '[2]')(id='ft-02')]
+
+          p Some analysts have identified that, as with the other creative industries, these jobs tend to be located in creative clusters. These may be defined as “agglomerations of creative businesses and workers that collaborate and compete with each other” with the result that individual businesses are able to access a significant number of creative workers and clients, as well as collaborate and share information with one another.#[+link('#fb-03', '[3]')(id='ft-03')] Some analysts have also described the advertising industry as an ecosystem that is constituted of creative talent, client management and strategic management.
+
+          p Perhaps because the UK has been able to generate such clusters, it has been able to attract talented individuals from around the world. For example, the Advertising Association estimates that as many as 1 in 5 of those working in UK advertising are from other EU countries. It has called for continued access to the global talent pool. It has also emphasised the need to develop creative, technological, mathematical and analytical skills.#[+link('#fb-04', '[4]')(id='ft-04')]
+
+          p The advertising industry faces major change as advertisers switch from the traditional media of television, radio and print to digital. In May 2017, Enders Analysis reported that “digital advertising now generates more revenue in the UK than all other media”.#[+link('#fb-05', '[5]')(id='ft-05')] In July the Advertising Association and WARC reported that television spending for the first quarter of the year had experienced its first fall since 2009 while internet spend increased by about 10%.#[+link('#fb-06', '[6]')(id='ft-06')]
+
+        h3 Footnotes
+
+        p #[+link('#ft-01', '[1]')(id='fb-01')] DCMS, Creative Industries Economic Estimates (January 2016) #[+link('https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/523024/ Creative_Industries_Economic_Estimates_January_2016_Updated_201605.pdf', 'https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/523024/ Creative_Industries_Economic_Estimates_January_2016_Updated_201605.pdf')] [accessed 6 September 2017]
+
+        p #[+link('#ft-02', '[2]')(id='fb-02')] The Advertising Association, Global strength and regional growth: A blueprint for how advertising can drive the UK’s industrial strategy (April 2017)
+
+        p #[+link('#ft-03', '[3]')(id='fb-03')] Nesta, The Geography of Creativity in the UK (July 2016) #[+link('https://www.nesta.org.uk/sites/default/files/the_geography_of_creativity_in_the_uk.pdf', 'https://www.nesta.org.uk/sites/default/files/the_geography_of_creativity_in_the_uk.pdf')] [accessed 6 September 2017]
+
+        p #[+link('#ft-04', '[4]')(id='fb-04')] The Advertising Association, Brexit: the story so far
+
+        p #[+link('#ft-05', '[5]')(id='fb-05')] 5 Enders Analysis, Mounting risks to marketing effectiveness (18 May 2017)
+
+        p #[+link('#ft-06', '[6]')(id='fb-06')] ISBA, ‘Brand advertisers under pressure from weakening consumer confidence’ (27 July 2017) #[+link('http://www.isba.org.uk/news/2017/07/27/brand-advertisers-under-pressure-from-weakening-consumer-confidence', 'http://www.isba.org.uk/news/2017/07/27/brand-advertisers-under-pressure-from-weakening-consumer-confidence')] [accessed 6 September 2017]
+
+  section
+    .container
+      .block
+        h2 Call for evidence
+        p The Communications Committee would like to hear your views.
+        p To find out what evidence the Committee is interested in, read the #[+link('page02.html', 'advertising industry inquiry call for evidence')].

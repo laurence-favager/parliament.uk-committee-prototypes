@@ -81,6 +81,25 @@ UK_Parliament.submitterRoutingV3 = function () {
 
 UK_Parliament.submitterRoutingV3();
 
+// Function to route users correctly depending on submitter type
+UK_Parliament.submitterRoutingV4 = function () {
+
+  var submitterType = localStorage.getItem('submitter');
+
+  console.log(submitterType);
+
+  if (document.getElementById('confirmPageLink1')) {
+    var submitterLink = document.getElementById('confirmPageLink1');
+    if (submitterType == 'ind' || submitterType == 'grp') {
+      submitterLink.href = 'page12-1.html';
+    } else if (submitterType == 'org' || submitterType == 'orgs') {
+      submitterLink.href = 'page13-1.html';
+    }
+  }
+};
+
+UK_Parliament.submitterRoutingV4();
+
 // Function to listen for checked radio buttons and change form action
 UK_Parliament.radioRouting = function () {
   if (document.getElementById('submitterType')) {
@@ -189,6 +208,7 @@ UK_Parliament.enableSubmit = function () {
 
 UK_Parliament.enableSubmit();
 
+/*
 // Function to enhance client side form validation
 UK_Parliament.formValidation = function () {
 
@@ -255,6 +275,7 @@ UK_Parliament.formValidation = function () {
 };
 
 UK_Parliament.formValidation();
+*/
 
 // Dropdown switch for hiding/showing content using form elements
 UK_Parliament.dropdownSwitch = function () {
@@ -393,7 +414,6 @@ UK_Parliament.addNewOrganisation = function () {
         it.setAttribute('required', 'required');
         it.setAttribute('data-error', 'Please enter the organisation name');
         ir.setAttribute('class', 'link--remove-cv');
-        ir.innerHTML = 'remove';
 
         incrementOrg();
 
@@ -405,6 +425,7 @@ UK_Parliament.addNewOrganisation = function () {
         is.appendChild(il);
         is.appendChild(it);
 
+        ir.innerHTML = 'Remove additional organisation ' + j;
         ir.setAttribute('onclick', "removeOrgElement('id_" + j + "')");
 
         ip.appendChild(ir);
@@ -416,18 +437,16 @@ UK_Parliament.addNewOrganisation = function () {
 
         UK_Parliament.formValidation();
 
+      } else {
+        var vm = document.createElement('div');
+        var vp = document.createElement('p');
+        vm.setAttribute('id', 'orgError');
+        vm.setAttribute('class', 'status--highlight theme--caution');
+        vm.setAttribute('aria-live', 'polite');
+        vp.innerHTML = 'You can\'t add more than 10 organisation names to this form.\n\n If there are more organisations on the submission make sure they\'re included in your evidence.';
+        vm.appendChild(vp);
+        document.getElementById('addNewOrg').insertAdjacentElement('beforebegin', vm);
       }
-
-   // else {
-      // var vm = document.createElement('div');
-      // var vp = document.createElement('p');
-      // vm.setAttribute('id', 'orgError');
-      // vm.setAttribute('class', 'status--highlight theme--caution');
-      // vm.setAttribute('aria-live', 'polite');
-      // vp.innerHTML = 'You can\'t add more than 10 organisation names to this form.\n\n If there are more organisations on the submission make sure they\'re included in your evidence.';
-      // vm.appendChild(vp);
-      // document.getElementById('addNewOrg').insertAdjacentElement('beforebegin', vm);
-   // }
     });
   }
 
@@ -511,7 +530,6 @@ UK_Parliament.addNewIndividual = function () {
         it5.setAttribute('name', 'pro-role');
 
         ir.setAttribute('class', 'link--remove-cv');
-        ir.innerHTML = 'remove';
 
         increment();
 
@@ -541,6 +559,7 @@ UK_Parliament.addNewIndividual = function () {
         is.appendChild(il5);
         is.appendChild(it5);
 
+        ir.innerHTML = 'Remove additional individual ' + i;
         ir.setAttribute('onclick', "removeElement('id_" + i + "')");
 
         ip.appendChild(ir);
@@ -552,18 +571,16 @@ UK_Parliament.addNewIndividual = function () {
 
         UK_Parliament.formValidation();
 
+      } else {
+        var vm = document.createElement('div');
+        var vp = document.createElement('p');
+        vm.setAttribute('id', 'indError');
+        vm.setAttribute('class', 'status--highlight theme--caution');
+        vm.setAttribute('aria-live', 'polite');
+        vp.innerHTML = 'You can\'t add more than 10 names to this form.\n\n If there are more names on the submission make sure they\'re included in your evidence.';
+        vm.appendChild(vp);
+        document.getElementById('addNewInd').insertAdjacentElement('beforebegin', vm);
       }
-
-    // else {
-      // var vm = document.createElement('div');
-      // var vp = document.createElement('p');
-      // vm.setAttribute('id', 'indError');
-      // vm.setAttribute('class', 'status--highlight theme--caution');
-      // vm.setAttribute('aria-live', 'polite');
-      // vp.innerHTML = 'You can\'t add more than 10 names to this form.\n\n If there are more names on the submission make sure they\'re included in your evidence.';
-      // vm.appendChild(vp);
-      // document.getElementById('addNewInd').insertAdjacentElement('beforebegin', vm);
-    // }
     });
   }
 
@@ -590,83 +607,3 @@ UK_Parliament.addNewIndividual = function () {
 };
 
 UK_Parliament.addNewIndividual();
-
-// Show file name, file upload status and check file size
-
-UK_Parliament.fileUploaderV2 = function () {
-
-  var fileInput = document.querySelector('[data-file-upload="newbutton"]');
-
-  if (fileInput) {
-
-    // Local variables
-    var
-      fileIcon = document.querySelector('[data-file-upload="upload"]'),
-      fileStatus = document.querySelector('[data-file-upload="newstatus"]'),
-      fileSizeLimit = fileInput.getAttribute('data-file-size') ? fileInput.getAttribute('data-file-size') : '5242880',
-      fileSizeLimitFormatted = fileSizeLimit.substring(0, 2),
-      fileContainer = document.getElementById('uploader-container');
-
-    fileInput.onchange = function () {
-
-      //console.log(this.files[0].size);
-
-      if (this.files[0] === undefined) {
-
-        fileContainer.classList.add('normal-cv');
-        fileContainer.classList.remove('success-cv');
-        fileStatus.className = '';
-        fileStatus.innerHTML = '';
-        fileIcon.setAttribute('data-file-upload', 'upload');
-      } else {
-
-        // Grab file object reference, determine size and construct filename
-        var
-          fileObject = this.files,
-          fileObjectSize = fileObject[0].size,
-          fileName = this.value.split(/(\\|\/)/g).pop(),
-          fileNameFormatted = '<strong>\'' + fileName + '\'</strong>';
-
-        // Check for aria attribute and manage addition / class removal accordingly
-        fileStatus.hasAttribute('aria-live') ? fileStatus.classList.remove('theme--warning') : fileStatus.setAttribute('aria-live', 'polite');
-
-        // Check if file exceeds size limit passed in data-file-size attribute (default set to 5MB in binary)
-        if (fileObjectSize > fileSizeLimit) {
-          fileContainer.classList.add('normal-cv');
-          fileContainer.classList.remove('success-cv');
-          fileStatus.classList.add('status--highlight');
-          fileStatus.classList.add('theme--warning');
-          fileStatus.innerHTML = 'The file you have uploaded is too big. Please make sure it is smaller than ' + fileSizeLimitFormatted + 'MB.';
-          fileIcon.setAttribute('data-file-upload', 'upload');
-
-        // Check if linked file object is present
-        } else if (fileObject) {
-          fileContainer.classList.remove('normal-cv');
-          fileContainer.classList.add('success-cv');
-          fileStatus.classList.add('status--highlight');
-          fileStatus.classList.add('theme--success');
-          fileStatus.innerHTML = 'Your file ' + fileNameFormatted + ' is ready to be uploaded';
-          fileIcon.setAttribute('data-file-upload', 'uploaded');
-
-        // Return text to default state if no linked file object exists
-        } else {
-          fileContainer.classList.add('normal-cv');
-          fileContainer.classList.remove('success-cv');
-          fileIcon.setAttribute('data-file-upload', 'upload');
-        }
-      }
-    };
-
-    // Check if element is in focus and add class for Firefox
-    fileInput.addEventListener('focus', function () {
-      fileInput.classList.add('js-has-focus');
-    });
-
-    // Check if element is out of focus and remove class for Firefox
-    fileInput.addEventListener('blur', function () {
-      fileInput.classList.remove('js-has-focus');
-    });
-  }
-};
-
-UK_Parliament.fileUploaderV2();

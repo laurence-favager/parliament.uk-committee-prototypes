@@ -30,6 +30,16 @@
       outline-offset: -2px;
     }
   }
+  + input {
+    &[type="checkbox"]:checked + label:before,
+    &[type="checkbox"]:not(:checked) + label:before {
+      border: solid 2px $warning--dark;
+      box-shadow: none;
+    }
+    &[type="checkbox"]:focus + label::before {
+      box-shadow: 0 0 0 3px $warning--dark;
+    }
+  }
 }
 
 // Hero & Heading tweaks
@@ -70,10 +80,6 @@ legend {
 // Input indentations
 
 .list-cv > li {
-  margin-bottom: $base-spacing-unit;
-}
-
-.list--large-cv > li {
   margin-bottom: $base-spacing-unit-tiny;
 }
 
@@ -83,7 +89,7 @@ legend {
 }
 
 .indent-cv {
-  padding-left: ($base-spacing-unit-medium * 2);
+  padding-left: (($base-spacing-unit-medium * 2) + 2px);
   padding-bottom: $base-spacing-unit-medium;
 }
 
@@ -99,7 +105,7 @@ legend {
 
 // Button styling (double padding + lead font size)
 
-.btn--large-cv {
+.btn-cv {
   padding: 8px 20px;
   @include fontsize(24);
 }
@@ -109,6 +115,7 @@ legend {
 .theme--success-dark {
   text-align: center;
   background-color: $success--light;
+  border-top: solid 6px $mint;
 }
 
 // File uploader
@@ -147,4 +154,26 @@ legend {
   [data-icon="upload"] {
     display: none;
   }
+}
+
+// Check answers alignment
+
+.container-cv {
+  display: flex;
+  & h2, p {
+    margin-bottom: 0;
+  }
+}
+
+.col-1-cv {
+  width: 30%;
+}
+
+.col-2-cv {
+  width: 55%;
+}
+
+.col-3-cv {
+  width: 15%;
+  text-align: right;
 }

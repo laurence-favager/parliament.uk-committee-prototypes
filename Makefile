@@ -49,6 +49,7 @@ js:
 	@$(UGLIFY_JS) $(JAVASCRIPTS_LOC)/overrides.js -m -o $(PUBLIC_FOLDER)/javascripts/overrides.js
 	@$(UGLIFY_JS) $(JAVASCRIPTS_LOC)/timeline-and-submission.js -m -o $(PUBLIC_FOLDER)/javascripts/timeline-and-submission.js
 	@$(UGLIFY_JS) $(JAVASCRIPTS_LOC)/form-validation.js -m -o $(PUBLIC_FOLDER)/javascripts/form-validation.js
+	@$(UGLIFY_JS) $(JAVASCRIPTS_LOC)/file-upload-v2.js -m -o $(PUBLIC_FOLDER)/javascripts/file-upload-v2.js
 
 # Minifies json file
 json:

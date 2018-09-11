@@ -1,0 +1,49 @@
+extends ../../layouts/layout.pug
+
+block content
+  #content.section--primary
+    .container
+      h1 Communications Committee
+      p Joint (Commons and Lords) select committee
+
+  section
+    .container
+      h2 About the committee
+      p We evaluate the media and creative industries, and broadcasting public policy.
+
+  section
+    .container
+      h2 Open inquiries
+      ol.list--pipe
+        li #[+link('page01.html', 'The advertising industry inquiry')]
+        li #[+link('#', 'The Internet: to regulate or not to regulate?')]
+
+  section
+    .container
+      h2 Committee members
+      ol.list--block
+        li
+          .card
+            figure.avatar--round
+              a(href="#" tabindex="-1")
+                picture
+                  img(src="https://api.parliament.uk/Staging/photo/iGmLaCTP.jpeg?crop=CU_1:1&width=186&quality=80" alt="Lord Gilbert of Panteg")
+            .card__details
+              h3
+                a(href="#") Lord Gilbert of Panteg
+              p Committee chair
+              p Conservative member of the House of Lords
+      p #[+link('#', 'View all 13 committee members')]
+
+  section
+    .container
+      h2 Contact us
+      
+      .block
+        dl.list--definition
+          dt Email:
+          dd #[+link('mailto:holcommunications@parliament.uk', 'holcommunications@parliament.uk')]
+          dt Phone:
+          dd #[+link('tel:02072198662', '020 7219 8662')]
+          dt Address:
+          dd Communications Committee, House of Lords, London, SW1A 0PW

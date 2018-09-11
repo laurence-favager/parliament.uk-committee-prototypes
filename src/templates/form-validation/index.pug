@@ -17,15 +17,15 @@ block content
           textarea(id='txtComment', required, data-error='Please leave a comment')
 
           +fieldset('Age range?')
-            +radio--checkbox__inline('radio', 'diversity-age', 'rdAge1', '18+')
-            +radio--checkbox__inline('radio', 'diversity-age', 'rdAge2', '30+')
-            +radio--checkbox__inline('radio', 'diversity-age', 'rdAge3', '45+')
-            +radio--checkbox__inline('radio', 'diversity-age', 'rdAge4', 'Prefer not to say')(checked)
+            +radio--checkbox('radio', 'diversity-age', 'rdAge1', 'Prefer not to say')(required, data-error='Please choose one of the options')
+            +radio--checkbox('radio', 'diversity-age', 'rdAge2', '18+')
+            +radio--checkbox('radio', 'diversity-age', 'rdAge3', '30+')
+            +radio--checkbox('radio', 'diversity-age', 'rdAge4', '45+')
 
           +fieldset('Gender?')
-            +radio--checkbox__inline('radio', 'diversity-gender', 'rdGen1', 'Male')
-            +radio--checkbox__inline('radio', 'diversity-gender', 'rdGen2', 'Female')
-            +radio--checkbox__inline('radio', 'diversity-gender', 'rdGen3', 'Prefer not to say')(checked)
+            +radio--checkbox__inline('radio', 'diversity-gender', 'rdGen1', 'Prefer not to say')(required, data-error='Please choose one of the options')
+            +radio--checkbox__inline('radio', 'diversity-gender', 'rdGen2', 'Male')
+            +radio--checkbox__inline('radio', 'diversity-gender', 'rdGen3', 'Female')
           
           label(for='selContMeth') How do you wish to be contacted?
           select(name='contact-select', id='selContMeth', required, data-error='Please choose a method of contact')

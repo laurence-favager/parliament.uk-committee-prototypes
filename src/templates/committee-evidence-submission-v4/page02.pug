@@ -8,8 +8,22 @@ block content
         span.sr-only .
         span.context The advertising industry inquiry
 
+      ul.list--inline
+        li
+          .card--inline
+            .card__details
+              include ../../icons/download.svg
+              +link('https://www.parliament.uk/documents/lords-committees/communications/advertising-industry/Final-Call-for-evidence.pdf', 'Download as a PDF (271 KB)')
+        li.visually-hidden(aria-hidden='true')
+          .card--inline
+            .card__details
+              include ../../icons/print.svg
+              +link('#', 'Print call for evidence')(onclick='printPage()').btn--print
+
       p The Committee seeks to receive written evidence which addresses the following list of questions. Witnesses should not feel that they must answer every question. On the other hand, witnesses may address issues that are not covered below provided that they are salient to the aims of the inquiry as set out above. Witnesses are also encouraged to suggest recommendations and to discuss whether the evidence bases and available data that contribute to their answers are adequate.
 
+  section
+    .container
       +dropdownToggle("Questions")
 
         h3 Skills and research

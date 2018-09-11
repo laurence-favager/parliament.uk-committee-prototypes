@@ -12,11 +12,11 @@ block content
 
   section
     .container
-      h2 Disability
-      p The Equality Act 2010 defines a person with a disability as someone who has a physical or mental impairment that has a substantial and long term adverse effect on his or her ability to carry out normal day to day activities.
+      +form(action='page14.html')
+        .input-group__extended
+          h2 Disability
+          p The Equality Act 2010 defines a person with a disability as someone who has a physical or mental impairment that has a substantial and long term adverse effect on his or her ability to carry out normal day to day activities.
 
-      +form(action='page13.html')
-        .input-wrapper
           +fieldset('Do you consider yourself to have a disability?')
             +radio--checkbox__inline('radio', 'diversity-3', 'rdDiv3-1', 'Prefer not to say')
             +radio--checkbox__inline('radio', 'diversity-3', 'rdDiv3-2', 'Yes')

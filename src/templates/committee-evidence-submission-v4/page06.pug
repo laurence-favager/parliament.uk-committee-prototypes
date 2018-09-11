@@ -1,0 +1,46 @@
+extends ../../layouts/layout.pug
+
+block content
+  #content.hero.theme--grey-4
+    .container
+      h1
+        span Submitting as a group of individuals
+        span.sr-only .
+        span.context The advertising industry inquiry
+
+      p #[+link('#', 'Back to previous page')(onclick='goBack()')]
+
+  section
+    .container
+      +form('page06-1.html')
+        .input-group__extended
+          h2 Lead individual
+          p If your evidence is published, all individuals’ names will appear online.
+
+          +input--text('title', 'txtTitle', 'Title (optional)')(class='input__md')
+          +input--text('first-name', 'txtFirstName', 'First name(s)')(required, data-error='Please enter a first name')
+          +input--text('last-name', 'txtLastName', 'Last name')(required, data-error='Please enter a last name')
+          +input--text('pro-name', 'txtProName', 'Job title (optional)')
+          +input--text('pro-role', 'txtProRole', 'Organisation (optional)')
+
+        .input-group__extended
+          h2 Additional individual 1
+
+          +input--text('title', 'txtTitle1', 'Title (optional)')(class='input__md')
+          +input--text('first-name', 'txtFirstName1', 'First name(s)')(required, data-error='Please enter a first name')
+          +input--text('last-name', 'txtLastName1', 'Last name')(required, data-error='Please enter a last name')
+          +input--text('pro-name', 'txtProName', 'Job title (optional)')
+          +input--text('pro-role', 'txtProRole', 'Organisation (optional)')
+
+        .input-group__extended
+          #multiInds
+
+          +buttonLink('#', 'Add another individual', 'btn--ghost--primary')(id='addNewInd')
+
+        +button('Continue', 'btn--primary btn-cv', 'submit')
+
+  section.section--minor
+    .container
+      .block.accent--mint
+        h2 Help and support
+        p If you need help submitting evidence, email the Communications Committee (#[+link('mailto:holcommunications@parliament.uk', 'holcommunications@parliament.uk')]) or phone #[+link('tel:02072198662', '020 7219 8662')].
