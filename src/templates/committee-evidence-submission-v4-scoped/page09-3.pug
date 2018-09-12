@@ -1,0 +1,25 @@
+extends ../../layouts/layout.pug
+
+block content
+  #content.hero.theme--grey-4
+    .container
+      h1
+        span Diversity question 3 of 3
+        span.sr-only .
+        span.context The advertising industry inquiry
+
+      p #[+link('#', 'Back to previous page')(onclick='goBack()')]
+
+  section
+    .container
+      +form(action='page11.html')
+        .input-group__extended
+          h2 Disability
+          p The Equality Act 2010 defines a person with a disability as someone who has a physical or mental impairment that has a substantial and long term adverse effect on his or her ability to carry out normal day to day activities.
+
+          +fieldset('Do you consider yourself to have a disability?')
+            +radio--checkbox__inline('radio', 'diversity-3', 'rdDiv3-1', 'Prefer not to say')
+            +radio--checkbox__inline('radio', 'diversity-3', 'rdDiv3-2', 'Yes')
+            +radio--checkbox__inline('radio', 'diversity-3', 'rdDiv3-3', 'No')
+
+        +button('Finish', 'btn--primary btn-cv', 'submit')

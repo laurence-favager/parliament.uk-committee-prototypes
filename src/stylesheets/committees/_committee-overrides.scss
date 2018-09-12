@@ -79,6 +79,10 @@ legend {
 
 // Input indentations
 
+.block-cv {
+  margin-top: ($base-spacing-unit-medium + $base-spacing-unit-small);
+}
+
 .list-cv > li {
   margin-bottom: $base-spacing-unit-tiny;
 }
@@ -163,17 +167,14 @@ legend {
   & h2, p {
     margin-bottom: 0;
   }
-}
-
-.col-1-cv {
-  width: 30%;
-}
-
-.col-2-cv {
-  width: 55%;
-}
-
-.col-3-cv {
-  width: 15%;
-  text-align: right;
+  & :first-child {
+    width: 30%;
+  }
+  & :nth-child(2) {
+    width: 55%;
+  }
+  & :last-child {
+    width: 15%;
+    text-align: right;
+  }
 }

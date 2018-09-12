@@ -1,0 +1,37 @@
+extends ../../layouts/layout.pug
+
+block content
+  #content.hero.theme--grey-4
+    .container
+      h1
+        span Submitting as an organisation
+        span.sr-only .
+        span.context The advertising industry inquiry
+
+      p #[+link('#', 'Back to previous page')(onclick='goBack()')]
+
+  section
+    .container
+      +form('page06.html')
+        .input-group__extended
+          h2 Organisation details
+          +input--text('name', 'txtOrgName', 'Organisation name')(required, data-error='Please enter the organisation name')
+          p If your evidence is published, your organisation's name will appear online.
+
+        .input-group__extended
+          h2 Contact details
+          +input--text('title', 'txtTitle', 'Title (optional)')(class='input__md')
+          +input--text('first-name', 'txtFirstName', 'First name(s)')(required, data-error='Please enter a first name')
+          +input--text('last-name', 'txtLastName', 'Last name')(required, data-error='Please enter a last name')
+          +input--validate('email', 'email', 'txtEmail', '[^@]+@[^@]+\\.[^@]+', null, 'Email', null)(data-error='Please enter a valid email address')
+          +radio--checkbox('checkbox', 'update-1', 'update1', 'I would like to receive updates from the Communications Committee')
+          +radio--checkbox('checkbox', 'update-2', 'update2', 'I would like to receive updates on the advertising industry inquiry')
+          +input--text('telephone', 'txtPhone', 'Phone (optional)')(maxlength='15')
+
+        +button('Continue', 'btn--primary btn-cv', 'submit')
+
+  section
+    .container
+      .block.accent--mint.block-cv
+        h2 Help and support
+        p If you need help submitting evidence, email the Communications Committee (#[+link('mailto:holcommunications@parliament.uk', 'holcommunications@parliament.uk')]) or phone #[+link('tel:02072198662', '020 7219 8662')].

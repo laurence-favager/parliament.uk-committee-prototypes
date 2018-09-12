@@ -1,0 +1,28 @@
+extends ../../layouts/layout.pug
+
+block content
+  #content.hero.theme--grey-4
+    .container
+      h1
+        span Submit evidence
+        span.sr-only .
+        span.context The advertising industry inquiry
+
+      p #[+link('#', 'Back to previous page')(onclick='goBack()')]
+
+  section
+    .container
+      +form('page02.html')(id='submitterType', data-evidence='form')
+        .input-group__extended
+          h2 Who are you submitting evidence for?
+          ol.list--block
+            li
+              +radio--checkbox__verbose('radio', 'submitter-type', 'ind', 'You are submitting evidence for yourself or on behalf of someone else.', 'Individual')(data-route='page02.html', required, data-error='Please choose who are you submitting evidence for')
+            li
+              +radio--checkbox__verbose('radio', 'submitter-type', 'grp', 'You are submitting evidence for a group of people.', 'Group of individuals')(data-route='page03-1.html')
+            li
+              +radio--checkbox__verbose('radio', 'submitter-type', 'org', 'You are submitting evidence for a business or an organisation.', 'Organisation')(data-route='page04.html')
+            li
+              +radio--checkbox__verbose('radio', 'submitter-type', 'orgs', 'You are submitting evidence for a group of businesses or organisations.', 'Group of organisations')(data-route='page05-1.html')
+
+        +button('Continue', 'btn--primary btn-cv', 'submit')
