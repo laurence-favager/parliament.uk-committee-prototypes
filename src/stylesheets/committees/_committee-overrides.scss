@@ -112,6 +112,7 @@ legend {
 .btn-cv {
   padding: 8px 20px;
   @include fontsize(24);
+  line-height: 1.15;
 }
 
 // Theme success dark
