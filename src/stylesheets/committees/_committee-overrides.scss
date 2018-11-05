@@ -30,14 +30,16 @@
       outline-offset: -2px;
     }
   }
-  + input {
-    &[type="checkbox"]:checked + label:before,
-    &[type="checkbox"]:not(:checked) + label:before {
-      border: solid 2px $warning--dark;
-      box-shadow: none;
-    }
-    &[type="checkbox"]:focus + label::before {
-      box-shadow: 0 0 0 3px $warning--dark;
+  + [class*="input-group"] {
+    > input {
+      &[type="checkbox"]:checked + label:before,
+      &[type="checkbox"]:not(:checked) + label:before {
+        border: solid 2px $warning--dark;
+        box-shadow: none;
+      }
+      &[type="checkbox"]:focus + label::before {
+        box-shadow: 0 0 0 3px $warning--dark;
+      }
     }
   }
 }

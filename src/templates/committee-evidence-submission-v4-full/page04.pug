@@ -17,7 +17,7 @@ block content
           h2 Who are you submitting evidence for?
           ol.list--block
             li
-              +radio--checkbox__verbose('radio', 'submitter-type', 'ind', 'You are submitting evidence for yourself or on behalf of someone else.', 'Individual')(data-route='page05.html', required, data-error='Please choose who are you submitting evidence for')
+              +radio--checkbox__verbose('radio', 'submitter-type', 'ind', 'You are submitting evidence for yourself or on behalf of someone else.', 'Individual')(data-route='page05.html', checked)
             li
               +radio--checkbox__verbose('radio', 'submitter-type', 'grp', 'You are submitting evidence for a group of people.', 'Group of individuals')(data-route='page06.html')
             li

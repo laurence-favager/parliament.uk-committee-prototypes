@@ -33,6 +33,7 @@ UK_Parliament.submitterIdentification = function () {
       getSubmitterType = function (radio) {
         if (radio.checked) {
           localStorage.submitter = radio.id;
+          form.action = radio.dataset.route;
           form.submit();
         }
       };
@@ -48,98 +49,24 @@ UK_Parliament.submitterIdentification = function () {
 UK_Parliament.submitterIdentification();
 
 // Function to route users correctly depending on submitter type
-UK_Parliament.submitterRoutingV2 = function () {
+function submitterRouting(subLoc, subAct, indPage, orgPage) {
 
   var submitterType = localStorage.getItem('submitter');
+  var submitterControl = document.getElementById(subLoc);
+  var submitterAction = subAct;
+  var individualPage = indPage;
+  var organisationPage = orgPage;
 
-  if (document.getElementById('fileUploadFormV2')) {
-    var submitterLink = document.getElementById('fileUploadFormV2');
-    if (submitterType == 'ind') {
-      submitterLink.action = 'page05-1.html';
-    } else if (submitterType == 'org') {
-      submitterLink.action = 'page06-1.html';
-    }
+  if ((submitterType == 'ind' || submitterType == 'grp') && submitterAction == 'form') {
+    submitterControl.action = individualPage;
+  } else if ((submitterType == 'org' || submitterType == 'orgs') && submitterAction == 'form') {
+    submitterControl.action = organisationPage;
+  } else if ((submitterType == 'ind' || submitterType == 'grp') && submitterAction == 'link') {
+    submitterControl.href = individualPage;
+  } else {
+    submitterControl.href = organisationPage;
   }
-};
-
-UK_Parliament.submitterRoutingV2();
-
-// Function to route users correctly depending on submitter type
-UK_Parliament.submitterRoutingV3 = function () {
-
-  var submitterType = localStorage.getItem('submitter');
-
-  if (document.getElementById('confirmPageLink')) {
-    var submitterLink = document.getElementById('confirmPageLink');
-    if (submitterType == 'ind' || submitterType == 'grp') {
-      submitterLink.href = 'page11-1.html';
-    } else if (submitterType == 'org' || submitterType == 'orgs') {
-      submitterLink.href = 'page12-1.html';
-    }
-  }
-};
-
-UK_Parliament.submitterRoutingV3();
-
-// Function to route users correctly depending on submitter type
-UK_Parliament.submitterRoutingV4 = function () {
-
-  var submitterType = localStorage.getItem('submitter');
-
-  if (document.getElementById('confirmPageLink1')) {
-    var submitterLink = document.getElementById('confirmPageLink1');
-    if (submitterType == 'ind' || submitterType == 'grp') {
-      submitterLink.href = 'page12-1.html';
-    } else if (submitterType == 'org' || submitterType == 'orgs') {
-      submitterLink.href = 'page13-1.html';
-    }
-  }
-};
-
-UK_Parliament.submitterRoutingV4();
-
-// Function to route users correctly depending on submitter type
-UK_Parliament.submitterRoutingV5 = function () {
-
-  var submitterType = localStorage.getItem('submitter');
-
-  if (document.getElementById('confirmPageLink2')) {
-    var submitterLink = document.getElementById('confirmPageLink2');
-    if (submitterType == 'ind' || submitterType == 'grp') {
-      submitterLink.href = 'page09-1.html';
-    } else if (submitterType == 'org' || submitterType == 'orgs') {
-      submitterLink.href = 'page10-1.html';
-    }
-  }
-};
-
-UK_Parliament.submitterRoutingV5();
-
-// Function to listen for checked radio buttons and change form action
-UK_Parliament.radioRouting = function () {
-  if (document.getElementById('submitterType')) {
-
-    var radios = document.querySelectorAll('input[type=radio]');
-
-    for (var i = 0; i < radios.length; i++) {
-      radios[i].onclick = function () {
-        var route = getCheckedRadioIndex(radios);
-        document.getElementById('submitterType').action = route;
-      };
-    }
-  }
-
-  function getCheckedRadioIndex(radios) {
-    for (var i = 0; i < radios.length; i++) {
-      if (radios[i].checked) {
-        var r = radios[i].dataset.route;
-        return r;
-      }
-    }
-  }
-};
-
-UK_Parliament.radioRouting();
+}
 
 // Function to enable/disable form submit buttons using form elements
 UK_Parliament.enableSubmit = function () {

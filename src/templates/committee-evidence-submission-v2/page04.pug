@@ -19,7 +19,7 @@ block content
         li be a single Word document
         li not contain logos
 
-      +form(action='page05-1.html', id='fileUploadFormV2')
+      +form(action='', id='fileUploadFormV2')
         ol.list--pipe__deep
           li
             .card
@@ -32,7 +32,7 @@ block content
 
                 p(data-file-upload='status') No file(s) selected
 
-        +button('Continue', 'btn--primary', 'submit')(id='file-upload-check')
+        +button('Continue', 'btn--primary', 'submit')(id='file-upload-check', onclick='submitterRouting("fileUploadFormV2", "form", "page05-1.html", "page06-1.html")')
 
       .section--minor
         .block.accent--mint
