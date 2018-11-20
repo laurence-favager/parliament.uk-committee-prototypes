@@ -75,6 +75,8 @@ documents:
 # Outputs pug files to html within public folder
 templates:
 	@$(PUG) $(SRC_FOLDER)/templates -P --out $(PUBLIC_FOLDER)/templates
+	@mkdir -p $(PUBLIC_FOLDER)/templates/committee-resources/
+	@cp $(SRC_FOLDER)/templates/committee-resources/* $(PUBLIC_FOLDER)/templates/committee-resources/
 
 # Runs tests on javascript files
 lint:
